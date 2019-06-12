@@ -1,0 +1,78 @@
+    <?xml version="1.0"?>
+<openerp>
+    <data>
+        <!--Contract Renewal mail notification-->
+        <record id="email_template_contract_renewal" model="mail.template">
+            <field name="name">Employee Contract Renewal</field>
+            <field name="model_id" ref="hr_contract.model_hr_contract"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="email_from"></field>
+            <field name="email_to">${(object.employee_id.parent_id.user_id != False and object.employee_id.parent_id.user_id.email)|safe}</field>
+            <field name="subject">Reminder on Contract: ${object.id} Renewal For ${object.employee_id != False and object.employee_id.name}</field>
+            <field name="body_html"><![CDATA[<p>This Contract Needs Renewal:</p>
+                <ul>
+                <li>Name: ${object.name}</li>
+                <li>ID: ${object.id}</li>
+                <li>Contract Duration: From ${object.date_start} To ${object.date_end}</li>
+                </ul>]]>
+            </field>
+        </record>
+
+        <record id="action_send_email_contract_renewal" model="ir.actions.server">
+            <field name="name">Employee Contract Renewal</field>
+            <field name="model_id" ref="hr_contract.model_hr_contract"/>
+            <field name="condition">True</field>
+            <field name="type">ir.actions.server</field>
+            <field name="state">email</field>
+            <field name="template_id" ref="email_template_contract_renewal"/>
+        </record>
+        <record id="rule_send_email_contract_renewal" model="base.action.rule">
+            <field name="name">Send Email to Manager by employee contract renewal</field>
+            <field name="model_id" ref="hr_contract.model_hr_contract"/>
+            <field name="sequence">3</field>
+            <field name="kind">on_time</field>
+            <field name="filter_domain">[('state', '=', 'open')]</field>
+            <field name="trg_date_id" ref="hr_contract.field_hr_contract_date_end"/>
+            <field name="trg_date_range">2</field>
+            <field name="trg_date_range_type">month</field>
+            <field name="server_action_ids" eval="[(6,0,[ref('action_send_email_contract_renewal')])]"/>
+        </record>
+
+
+        <!--Contract trial period notifiction mail-->
+        <record id="email_template_contract_trial_period" model="mail.template">
+            <field name="name">Employee Contract Trial Period</field>
+            <field name="model_id" ref="hr_contract.model_hr_contract"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="email_from"></field>
+            <field name="email_to">${(object.employee_id.parent_id.user_id != False and object.employee_id.parent_id.user_id.email)|safe}</field>
+            <field name="subject">Reminder on Contract: ${object.id} [Trial Period] End For ${object.employee_id != False and object.employee_id.name}</field>
+            <field name="body_html"><![CDATA[<p>This Contract[Trial Period] Needs Renewal:</p>
+                <ul>
+                <li>Name: ${object.name}</li>
+                <li>ID: ${object.id}</li>
+                <li>Contract's Trial Period Duration: From ${object.trial_date_start} To ${object.trial_date_end}</li>
+                </ul>]]></field>
+        </record>
+        <record id="action_send_email_trial_period" model="ir.actions.server">
+            <field name="name">Employee Contract Trial Period Notification</field>
+            <field name="model_id" ref="hr_contract.model_hr_contract"/>
+            <field name="condition">True</field>
+            <field name="type">ir.actions.server</field>
+            <field name="state">email</field>
+            <field name="template_id" ref="email_template_contract_trial_period"/>
+        </record>
+        <record id="rule_send_email_contract_trial_period" model="base.action.rule">
+            <field name="name">Send Email to Manager by employee Trial Period</field>
+            <field name="model_id" ref="hr_contract.model_hr_contract"/>
+            <field name="sequence">3</field>
+            <field name="kind">on_time</field>
+            <field name="filter_domain">[('state', '=', 'open')]</field>
+            <field name="trg_date_id" ref="hr_contract.field_hr_contract_trial_date_end"/>
+            <field name="trg_date_range">5</field>
+            <field name="trg_date_range_type">day</field>
+            <field name="server_action_ids" eval="[(6,0,[ref('action_send_email_trial_period')])]"/>
+        </record>
+
+    </data>
+</openerp>

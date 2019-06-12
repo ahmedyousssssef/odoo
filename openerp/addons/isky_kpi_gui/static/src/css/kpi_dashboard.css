@@ -1,0 +1,72 @@
+
+
+.hr_kpi {
+    text-align: center;
+}
+.emp_stat {
+    text-align: center;
+}
+
+ .hr_kpi .col-md-3 {
+     border: 1px solid #C0C0C0;
+     border-right: none;
+ }
+ .hr_kpi .col-md-4 {
+     border: 1px solid #C0C0C0;
+     border-right: none;
+ }
+ .hr_kpi .col-md-6 {
+     border: 1px solid #C0C0C0;
+     border-right: none;
+ }
+ .emp_stat .col-md-3 {
+     border: 1px solid #C0C0C0;
+     border-right: none;
+ }
+ .emp_stat .col-md-6 {
+     border: 1px solid #C0C0C0;
+     border-right: none;
+ }
+
+.hr_kpi .col-md-3:last-child {
+    border: 1px solid #C0C0C0;
+}
+.emp_stat .col-md-3:last-child {
+    border: 1px solid #C0C0C0;
+}
+
+.emp_stat .col-md-3:hover {
+    cursor: pointer;
+}
+.emp_stat .col-md-3:hover {
+    cursor: pointer;
+}
+.tasks_select .col-md-12.center:hover {
+    cursor: pointer;
+}
+.hr_kpi .col-md-3:hover {
+    cursor: pointer;
+}
+.hr_kpi .col-md-4:hover {
+    cursor: pointer;
+}
+.hr_kpi .col-md-6:hover {
+    cursor: pointer;
+}
+
+.hr_kpi .activestep {
+    height: 100;
+    margin-top: -7px;
+    padding-top: 7px;
+    border-left: 6px solid black !important;
+    border-right: 6px solid black !important;
+    border-top: 3px solid black !important;
+    border-bottom: 3px solid black !important;
+    vertical-align: central;
+}
+
+.hr_kpi .fa {
+    padding-top: 15px;
+    font-size: 25px;
+}
+

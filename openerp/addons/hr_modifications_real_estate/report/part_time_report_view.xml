@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="part_time_report">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="report.external_layout">
+                        <div class="page">
+                                <center><h3>JOB OFFER LETTER</h3></center>
+                                <center><h5>CONFIDENTIAL</h5></center>
+                                <left><h4>Dear <span t-field="o.partner_name" /></h4></left>
+                                <left><h4>We would like to inform you that EL SHAHAWI GROUP is offering you a full time
+                                employment opportunity as a <span t-field="o.job_id"/> to join in <span t-field="o.hiring_date"/> </h4></left>
+                                <left><h4>Please find below your employment opportunity description:</h4></left>
+                                <left><h4><u>Job Title: <span t-field="o.job_id"/> </u></h4></left>
+                                <left><h4><u>job title of the direct Superior:<span t-field="o.department_id.manager_id"/> </u></h4></left>
+                                <left><h4><u>Job Summary:</u></h4></left>
+                                <center><h4>The Business Development Executive is engaged in the business of real estate</h4></center>
+                                <center><h4>development and is in need primarily for the purpose of sales experience project in</h4></center>
+                                <center><h4>connection with the undertaking project Ein Hills and to be completed after all</h4></center>
+                                <center><h4>Helps in the assessment of creative work from a factual perspective, ensuring that </h4></center>
+                                <center><h4>the work is on brief, includes the required elements and meets the brand</h4></center>
+                                <center><h4>guidelines and feasible to be implemented.</h4></center>
+                                <center><h4>Perform other related duties assigned by the direct superior as required.</h4></center>
+                                <left><h4><u>Net Salary : <span t-field="o.salary_proposed"/> </u></h4></left>
+                                <left><h4><u>Salary Due:</u>2 nd day of each month.</h4> </left>
+                                <center><h4>Please confirm your acceptance at your earliest convenience, but not later than</h4></center>
+                                <center><h4><span t-field="o.offer_expire_date"/> as the date for this offer will expire.</h4></center>
+                                <center><h4>We are looking forward see you at our company and we are glad that you will play a</h4></center>
+                                <center><h4>key role in our company’s expansion. If you have any inquiries, please do not</h4></center>
+                                <center><h4>hesitate to contact me.</h4></center>
+                                <br></br>
+
+
+
+
+                        </div>
+
+                    </t>
+
+                </t>
+
+            </t>
+        </template>
+
+    </data>
+</openerp>

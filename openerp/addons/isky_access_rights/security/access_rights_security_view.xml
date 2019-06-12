@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+        <!-- Security groups -->
+
+        <record id="rs_accountant" model="res.groups">
+            <field name="name">Accountant</field>
+            <field name="category_id" ref="sky_height.module_real_estate_management"/>
+            <field name="implied_ids" eval="[(4, ref('account.group_account_user'))]"/>
+        </record>
+
+        <record id="financial_manager" model="res.groups">
+            <field name="name">Financial Manager</field>
+            <field name="category_id" ref="sky_height.module_real_estate_management"/>
+            <field name="implied_ids" eval="[(4, ref('sky_height.group_sky_height_penalty_fees')),(4, ref('sky_height.group_real_state')),(4, ref('account.group_account_manager'))]"/>
+        </record>
+
+        <record id="accounting_supervisor" model="res.groups">
+            <field name="name">Accounting Supervisor</field>
+            <field name="category_id" ref="sky_height.module_real_estate_management"/>
+            <field name="implied_ids" eval="[(4, ref('sky_height.group_real_state')),(4, ref('account.group_account_manager'))]"/>
+        </record>
+
+        <record id="development_user" model="res.groups">
+            <field name="name">Development</field>
+            <field name="category_id" ref="sky_height.module_real_estate_management"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_legal_ex" model="res.groups">
+            <field name="name">Legal EX</field>
+            <field name="category_id" ref="sky_height.module_real_estate_management"/>
+            <field name="implied_ids" eval="[(4, ref('sky_height.group_real_state'))]"/>
+        </record>
+
+        <record id="group_legal_adv" model="res.groups">
+            <field name="name">Legal Adv</field>
+            <field name="category_id" ref="sky_height.module_real_estate_management"/>
+            <field name="implied_ids" eval="[(4, ref('sky_height.group_real_state'))]"/>
+        </record>
+
+        <record id="group_ar" model="res.groups">
+            <field name="name">AR</field>
+            <field name="category_id" ref="sky_height.module_real_estate_management"/>
+            <field name="implied_ids" eval="[(4, ref('sky_height.group_real_state'))]"/>
+        </record>
+
+        <record id="group_ar_sup" model="res.groups">
+            <field name="name">AR Supervisor</field>
+            <field name="category_id" ref="sky_height.module_real_estate_management"/>
+            <field name="implied_ids" eval="[(4, ref('sky_height.group_real_state'))]"/>
+        </record>
+
+        <record id="group_general_ar" model="res.groups">
+            <field name="name">General AR</field>
+            <field name="category_id" ref="sky_height.module_real_estate_management"/>
+            <field name="implied_ids" eval="[(4, ref('isky_access_rights.group_ar_sup')),(4, ref('isky_access_rights.group_ar'))]"/>
+        </record>
+
+        <record id="group_treasury" model="res.groups">
+            <field name="name">Treasury Accountant</field>
+            <field name="category_id" ref="sky_height.module_real_estate_management"/>
+            <field name="implied_ids" eval="[(4, ref('sky_height.group_real_state')), (4, ref('account.group_account_user'))]"/>
+        </record>
+
+
+        <record model="ir.rule" id="isky_product_prod_smanager_rule">
+            <field name="name">Product Product Model</field>
+            <field name="model_id" ref="sky_height.model_product_product"/>
+            <field name="groups" eval="[(4,ref('base.group_sale_manager'))]"></field>
+            <field eval="1" name="perm_read"></field>
+            <field eval="1" name="perm_write"></field>
+            <field eval="0" name="perm_unlink"></field>
+            <field eval="0" name="perm_create"></field>
+        </record>
+
+        <record model="ir.rule" id="isky_welcome_card_operation_rule">
+            <field name="name">Welcome Card</field>
+            <field name="model_id" ref="crm.model_crm_lead"/>
+            <field name="groups" eval="[(4,ref('sky_height.operation_sr_manager_user')),(4,ref('sky_height.operation_manager_user')),(4,ref('sky_height.operation_senior_supervisor_user')),(4,ref('sky_height.operation_supervisor_user')),(4,ref('sky_height.operation_sr_executive_user')),(4,ref('sky_height.operation_executive_user'))]"></field>
+            <field name="domain_force">['|', ('type','=','lead'), ('type','=',False)]</field>
+            <field eval="1" name="perm_read"></field>
+            <field eval="1" name="perm_write"></field>
+            <field eval="0" name="perm_unlink"></field>
+            <field eval="1" name="perm_create"></field>
+        </record>
+
+        <record model="ir.rule" id="isky_welcome_card_operation_head_rule">
+            <field name="name">Welcome Card head</field>
+            <field name="model_id" ref="crm.model_crm_lead"/>
+            <field name="groups" eval="[(4,ref('sky_height.sales_head_user'))]"></field>
+            <field name="domain_force">['|', ('type','=','lead'), ('type','=',False)]</field>
+            <field eval="1" name="perm_read"></field>
+            <field eval="1" name="perm_write"></field>
+            <field eval="0" name="perm_unlink"></field>
+            <field eval="0" name="perm_create"></field>
+        </record>
+
+
+        <!-- Allow operations group to create opportunity-->
+        <record model="ir.rule" id="isky_convert_to_lead_operation_rule">
+            <field name="name">Convert to lead</field>
+            <field name="model_id" ref="crm.model_crm_lead"/>
+            <field name="groups" eval="[(4,ref('sky_height.operation_sr_manager_user')),(4,ref('sky_height.operation_manager_user')),(4,ref('sky_height.operation_senior_supervisor_user')),(4,ref('sky_height.operation_supervisor_user')),(4,ref('sky_height.operation_sr_executive_user')),(4,ref('sky_height.operation_executive_user'))]"></field>
+            <field name="domain_force">[('type','=','opportunity')]</field>
+            <field eval="1" name="perm_read"></field>
+            <field eval="1" name="perm_write"></field>
+            <field eval="0" name="perm_unlink"></field>
+            <field eval="1" name="perm_create"></field>
+        </record>
+
+        <record id="base.group_sale_salesman" model="res.groups">
+            <field name="name">Sales Person</field>
+            <field name="category_id" ref="base.module_category_sales_management"/>
+            <field name="comment">the user will have access to his own data in the sales application.</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record model="ir.rule" id="isky_sales_team_leader">
+            <field name="name">Sales TeamLeader users</field>
+            <field name="model_id" ref="crm.model_crm_lead"></field>
+            <field name="groups" eval="[(4,ref('sky_height.sale_team_leader_group'))]"></field>
+            <field name="domain_force">['|', '|', ('user_id.sale_team_id.user_id','=',user.id), ('user_id', '=', user.id), ('user_id', '=', False)]</field>
+            <field eval="1" name="perm_read"></field>
+            <field eval="1" name="perm_write"></field>
+            <field eval="0" name="perm_unlink"></field>
+            <field eval="1" name="perm_create"></field>
+        </record>
+
+         <record model="ir.rule" id="isky_sales_team_manager">
+            <field name="name">Sales Manager users</field>
+            <field name="model_id" ref="crm.model_crm_lead"></field>
+            <field name="groups" eval="[(4,ref('base.group_sale_manager'))]"></field>
+            <field name="domain_force">['|', '|', ('user_id','=',user.id), ('user_id.sale_team_id.sales_manager_id', 'in', [user.id]), ('user_id', '=', False)]</field>
+            <field eval="1" name="perm_read"></field>
+            <field eval="1" name="perm_write"></field>
+            <field eval="0" name="perm_unlink"></field>
+            <field eval="1" name="perm_create"></field>
+        </record>
+
+        <record model="ir.rule" id="isky_res_partner_sales_team_leader">
+            <field name="name">Sales TeamLeader users partners</field>
+            <field name="model_id" ref="base.model_res_partner"></field>
+            <field name="groups" eval="[(4,ref('sky_height.sale_team_leader_group'))]"></field>
+            <field name="domain_force">['|', '|', '|', ('user_id.sale_team_id.user_id','=',user.id), ('user_id', '=', user.id), ('user_id', '=', False), ('user_ids', '!=', False)]</field>
+            <field eval="1" name="perm_read"></field>
+            <field eval="1" name="perm_write"></field>
+            <field eval="0" name="perm_unlink"></field>
+            <field eval="1" name="perm_create"></field>
+        </record>
+
+        <record model="ir.rule" id="isky_sales_team_manager_res_partner">
+            <field name="name">Sales Manager Partners</field>
+            <field name="model_id" ref="base.model_res_partner"></field>
+            <field name="groups" eval="[(4,ref('base.group_sale_manager'))]"></field>
+            <field name="domain_force">['|', '|', '|', ('user_id','=',user.id), ('user_id.sale_team_id.sales_manager_id', 'in', [user.id]), ('user_id', '=', False), ('user_ids', '!=', False)]</field>
+            <field eval="1" name="perm_read"></field>
+            <field eval="1" name="perm_write"></field>
+            <field eval="0" name="perm_unlink"></field>
+            <field eval="1" name="perm_create"></field>
+        </record>
+
+        <record model="ir.rule" id="crm_sale_person">
+            <field name="name">saleperson crm</field>
+            <field name="model_id" ref="crm.model_crm_lead"></field>
+            <field name="groups" eval="[(4,ref('base.group_sale_salesman'))]"></field>
+            <field name="domain_force">[('user_id.id','=',user.id)]</field>
+            <field eval="1" name="perm_read"></field>
+            <field eval="1" name="perm_write"></field>
+            <field eval="0" name="perm_unlink"></field>
+            <field eval="1" name="perm_create"></field>
+        </record>
+
+
+         <record model="ir.rule" id="isky_customer_sales_head">
+            <field name="name">Customer Sales Head</field>
+            <field name="model_id" ref="base.model_res_partner"></field>
+            <field name="groups" eval="[(4,ref('sky_height.sales_head_user'))]"></field>
+            <field eval="1" name="perm_read"></field>
+            <field eval="0" name="perm_write"></field>
+            <field eval="0" name="perm_unlink"></field>
+            <field eval="0" name="perm_create"></field>
+        </record>
+
+         <record model="ir.rule" id="isky_operation_executive_head">
+            <field name="name">Customer Sales Head</field>
+            <field name="model_id" ref="base.model_res_partner"></field>
+            <field name="groups" eval="[(4,ref('sky_height.operation_executive_user'))]"></field>
+            <field eval="1" name="perm_read"></field>
+            <field eval="0" name="perm_write"></field>
+            <field eval="0" name="perm_unlink"></field>
+            <field eval="0" name="perm_create"></field>
+        </record>
+
+        <record model="ir.rule" id="isky_welcome_card_sales_head">
+            <field name="name">Welcome Card Sales Head</field>
+            <field name="model_id" ref="crm.model_crm_lead"></field>
+            <field name="groups" eval="[(4,ref('sky_height.sales_head_user'))]"></field>
+            <field name="domain_force">[('type','=','opportunity')]</field>
+            <field eval="1" name="perm_read"></field>
+            <field eval="1" name="perm_write"></field>
+            <field eval="1" name="perm_unlink"></field>
+            <field eval="0" name="perm_create"></field>
+        </record>
+
+
+        <record model="ir.rule" id="isky_reservation_team_managers_rule">
+            <field name="name">Reservation team managers users</field>
+            <field name="model_id" ref="sky_height.model_rs_reservation"></field>
+            <field name="groups" eval="[(4,ref('base.group_sale_manager'))]"></field>
+            <field name="domain_force">[('user_ids.sale_team_id.sales_manager_id','in',[user.id])]</field>
+            <field eval="1" name="perm_read"></field>
+            <field eval="0" name="perm_write"></field>
+            <field eval="0" name="perm_unlink"></field>
+            <field eval="0" name="perm_create"></field>
+        </record>
+
+        <!--<record model="ir.rule" id="isky_reservation_leval_adv_rule">-->
+            <!--<field name="name">Reservation Legal Adv Rule</field>-->
+            <!--<field name="model_id" ref="sky_height.model_rs_reservation"></field>-->
+            <!--<field name="groups" eval="[(4,ref('isky_access_rights.group_legal_adv'))]"></field>-->
+            <!--<field name="domain_force">[('state','in',['initialize'])]</field>-->
+            <!--<field eval="1" name="perm_read"></field>-->
+            <!--<field eval="1" name="perm_write"></field>-->
+            <!--<field eval="0" name="perm_unlink"></field>-->
+            <!--<field eval="0" name="perm_create"></field>-->
+        <!--</record>-->
+
+        <record model="ir.rule" id="isky_reservation_team_leaders_rule">
+            <field name="name">Reservation team leaders users</field>
+            <field name="model_id" ref="sky_height.model_rs_reservation"></field>
+            <field name="groups" eval="[(4,ref('sky_height.sale_team_leader_group'))]"></field>
+            <field name="domain_force">['|', ('user_ids.sale_team_id.user_id','in',[user.id]),('user_ids', 'in', [user.id])]</field>
+            <field eval="1" name="perm_read"></field>
+            <field eval="1" name="perm_write"></field>
+            <field eval="0" name="perm_unlink"></field>
+            <field eval="1" name="perm_create"></field>
+        </record>
+
+        <record model="ir.rule" id="isky_reservation_legal_ex_rule">
+            <field name="name">Reservation legal ex</field>
+            <field name="model_id" ref="sky_height.model_rs_reservation"></field>
+            <field name="groups" eval="[(4,ref('isky_access_rights.group_legal_ex'))]"></field>
+            <field name="domain_force">[('state', '=', 'under_collection')]</field>
+            <field eval="1" name="perm_read"></field>
+            <field eval="1" name="perm_write"></field>
+            <field eval="0" name="perm_unlink"></field>
+            <field eval="0" name="perm_create"></field>
+        </record>
+
+        <record model="ir.rule" id="isky_reservation_legal_ex_rule_for_read">
+            <field name="name">Reservation legal ex</field>
+            <field name="model_id" ref="sky_height.model_rs_reservation"></field>
+            <field name="groups" eval="[(4,ref('isky_access_rights.group_legal_ex'))]"></field>
+            <field name="domain_force">[('state', 'in', ['initialize','review','create_so','cancel'])]</field>
+            <field eval="1" name="perm_read"></field>
+            <field eval="0" name="perm_write"></field>
+            <field eval="0" name="perm_unlink"></field>
+            <field eval="0" name="perm_create"></field>
+        </record>
+
+        <record model="ir.rule" id="isky_reservation_legal_adv_rule">
+            <field name="name">Reservation legal Adv</field>
+            <field name="model_id" ref="sky_height.model_rs_reservation"></field>
+            <field name="groups" eval="[(4,ref('isky_access_rights.group_legal_adv'))]"></field>
+            <field name="domain_force">[('state', '=', 'initialize')]</field>
+            <field eval="1" name="perm_read"></field>
+            <field eval="1" name="perm_write"></field>
+            <field eval="0" name="perm_unlink"></field>
+            <field eval="0" name="perm_create"></field>
+        </record>
+         <record model="ir.rule" id="isky_reservation_group_general_ar_rule">
+            <field name="name">General AR Users</field>
+            <field name="model_id" ref="sky_height.model_rs_reservation"></field>
+            <field name="groups" eval="[(4,ref('isky_access_rights.group_general_ar'))]"></field>
+            <field name="domain_force">[('state', 'in', ['review', 'create_so', 'initialize', 'under_collection'])]</field>
+            <field eval="1" name="perm_read"></field>
+            <field eval="1" name="perm_write"></field>
+            <field eval="0" name="perm_unlink"></field>
+            <field eval="0" name="perm_create"></field>
+        </record>
+
+        <record model="ir.rule" id="isky_reservation_legal_adv_rule_for_read">
+            <field name="name">Reservation legal Adv</field>
+            <field name="model_id" ref="sky_height.model_rs_reservation"></field>
+            <field name="groups" eval="[(4,ref('isky_access_rights.group_legal_adv'))]"></field>
+            <field name="domain_force">[('state', 'in', ['review','create_so','cancel'])]</field>
+            <field eval="1" name="perm_read"></field>
+            <field eval="0" name="perm_write"></field>
+            <field eval="0" name="perm_unlink"></field>
+            <field eval="0" name="perm_create"></field>
+        </record>
+
+        <record model="ir.rule" id="isky_reservation_account_ar_rule">
+            <field name="name">Reservation accountant ar users</field>
+            <field name="model_id" ref="sky_height.model_rs_reservation"></field>
+            <field name="groups" eval="[(4,ref('isky_access_rights.group_ar'))]"></field>
+            <field name="domain_force">['|', '|', ('state', '=', 'draft'), ('state', '=', 'request_exception'), ('state', '=', 'exception_approval')]</field>
+            <field eval="1" name="perm_read"></field>
+            <field eval="1" name="perm_write"></field>
+            <field eval="0" name="perm_unlink"></field>
+            <field eval="0" name="perm_create"></field>
+        </record>
+
+        <record model="ir.rule" id="isky_reservation_account_ar_rule_reserve">
+            <field name="name">AR ar users</field>
+            <field name="model_id" ref="sky_height.model_rs_reservation"></field>
+            <field name="groups" eval="[(4,ref('isky_access_rights.group_ar'))]"></field>
+            <field name="domain_force">[('state', '=', 'in_progress')]</field>
+            <field eval="1" name="perm_read"></field>
+            <field eval="1" name="perm_write"></field>
+            <field eval="0" name="perm_unlink"></field>
+            <field eval="0" name="perm_create"></field>
+        </record>
+
+        <record model="ir.rule" id="isky_reservation_account_ar_sup_rule">
+            <field name="name">Reservation accountant  ar supervisor users</field>
+            <field name="model_id" ref="sky_height.model_rs_reservation"></field>
+            <field name="groups" eval="[(4,ref('isky_access_rights.group_ar_sup'))]"></field>
+            <field name="domain_force">[('state', 'in', ['draft', 'request_exception', 'exception_approval'])]</field>
+            <field eval="1" name="perm_read"></field>
+            <field eval="1" name="perm_write"></field>
+            <field eval="0" name="perm_unlink"></field>
+            <field eval="0" name="perm_create"></field>
+        </record>
+
+
+
+
+
+        <!-- Sales team security -->
+        <!--<record model="ir.rule" id="model_crm_team_salesperson">-->
+            <!--<field name="name">CRM Team sales person</field>-->
+            <!--<field name="model_id" ref="sales_team.model_crm_team"></field>-->
+            <!--<field name="groups" eval="[(4,ref('base.group_sale_salesman'))]"></field>-->
+            <!--<field eval="1" name="perm_read"></field>-->
+            <!--<field eval="0" name="perm_write"></field>-->
+            <!--<field eval="0" name="perm_unlink"></field>-->
+            <!--<field eval="0" name="perm_create"></field>-->
+        <!--</record>-->
+
+        <!--<record model="ir.rule" id="model_crm_team_teamleader">-->
+            <!--<field name="name">CRM Team sales team leader</field>-->
+            <!--<field name="model_id" ref="sales_team.model_crm_team"></field>-->
+            <!--<field name="groups" eval="[(4,ref('sky_height.sale_team_leader_group'))]"></field>-->
+            <!--<field eval="1" name="perm_read"></field>-->
+            <!--<field eval="1" name="perm_write"></field>-->
+            <!--<field eval="0" name="perm_unlink"></field>-->
+            <!--<field eval="0" name="perm_create"></field>-->
+        <!--</record>-->
+
+        <!--<record model="ir.rule" id="model_crm_team_manager">-->
+            <!--<field name="name">CRM Team sales team manager</field>-->
+            <!--<field name="model_id" ref="sales_team.model_crm_team"></field>-->
+            <!--<field name="groups" eval="[(4,ref('base.group_sale_manager'))]"></field>-->
+            <!--<field eval="1" name="perm_read"></field>-->
+            <!--<field eval="1" name="perm_write"></field>-->
+            <!--<field eval="0" name="perm_unlink"></field>-->
+            <!--<field eval="0" name="perm_create"></field>-->
+        <!--</record>-->
+
+    </data>
+</openerp>

@@ -1,0 +1,2666 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sky_height
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c-20160427\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-08 12:47+0000\n"
+"PO-Revision-Date: 2016-11-14 11:50+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: en\n"
+"X-Generator: Poedit 1.8.11\n"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.report_property_reservation_eng_document
+msgid ""
+"*Exchange date is the date when you have to complete your purchacing process otherwise the reservation is canceled.\n"
+"                           Deposite will be refunded except for the administration cost (2.5%)"
+msgstr ""
+"*Exchange date is the date when you have to complete your purchacing process otherwise the reservation is canceled.\n"
+"                           Deposite will be refunded except for the administration cost (2.5%)"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.report_property_reservation_eng_document
+msgid ""
+"<br/> \n"
+"                                    <strong>Telephone Home/Mobile:</strong> <br/>"
+msgstr ""
+"<br/> \n"
+"                                    <strong>Telephone Home/Mobile:</strong> <br/>"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.report_property_reservation_eng_document
+msgid "<span style=\"color:#0000FF; font-size:18px;\"><strong> Project: </strong></span>"
+msgstr "<span style=\"color:#0000FF; font-size:18px;\"><strong> Project: </strong></span>"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.report_property_reservation_eng_document
+msgid "<span style=\"font-family:times new roman,times,serif;\"><span style=\"color:#0000FF;\"><span style=\"font-size:18px;\">Approval</span></span></span>"
+msgstr "<span style=\"font-family:times new roman,times,serif;\"><span style=\"color:#0000FF;\"><span style=\"font-size:18px;\">Approval</span></span></span>"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.report_property_reservation_eng_document
+msgid "<span style=\"font-family:times new roman,times,serif;\"><span style=\"color:#0000FF;\"><span style=\"font-size:18px;\">Internal Information</span></span></span>"
+msgstr "<span style=\"font-family:times new roman,times,serif;\"><span style=\"color:#0000FF;\"><span style=\"font-size:18px;\">Internal Information</span></span></span>"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.report_property_reservation_eng_document
+msgid "<span style=\"font-family:times new roman,times,serif;\"><span style=\"color:#0000FF;\"><span style=\"font-size:18px;\">Purchase Details</span></span></span>"
+msgstr "<span style=\"font-family:times new roman,times,serif;\"><span style=\"color:#0000FF;\"><span style=\"font-size:18px;\">Purchase Details</span></span></span>"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.report_property_reservation_eng_document
+msgid "<span style=\"font-family:times new roman,times,serif;\"><span style=\"color:#0000FF;\"><span style=\"font-size:18px;\">Reservation Condition</span></span></span>"
+msgstr "<span style=\"font-family:times new roman,times,serif;\"><span style=\"color:#0000FF;\"><span style=\"font-size:18px;\">Reservation Condition</span></span></span>"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.report_property_reservation_eng_document
+msgid "<span style=\"font-family:times new roman,times,serif;\"><span style=\"font-size:22px;\"><strong>Reservation form</strong></span></span>"
+msgstr "<span style=\"font-family:times new roman,times,serif;\"><span style=\"font-size:22px;\"><strong>Reservation form</strong></span></span>"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.report_property_reservation_eng_document
+msgid ""
+"<strong style=\"color:#6699ff; margin-left:100px;\">\n"
+"                                    Sky Heights\n"
+"                                </strong>"
+msgstr ""
+"<strong style=\"color:#6699ff; margin-left:100px;\">\n"
+"                                    Sky Heights\n"
+"                                </strong>"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.report_property_reservation_eng_document
+msgid "<strong> Exchange Date: </strong>"
+msgstr "<strong> Exchange Date: </strong>"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.report_property_reservation_eng_document
+msgid "<strong> Reservation Date:</strong>"
+msgstr "<strong> Reservation Date:</strong>"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.report_property_reservation_eng_document
+msgid "<strong>Address:</strong>"
+msgstr "<strong>Address:</strong>"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.report_property_reservation_eng_document
+msgid "<strong>Contract price:</strong>"
+msgstr "<strong>Contract price:</strong>"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.report_property_reservation_eng_document
+msgid "<strong>E-Mail:</strong>"
+msgstr "<strong>E-Mail:</strong>"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.report_property_reservation_eng_document
+msgid "<strong>Full Name:</strong>"
+msgstr "<strong>Full Name:</strong>"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.report_property_reservation_eng_document
+msgid "<strong>Payment Plan:</strong>"
+msgstr "<strong>Payment Plan:</strong>"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.report_property_reservation_eng_document
+msgid "<strong>Sales Team:</strong>"
+msgstr "<strong>Sales Team:</strong>"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.report_property_reservation_eng_document
+msgid ""
+"<strong>The Developer:</strong>\n"
+"                                El Shahawi group for developing communities\n"
+"                                <br/>\n"
+"                                14C, Ahmed Kamel street, New Maadi."
+msgstr ""
+"<strong>The Developer:</strong>\n"
+"                                El Shahawi group for developing communities\n"
+"                                <br/>\n"
+"                                14C, Ahmed Kamel street, New Maadi."
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.report_property_reservation_eng_document
+msgid "<strong>Unit Area:</strong>"
+msgstr "<strong>Unit Area:</strong>"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.report_property_reservation_eng_document
+msgid "<strong>Unit number:</strong>"
+msgstr "<strong>Unit number:</strong>"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.report_property_reservation_eng_document
+msgid "<strong>Unit type:</strong>"
+msgstr "<strong>Unit type:</strong>"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.strategies_report
+msgid "<u>Payment Strategies</u>"
+msgstr "<u>Payment Strategies</u>"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:217
+#: model:ir.model.fields,field_description:sky_height.field_payment_bank_bank_account_id
+#, python-format
+msgid "Account"
+msgstr "الحساب"
+
+#. module: sky_height
+#: model:ir.model,name:sky_height.model_account_move
+msgid "Account Entry"
+msgstr "قيد الحساب"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_reservation.py:333
+#, python-format
+msgid "Accountant Must Confirm Customer Payment"
+msgstr "Accountant Must Confirm Customer Payment"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_add_extension
+msgid "Add Extension"
+msgstr "Add Extension"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_address
+msgid "Address"
+msgstr "العنوان"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_product_product_search_admin
+msgid "Admin"
+msgstr "Admin"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_reservation.py:389
+#, python-format
+msgid "All Payment Method Except Deposit Must Be Checks"
+msgstr "جميع طرق الدفع ماعدا تحت الحساب يجب أن تكون شيك "
+
+#. module: sky_height
+#: model:ir.ui.menu,name:sky_height.menu_properties
+msgid "All Properties"
+msgstr "جميع الخصائص "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:297
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_amount
+#: model:ir.model.fields,field_description:sky_height.field_rs_payment_strategy_details_amount
+#: model:ir.ui.view,arch_db:sky_height.report_property_reservation_eng_document
+#: model:ir.ui.view,arch_db:sky_height.strategies_report
+#, python-format
+msgid "Amount"
+msgstr "المبلغ"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_sales_order.py:229
+#: model:ir.model.fields,field_description:sky_height.field_sale_order_line_analytic_account_id
+#, python-format
+msgid "Analytic Account"
+msgstr "مركز التكلفه "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:179
+#: selection:rs.payment_strategy_details,by_period:0
+#, python-format
+msgid "Annual"
+msgstr "سنوي "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_approve_cancellation
+#: model:ir.model.fields,field_description:sky_height.field_sale_order_approve_cancellation
+msgid "Approve Cancellation"
+msgstr "الموافقه علي الالغاء"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.payments_details_form_view
+msgid "Archive"
+msgstr "أرشفة"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:315
+#: selection:payment.strg,cheque_status:0
+#, python-format
+msgid "Archived"
+msgstr "تمت الأرشفه "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:303
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_archived_journal_id
+#, python-format
+msgid "Archived Journal"
+msgstr "الدفتر الارشيفي "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:308
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_archived_journal_entry_id
+#, python-format
+msgid "Archived Journal Entry"
+msgstr "قيد يوميه تمت أرشفته "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.rs_property_product2_form_view
+msgid "Area"
+msgstr "منطقه "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_inherit_opportunity.py:27
+#: code:addons/sky_height/models/real_estate_property.py:46
+#: model:ir.model.fields,field_description:sky_height.field_project_phase_available
+#: model:ir.ui.view,arch_db:sky_height.inherit_search_product2
+#: selection:product.product,status:0
+#, python-format
+msgid "Available"
+msgstr "متاح"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:184
+#: selection:rs.payment_strategy_details,payment_type:0
+#, python-format
+msgid "Bank"
+msgstr "بنك "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:216
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:222
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:312
+#: model:ir.model.fields,field_description:sky_height.field_payment_bank_cus_name
+#: model:ir.model.fields,field_description:sky_height.field_payment_bank_name
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_bank_name
+#, python-format
+msgid "Bank Name"
+msgstr "اسم البنك "
+
+#. module: sky_height
+#: model:ir.ui.menu,name:sky_height.payment_strategy_bank_details
+msgid "Bank Payment Details"
+msgstr "معلومات بنك"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.view_payments_details_list_search
+msgid "Bank Payment Method"
+msgstr "طريقه بنك الدفع"
+
+#. module: sky_height
+#: model:ir.actions.act_window,name:sky_height.payments_details_bank_list_action
+msgid "Bank Payments Details"
+msgstr "معلومات بنك الدفع"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:11
+#: code:addons/sky_height/models/real_estate_sales_order.py:17
+#: selection:payment.strg,type:0
+#, python-format
+msgid "Bank and Checks"
+msgstr "البنوك والشيكات"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.rspayment-strategy_details_form_view
+msgid "Basic Information"
+msgstr "تفاصيل رئيسيه "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_property.py:58
+#: model:ir.model.fields,field_description:sky_height.field_product_product_bedrooms_no
+#, python-format
+msgid "Bedrooms No."
+msgstr "عدد الغرف "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:179
+#: selection:rs.payment_strategy_details,by_period:0
+#, python-format
+msgid "Biannual"
+msgstr "نصف سنوى"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_project.py:79
+#: code:addons/sky_height/models/real_estate_property.py:49
+#: code:addons/sky_height/models/real_estate_property.py:190
+#: model:ir.model.fields,field_description:sky_height.field_product_product_property_block_id
+#: model:ir.model.fields,field_description:sky_height.field_project_property_property_block_id
+#: model:ir.model.fields,field_description:sky_height.field_property_block_name
+#, python-format
+msgid "Block"
+msgstr "Block"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_brokers.py:15
+#: code:addons/sky_height/models/real_estate_partners.py:16
+#: model:ir.model.fields,field_description:sky_height.field_res_partner_is_broker
+#: model:ir.model.fields,field_description:sky_height.field_res_users_is_broker
+#, python-format
+msgid "Broker"
+msgstr "المقاول "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_partners.py:17
+#: model:ir.model.fields,field_description:sky_height.field_res_partner_broker_commission_amount
+#: model:ir.model.fields,field_description:sky_height.field_res_users_broker_commission_amount
+#, python-format
+msgid "Broker Commission Percentage"
+msgstr "نسبه عمولة المقاول "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_reservation.py:45
+#: model:ir.actions.act_window,name:sky_height.action_broker_form
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_broker_ids
+#: model:ir.ui.menu,name:sky_height.menu_brokers
+#: model:ir.ui.view,arch_db:sky_height.rsreservation_form_view
+#, python-format
+msgid "Brokers"
+msgstr "المقاولين "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:181
+#: selection:rs.payment_strategy_details,date_select:0
+#, python-format
+msgid "By Contract Date"
+msgstr "بتاريخ العقد "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:177
+#: model:ir.model.fields,field_description:sky_height.field_rs_payment_strategy_details_by_days
+#: selection:rs.payment_strategy_details,inst_range:0
+#, python-format
+msgid "By Days"
+msgstr "ب عدد الأيام "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:177
+#: selection:rs.payment_strategy_details,inst_range:0
+#, python-format
+msgid "By Period"
+msgstr "ب المده "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_payment_strategy_details_by_period
+msgid "By period"
+msgstr "ب المده "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_payment_strategy_details_calculate_by
+msgid "Calculate By"
+msgstr "تم الحساب بطريقه "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.rspayment-strategy_details_form_view
+msgid "Calculator"
+msgstr "الأله "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_reservation.py:61
+#: code:addons/sky_height/models/real_estate_reservation.py:362
+#: code:addons/sky_height/models/real_estate_sales_order.py:78
+#: model:ir.ui.view,arch_db:sky_height.inherit_real_estate_view_sale_order
+#: model:ir.ui.view,arch_db:sky_height.rsreservation_form_view
+#: selection:rs.reservation,state:0
+#, python-format
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:324
+#: code:addons/sky_height/wizard/real_estate_rejected_check.py:13
+#: selection:payment.strg,rejection_action:0
+#: selection:rejected.check,rejection_action:0
+#, python-format
+msgid "Cancel And Refund"
+msgstr "الإلغاء والإسترداد"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.inherit_real_estate_view_sale_order
+msgid "Cancel Order"
+msgstr "إلغاء الأمر "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_cancel_process_cancel_product_id
+msgid "Cancel Product id"
+msgstr "إلغاء "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.inherit_real_estate_view_sale_order
+msgid "Cancel Quotation"
+msgstr "إلغاء عرض السعر "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_ir_attachment_cancel_reserve_id
+msgid "Cancel Reservation"
+msgstr "إلغاء الحجز "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_cancel_user_id
+msgid "Cancel User"
+msgstr "إلغاء المستخدم "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:325
+#: code:addons/sky_height/wizard/real_estate_rejected_check.py:14
+#: selection:payment.strg,rejection_action:0
+#: selection:rejected.check,rejection_action:0
+#, python-format
+msgid "Cancel Without Refund"
+msgstr "الإلغاء بدون الإسترداد "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_cancel_process_cancel_fees
+msgid "Cancellation Fees"
+msgstr "إلغاء المصاريف"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_cancel_process_cancel_fees_amount
+msgid "Cancellation Fees Percentage"
+msgstr "النسبه المئويه للإلغاء "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_cancel_attach_ids
+msgid "Cancellation Papers"
+msgstr "أوراق الإلغاء "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.rsreservation_form_view
+msgid "Cancellation Request"
+msgstr "طلب الإلغاء "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_cancel_process_cancelled
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_cancelled
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_cancelled
+#: model:ir.ui.view,arch_db:sky_height.view_payments_details_list_search
+msgid "Cancelled"
+msgstr "تم الإلغاء "
+
+#. module: sky_height
+#: code:addons/sky_height/wizard/real_estate_cancel_process.py:119
+#, python-format
+msgid "Cannot cancel this sales order!"
+msgstr "لا يمكن الإلغاء لهذا أمر المبيعات "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:11
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:184
+#: code:addons/sky_height/models/real_estate_sales_order.py:17
+#: selection:payment.strg,type:0
+#: selection:rs.payment_strategy_details,payment_type:0
+#, python-format
+msgid "Cash"
+msgstr "النقديه "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.view_payments_details_list_search
+msgid "Cash Payment Method"
+msgstr "النقديه وطريقه الدفع "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:315
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_cheque_status
+#, python-format
+msgid "Check Status"
+msgstr "حاله الشيك "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:313
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_cheque
+#, python-format
+msgid "Cheque Number"
+msgstr "رقم الشيك "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_product_product_clear_view
+msgid "Clear View"
+msgstr "إزاله العرض"
+
+#. module: sky_height
+#: model:ir.actions.act_window,help:sky_height.action_broker_form
+msgid "Click to add a contact in your address book."
+msgstr "إضغط لإضافه مستخدم في الكتيب "
+
+#. module: sky_height
+#: model:ir.actions.act_window,help:sky_height.property_normal_action
+msgid "Click to define a new product."
+msgstr "إضغط لتعريف منتج جديد "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:292
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_payment_code
+#, python-format
+msgid "Code"
+msgstr "الكود"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.payments_details_form_view
+msgid "Collect"
+msgstr "تحصيل "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:315
+#: selection:payment.strg,cheque_status:0
+#, python-format
+msgid "Collected"
+msgstr "تم التحصيل "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:305
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_collected_journal_id
+#, python-format
+msgid "Collected Journal"
+msgstr "دفتر القيود للتحصيل "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:309
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_collected_journal_entry_id
+#, python-format
+msgid "Collected Journal Entry"
+msgstr "قيد التحصيل "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_brokers.py:28
+#: code:addons/sky_height/models/real_estate_partners.py:28
+#, python-format
+msgid "Commission Amount Must be < 100"
+msgstr "مبلغ العموله يجب ان يكون اقل من 100 "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_brokers.py:26
+#: code:addons/sky_height/models/real_estate_partners.py:26
+#, python-format
+msgid "Commission Amount Must be Greater than Zero"
+msgstr "مبلغ العموله يجب ان يكون أكبر من صفر "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_brokers.py:16
+#: model:ir.model.fields,field_description:sky_height.field_res_users_sales_commission_amount
+#, python-format
+msgid "Commission Percentage"
+msgstr "النسبه المئويه للعموله "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.view_payterm_form_inherit
+msgid "Compute"
+msgstr "إحسب "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:30
+#: model:ir.model.fields,field_description:sky_height.field_account_payment_term_computed
+#, python-format
+msgid "Computed"
+msgstr "تم الحساب "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_reservation
+#: model:ir.model.fields,field_description:sky_height.field_sale_order_reservation
+msgid "Conditions"
+msgstr "الشروط "
+
+#. module: sky_height
+#: model:ir.ui.menu,name:sky_height.configuration_sub
+msgid "Configuration"
+msgstr "الإعدادات"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_confirm_date
+msgid "Confirm Date"
+msgstr "تاريخ الموافقه "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_confirm_expire_date
+msgid "Confirm Expire Date"
+msgstr "تاريخ إنتهاء الموافقه "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.rsreservation_form_view
+msgid "Confirm Reservation"
+msgstr "الموافقه علي الحجز "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_confirm_user_id
+msgid "Confirm User"
+msgstr "موافقه المستخدم "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_reservation.py:59
+#: selection:rs.reservation,state:0
+#, python-format
+msgid "Confirmed"
+msgstr "تمت الموافقه "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_property.py:20
+#: code:addons/sky_height/models/real_estate_property.py:34
+#, python-format
+msgid "Consumable"
+msgstr "إستهلاكي "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_payment_strategy_details_contract_date
+msgid "Contract Date"
+msgstr "تاريخ العقد "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_contract_user_id
+msgid "Contract User"
+msgstr "مستخدم العقد "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_inherit_opportunity.py:28
+#: code:addons/sky_height/models/real_estate_property.py:47
+#: code:addons/sky_height/models/real_estate_reservation.py:61
+#: selection:product.product,status:0 selection:rs.reservation,state:0
+#, python-format
+msgid "Contracted"
+msgstr "تم العقد "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_product_product_corner
+msgid "Corner"
+msgstr "الركن "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_property.py:65
+#: model:ir.model.fields,field_description:sky_height.field_product_product_court_yard
+#, python-format
+msgid "Court Yard"
+msgstr "Court Yard"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_property.py:62
+#: model:ir.model.fields,field_description:sky_height.field_product_product_covered_terrace
+#, python-format
+msgid "Covered Terrace"
+msgstr "Covered Terrace"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.rsreservation_form_view
+msgid "Create Broker Payment"
+msgstr "إنشاء مبلغ المقاول "
+
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_inherit_opportunity.py:108
+#: code:addons/sky_height/models/real_estate_property.py:144
+#: model:ir.ui.view,arch_db:sky_height.isky_form_view_opportunity_form_inherit2
+#: model:ir.ui.view,arch_db:sky_height.rs_property_product2_form_view
+#, python-format
+msgid "Create Reservation"
+msgstr "إنشاء الحجز "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.rsreservation_form_view
+msgid "Create Sale Order"
+msgstr "إنشاء أمر مبيعات "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.rsreservation_form_view
+msgid "Create Sales Representative Invoices"
+msgstr "إنشاء ممثل مبيعات "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_cancel_process_create_uid
+#: model:ir.model.fields,field_description:sky_height.field_customer_id_type_create_uid
+#: model:ir.model.fields,field_description:sky_height.field_payment_bank_create_uid
+#: model:ir.model.fields,field_description:sky_height.field_payment_bank_cus_create_uid
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_create_uid
+#: model:ir.model.fields,field_description:sky_height.field_project_phase_create_uid
+#: model:ir.model.fields,field_description:sky_height.field_project_property_create_uid
+#: model:ir.model.fields,field_description:sky_height.field_property_block_create_uid
+#: model:ir.model.fields,field_description:sky_height.field_property_floor_create_uid
+#: model:ir.model.fields,field_description:sky_height.field_property_level_create_uid
+#: model:ir.model.fields,field_description:sky_height.field_property_platform_create_uid
+#: model:ir.model.fields,field_description:sky_height.field_property_type_create_uid
+#: model:ir.model.fields,field_description:sky_height.field_rejected_check_create_uid
+#: model:ir.model.fields,field_description:sky_height.field_rs_payment_strategy_details_create_uid
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_cancel_process_create_date
+#: model:ir.model.fields,field_description:sky_height.field_customer_id_type_create_date
+#: model:ir.model.fields,field_description:sky_height.field_payment_bank_create_date
+#: model:ir.model.fields,field_description:sky_height.field_payment_bank_cus_create_date
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_create_date
+#: model:ir.model.fields,field_description:sky_height.field_project_phase_create_date
+#: model:ir.model.fields,field_description:sky_height.field_project_property_create_date
+#: model:ir.model.fields,field_description:sky_height.field_property_block_create_date
+#: model:ir.model.fields,field_description:sky_height.field_property_floor_create_date
+#: model:ir.model.fields,field_description:sky_height.field_property_level_create_date
+#: model:ir.model.fields,field_description:sky_height.field_property_platform_create_date
+#: model:ir.model.fields,field_description:sky_height.field_property_type_create_date
+#: model:ir.model.fields,field_description:sky_height.field_rejected_check_create_date
+#: model:ir.model.fields,field_description:sky_height.field_rs_payment_strategy_details_create_date
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_create_date
+msgid "Creation Date"
+msgstr "تاريخ الإنشاء"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_partner_id
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_customer_id
+msgid "Customer"
+msgstr "العميل"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:311
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_cus_bank
+#, python-format
+msgid "Customer Bank Name"
+msgstr "إنشاء إسم البنك "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_reservation.py:322
+#, python-format
+msgid "Customer Must Pay Reservation Deposit Before In Progress Step"
+msgstr "يجب علي العميل دفع مبلغ تحت الحساب قبل الخطوه التاليه "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:296
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_payment_date
+#: model:ir.model.fields,field_description:sky_height.field_rs_payment_strategy_details_date_select
+#: model:ir.ui.view,arch_db:sky_height.report_property_reservation_eng_document
+#: model:ir.ui.view,arch_db:sky_height.strategies_report
+#, python-format
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_days_diff
+msgid "Days Diff"
+msgstr "Days Diff"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.view_payments_details_list_search
+msgid "Days Diff <= 0 and Not Paid"
+msgstr "Days Diff <= 0 and Not Paid"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_inherit_opportunity.py:28
+#: code:addons/sky_height/models/real_estate_property.py:47
+#: selection:product.product,status:0
+#, python-format
+msgid "Delivered"
+msgstr "تم التسليم "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.inherit_real_estate_view_sale_order
+msgid "Delivery"
+msgstr "التسليم "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.inherit_real_estate_view_sale_order
+msgid "Delivery And Expense Accounting"
+msgstr "التسليم و مصروف الحسابات "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_sales_order.py:32
+#: model:ir.model.fields,field_description:sky_height.field_sale_order_delivery_credit_account_id
+#, python-format
+msgid "Delivery Credit Account"
+msgstr "الحساب الدائن للتسليم "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_sales_order.py:31
+#: model:ir.model.fields,field_description:sky_height.field_sale_order_delivery_debit_account_id
+#, python-format
+msgid "Delivery Debit Account"
+msgstr "الحساب المدين للتسليم "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_sales_order.py:29
+#: model:ir.model.fields,field_description:sky_height.field_sale_order_delivery_journal_id
+#, python-format
+msgid "Delivery Journal"
+msgstr "دفتر التسليم "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_sales_order.py:35
+#: model:ir.model.fields,field_description:sky_height.field_sale_order_delivery_journal_entry_id
+#, python-format
+msgid "Delivery Journal Entry"
+msgstr "قيد اليوميه للتسليم "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_account_payment_term_line_deposit
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_deposite
+#: model:ir.model.fields,field_description:sky_height.field_rs_payment_strategy_details_deposit
+msgid "Deposit"
+msgstr "مبلغ تحت الحساب "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:298
+#: model:ir.model.fields,field_description:sky_height.field_account_payment_term_line_payment_description
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_description
+#: model:ir.ui.view,arch_db:sky_height.report_property_reservation_eng_document
+#, python-format
+msgid "Description"
+msgstr "الوصف"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_account_payment_term_details
+msgid "Details"
+msgstr "التفاصيل "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_discount
+#: model:ir.model.fields,field_description:sky_height.field_sale_order_discount
+msgid "Discount Percentage"
+msgstr "نسبه الخصم "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_cancel_process_display_name
+#: model:ir.model.fields,field_description:sky_height.field_customer_id_type_display_name
+#: model:ir.model.fields,field_description:sky_height.field_payment_bank_cus_display_name
+#: model:ir.model.fields,field_description:sky_height.field_payment_bank_display_name
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_display_name
+#: model:ir.model.fields,field_description:sky_height.field_project_phase_display_name
+#: model:ir.model.fields,field_description:sky_height.field_project_property_display_name
+#: model:ir.model.fields,field_description:sky_height.field_property_block_display_name
+#: model:ir.model.fields,field_description:sky_height.field_property_floor_display_name
+#: model:ir.model.fields,field_description:sky_height.field_property_level_display_name
+#: model:ir.model.fields,field_description:sky_height.field_property_platform_display_name
+#: model:ir.model.fields,field_description:sky_height.field_property_type_display_name
+#: model:ir.model.fields,field_description:sky_height.field_rejected_check_display_name
+#: model:ir.model.fields,field_description:sky_height.field_rs_payment_strategy_details_display_name
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_reservation.py:58
+#: selection:rs.reservation,state:0
+#, python-format
+msgid "Draft"
+msgstr "أرشفه "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_email
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_exception_approval_user_id
+msgid "Exception Approval User"
+msgstr "موافقه مستخدم إستثنائي "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_reservation.py:58
+#: selection:rs.reservation,state:0
+#, python-format
+msgid "Exception Approved"
+msgstr "Exception approved "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_request_exception
+#: model:ir.ui.view,arch_db:sky_height.rsreservation_form_view
+msgid "Exception Request"
+msgstr "Exception Request"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.inherit_real_estate_view_sale_order
+msgid "Expense"
+msgstr "المصروف"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_sales_order.py:34
+#: model:ir.model.fields,field_description:sky_height.field_sale_order_expense_credit_account_id
+#, python-format
+msgid "Expense Credit Account"
+msgstr "حساب المصروف الدائن "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_sales_order.py:33
+#: model:ir.model.fields,field_description:sky_height.field_sale_order_expense_debit_account_id
+#, python-format
+msgid "Expense Debit Account"
+msgstr "حساب المصروف المدين "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_sales_order.py:30
+#: model:ir.model.fields,field_description:sky_height.field_sale_order_expense_journal_id
+#, python-format
+msgid "Expense Journal"
+msgstr "دفتر المصروف "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_sales_order.py:36
+#: model:ir.model.fields,field_description:sky_height.field_sale_order_expense_journal_entry_id
+#, python-format
+msgid "Expense Journal Entry"
+msgstr "قيد اليوميه للمصروف "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_expire_date
+msgid "Expire Date"
+msgstr "تاريخ الإنتهاء "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_reservation.py:382
+#, python-format
+msgid "Expire Date Must be greater Than Creation Date"
+msgstr "تاريخ الإنتهاء يجب أن يكون أكبر من تاريخ الإضافه  "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_account_payment_term_line_add_extension
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_add_extension
+#: model:ir.model.fields,field_description:sky_height.field_rs_payment_strategy_details_add_extension
+msgid "Extension"
+msgstr "ملحق "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_reservation.py:129
+#, python-format
+msgid "Extension Amount Must Equal Payment Extension Amount in lines \"%s\" "
+msgstr " مبلغ الملحق يجب أن يكون مساو ل إجمالي كل بند  \"%s\" "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:304
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_extension_archived_journal_id
+#, python-format
+msgid "Extension Archived Journal"
+msgstr "دفتر الملحقات المؤرشفه "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:306
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_extension_collected_journal_id
+#, python-format
+msgid "Extension Collected Journal"
+msgstr "Extension Collected Journal"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:302
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_extension_proved_journal_id
+#, python-format
+msgid "Extension Proved Journal"
+msgstr "Extension Proved Journal"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.rs_property_product2_form_view
+msgid "Extensions"
+msgstr "Extensions"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_extensions
+msgid "Extensions Amount"
+msgstr "Extensions Amount"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_payment_strategy_details_first_inst_date
+msgid "First Date Installment"
+msgstr "التاريخ الأول للقسط "
+
+#. module: sky_height
+#: code:addons/sky_height/wizard/real_estate_cancel_process.py:120
+#, python-format
+msgid "First cancel all invoices attached to this sales order."
+msgstr "أولاً إلغي جميع الفواتير المرفقه لهذا امر البيع "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:181
+#: selection:rs.payment_strategy_details,date_select:0
+#, python-format
+msgid "Fixed Date"
+msgstr "تاريخ ثابت"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_property_floor_name
+#: model:ir.ui.view,arch_db:sky_height.inherit_search_product2
+msgid "Floor"
+msgstr "الطابق الأرضي "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_property.py:56
+#: model:ir.model.fields,field_description:sky_height.field_product_product_property_floor_id
+#, python-format
+msgid "Floor Number"
+msgstr "رقم الطابق الأرضي "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_product_product_garage
+msgid "Garage"
+msgstr "الجراج "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_product_product_garden
+msgid "Garden"
+msgstr "الحديقه "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_product_product_garden_area
+msgid "Garden Area"
+msgstr "منطقه الحديقه "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:11
+#: code:addons/sky_height/models/real_estate_sales_order.py:17
+#: selection:payment.strg,type:0
+#, python-format
+msgid "General"
+msgstr "العام "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.inherit_real_estate_view_sale_order
+msgid "Generate Delivery Entries"
+msgstr "إنشاء قيود التسليم "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.inherit_real_estate_view_sale_order
+msgid "Generate Expense Entries"
+msgstr "إنشاء قيود المصاريف "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.phase_form_view
+msgid "Get Properties"
+msgstr "الحصول علي الخصائص "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.view_payments_details_list_search
+msgid "Group By..."
+msgstr "تجميع حسب ..."
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_hide_payment_button
+msgid "Hide"
+msgstr "إخفاء "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_button_broker_paid
+msgid "Hide Broker Payment button"
+msgstr "إخفاء زر الدفع للمقاول "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_sale_order_hide_delivery_button
+msgid "Hide Delivery_button"
+msgstr "إخفاء زر التسليم "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_sale_order_hide_expense_button
+msgid "Hide Expense Button"
+msgstr "إخفاء زر المصروف "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_button_salescommission_paid
+msgid "Hide Sales Commission Payment button"
+msgstr "إخفاء زر عموله المبيعات "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_cancel_process_id
+#: model:ir.model.fields,field_description:sky_height.field_customer_id_type_id
+#: model:ir.model.fields,field_description:sky_height.field_payment_bank_cus_id
+#: model:ir.model.fields,field_description:sky_height.field_payment_bank_id
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_ids
+#: model:ir.model.fields,field_description:sky_height.field_project_phase_id
+#: model:ir.model.fields,field_description:sky_height.field_project_property_id
+#: model:ir.model.fields,field_description:sky_height.field_property_block_id
+#: model:ir.model.fields,field_description:sky_height.field_property_floor_id
+#: model:ir.model.fields,field_description:sky_height.field_property_level_id
+#: model:ir.model.fields,field_description:sky_height.field_property_platform_id
+#: model:ir.model.fields,field_description:sky_height.field_property_type_id
+#: model:ir.model.fields,field_description:sky_height.field_rejected_check_id
+#: model:ir.model.fields,field_description:sky_height.field_rs_payment_strategy_details_id
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_customer_id_type_name
+msgid "ID Type"
+msgstr "ID Type"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_crm_lead_id_no
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_id_no
+msgid "Identification No."
+msgstr "رقم البطاقه "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_crm_lead_id_type
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_id_type
+msgid "Identification Type"
+msgstr "نوع البطاقه "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_reservation.py:59
+#: model:ir.ui.view,arch_db:sky_height.rsreservation_form_view
+#: selection:rs.reservation,state:0
+#, python-format
+msgid "In Progress"
+msgstr "In Progress"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_reservation_date
+msgid "In Progress Date"
+msgstr "In Progress Date"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_reservation_expiry_date
+msgid "In Progress Expire Date"
+msgstr "In Progress Expire Date"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_in_progress_user_id
+msgid "In Progress User"
+msgstr "In Progress User"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_property.py:61
+#: model:ir.model.fields,field_description:sky_height.field_product_product_indoor_area
+#, python-format
+msgid "Indoor Area"
+msgstr "المنطقه الداخليه "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_reservation.py:60
+#: model:ir.ui.view,arch_db:sky_height.rsreservation_form_view
+#: selection:rs.reservation,state:0
+#, python-format
+msgid "Initialize Contract"
+msgstr "تهيئه العقد "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_initialize_user_id
+msgid "Initialize User"
+msgstr "تهيئة المستخدم"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_payment_strategy_details_inst_percentage
+msgid "Installment Percentage"
+msgstr "النسبه المئويه للتقسيط "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_payment_strategy_details_inst_range
+#: model:ir.ui.view,arch_db:sky_height.rspayment-strategy_details_form_view
+msgid "Installment Range"
+msgstr "مدي التقسيط "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_payment_strategy_details_inst_value
+msgid "Installment Value"
+msgstr "قيمه التقسيط "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.rs_property_product2_form_view
+msgid "Internal Category"
+msgstr "المجموعه الداخليه "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.rsreservation_form_view
+msgid "Internal Information"
+msgstr "تفاصيل داخليه "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:17
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:185
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:300
+#: code:addons/sky_height/wizard/real_estate_cancel_process.py:21
+#: code:addons/sky_height/wizard/real_estate_rejected_check.py:19
+#: model:ir.model.fields,field_description:sky_height.field_account_payment_term_line_journal_id
+#: model:ir.model.fields,field_description:sky_height.field_cancel_process_journal_id
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_journal_id
+#: model:ir.model.fields,field_description:sky_height.field_rejected_check_journal_id
+#: model:ir.model.fields,field_description:sky_height.field_rs_payment_strategy_details_journal_id
+#, python-format
+msgid "Journal"
+msgstr "اليومية"
+
+#. module: sky_height
+#: model:ir.model,name:sky_height.model_account_move_line
+msgid "Journal Item"
+msgstr "عنصر يومية"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_product_product_lake_or_pool_view
+msgid "Lake/Pool View"
+msgstr "واجهه / بحيره أو حمام سباحه "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_product_product_landscape_view
+msgid "Landscape View"
+msgstr "واجهه المناظر الطبيعيه "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_cancel_process___last_update
+#: model:ir.model.fields,field_description:sky_height.field_customer_id_type___last_update
+#: model:ir.model.fields,field_description:sky_height.field_payment_bank___last_update
+#: model:ir.model.fields,field_description:sky_height.field_payment_bank_cus___last_update
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg___last_update
+#: model:ir.model.fields,field_description:sky_height.field_project_phase___last_update
+#: model:ir.model.fields,field_description:sky_height.field_project_property___last_update
+#: model:ir.model.fields,field_description:sky_height.field_property_block___last_update
+#: model:ir.model.fields,field_description:sky_height.field_property_floor___last_update
+#: model:ir.model.fields,field_description:sky_height.field_property_level___last_update
+#: model:ir.model.fields,field_description:sky_height.field_property_platform___last_update
+#: model:ir.model.fields,field_description:sky_height.field_property_type___last_update
+#: model:ir.model.fields,field_description:sky_height.field_rejected_check___last_update
+#: model:ir.model.fields,field_description:sky_height.field_rs_payment_strategy_details___last_update
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation___last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_cancel_process_write_uid
+#: model:ir.model.fields,field_description:sky_height.field_customer_id_type_write_uid
+#: model:ir.model.fields,field_description:sky_height.field_payment_bank_cus_write_uid
+#: model:ir.model.fields,field_description:sky_height.field_payment_bank_write_uid
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_write_uid
+#: model:ir.model.fields,field_description:sky_height.field_project_phase_write_uid
+#: model:ir.model.fields,field_description:sky_height.field_project_property_write_uid
+#: model:ir.model.fields,field_description:sky_height.field_property_block_write_uid
+#: model:ir.model.fields,field_description:sky_height.field_property_floor_write_uid
+#: model:ir.model.fields,field_description:sky_height.field_property_level_write_uid
+#: model:ir.model.fields,field_description:sky_height.field_property_platform_write_uid
+#: model:ir.model.fields,field_description:sky_height.field_property_type_write_uid
+#: model:ir.model.fields,field_description:sky_height.field_rejected_check_write_uid
+#: model:ir.model.fields,field_description:sky_height.field_rs_payment_strategy_details_write_uid
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_cancel_process_write_date
+#: model:ir.model.fields,field_description:sky_height.field_customer_id_type_write_date
+#: model:ir.model.fields,field_description:sky_height.field_payment_bank_cus_write_date
+#: model:ir.model.fields,field_description:sky_height.field_payment_bank_write_date
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_write_date
+#: model:ir.model.fields,field_description:sky_height.field_project_phase_write_date
+#: model:ir.model.fields,field_description:sky_height.field_project_property_write_date
+#: model:ir.model.fields,field_description:sky_height.field_property_block_write_date
+#: model:ir.model.fields,field_description:sky_height.field_property_floor_write_date
+#: model:ir.model.fields,field_description:sky_height.field_property_level_write_date
+#: model:ir.model.fields,field_description:sky_height.field_property_platform_write_date
+#: model:ir.model.fields,field_description:sky_height.field_property_type_write_date
+#: model:ir.model.fields,field_description:sky_height.field_rejected_check_write_date
+#: model:ir.model.fields,field_description:sky_height.field_rs_payment_strategy_details_write_date
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_lead_id
+msgid "Lead"
+msgstr "الترشيح"
+
+#. module: sky_height
+#: model:ir.model,name:sky_height.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "عرض/فرصة"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_attach_ids
+#: model:ir.ui.view,arch_db:sky_height.rsreservation_form_view
+msgid "Legal Papers"
+msgstr "أوراق قانونيه "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_project.py:82
+#: code:addons/sky_height/models/real_estate_property.py:52
+#: model:ir.model.fields,field_description:sky_height.field_product_product_level_id
+#: model:ir.model.fields,field_description:sky_height.field_project_property_level_id
+#: model:ir.ui.view,arch_db:sky_height.inherit_search_product2
+#, python-format
+msgid "Level"
+msgstr "مستوى"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.rsreservation_form_view
+msgid "Log"
+msgstr "السجل "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_product_product_main_spine
+msgid "Main Spine"
+msgstr "Main Spine"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_reservation.py:340
+#: code:addons/sky_height/models/real_estate_sales_order.py:60
+#, python-format
+msgid "Manager Must Approve Cancellation"
+msgstr "المدير يجب أن يوافق "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_inherit_opportunity.py:18
+#: code:addons/sky_height/models/real_estate_reservation.py:22
+#: model:ir.model.fields,field_description:sky_height.field_crm_lead_marital_status
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_marital_status
+#, python-format
+msgid "Marital Status"
+msgstr "الحاله الإجتماعيه "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_mobile
+msgid "Mobile"
+msgstr "الجوال"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:179
+#: selection:rs.payment_strategy_details,by_period:0
+#, python-format
+msgid "Monthly"
+msgstr "شهري "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_cancel_process_name
+#: model:ir.model.fields,field_description:sky_height.field_project_phase_name
+#: model:ir.model.fields,field_description:sky_height.field_rs_payment_strategy_details_name
+#: model:ir.ui.view,arch_db:sky_height.rs_property_product2_form_view
+#: model:ir.ui.view,arch_db:sky_height.strategies_report
+msgid "Name"
+msgstr "الاسم"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_net_price
+#: model:ir.model.fields,field_description:sky_height.field_sale_order_net_property_price
+msgid "Net Price"
+msgstr "صافي السعر "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.view_payterm_form_inherit
+msgid "New Copy of Payment"
+msgstr "نسخه جديده من المبلغ "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_inherit_opportunity.py:18
+#: code:addons/sky_height/models/real_estate_reservation.py:22
+#: selection:crm.lead,marital_status:0
+#, python-format
+msgid "No"
+msgstr "العدد "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_inherit_opportunity.py:19
+#: code:addons/sky_height/models/real_estate_reservation.py:23
+#: model:ir.model.fields,field_description:sky_height.field_crm_lead_no_of_kids
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_no_of_kids
+#, python-format
+msgid "No. Of Kids"
+msgstr "عدد الأطفال "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_inherit_opportunity.py:27
+#: code:addons/sky_height/models/real_estate_property.py:46
+#: model:ir.ui.view,arch_db:sky_height.inherit_search_product2
+#: selection:product.product,status:0
+#, python-format
+msgid "Not Available"
+msgstr "ليست متاحه "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.view_payments_details_list_search
+msgid "Not Cancelled"
+msgstr "ليست تم إلغائها "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_payment_strategy_details_calc_no_inst
+#: model:ir.model.fields,field_description:sky_height.field_rs_payment_strategy_details_number_of_inst
+msgid "Number of Installments"
+msgstr "عدد الأقساط "
+
+#. module: sky_height
+#: model:ir.actions.act_window,help:sky_height.action_broker_form
+msgid ""
+"Odoo helps you easily track all activities related to a customer; discussions, history of business\n"
+"                    opportunities, documents, etc."
+msgstr "اودو يساعدك بسهوله تتبع جميع الأنشطه الخاصه بالعميل و المناقشات وتاريخ الاعمال والفرص والملفات , الخ "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:179
+#: selection:rs.payment_strategy_details,by_period:0
+#, python-format
+msgid "Once"
+msgstr "مره واحده "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_account_move_line.py:64
+#, python-format
+msgid "Only a draft payment can be posted. Trying to post a payment in state %s."
+msgstr "فقط المبلغ المؤرشف يمكنك ارساله ، حاول ان ترسل ذلك المبلغ في نفس الحاله  %s."
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_property.py:64
+#: model:ir.model.fields,field_description:sky_height.field_product_product_open_terrace
+#, python-format
+msgid "Open Terrace"
+msgstr "Open Terrace"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:11
+#: code:addons/sky_height/models/real_estate_sales_order.py:17
+#: selection:payment.strg,type:0
+#, python-format
+msgid "Opening/Closing Situation"
+msgstr "موقف الفتح / القفل "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_reservation.py:54
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_sale_order_id
+#, python-format
+msgid "Order"
+msgstr "الطلب "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_inherit_opportunity.py:20
+#: code:addons/sky_height/models/real_estate_partners.py:18
+#: model:ir.model.fields,field_description:sky_height.field_crm_lead_organization
+#: model:ir.model.fields,field_description:sky_height.field_res_partner_organization
+#: model:ir.model.fields,field_description:sky_height.field_res_users_organization
+#, python-format
+msgid "Organization"
+msgstr "المنظمه "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_move_check
+msgid "Paid"
+msgstr "مدفوعة"
+
+#. module: sky_height
+#: model:ir.model,name:sky_height.model_res_partner
+#: model:ir.ui.view,arch_db:sky_height.view_payments_details_list_search
+msgid "Partner"
+msgstr "الشريك"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:322
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:326
+#: code:addons/sky_height/models/real_estate_reservation.py:55
+#: code:addons/sky_height/models/real_estate_sales_order.py:22
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_payment_id
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_rejection_cash_payment_id
+#: model:ir.model.fields,field_description:sky_height.field_product_product_payment_id
+#: model:ir.model.fields,field_description:sky_height.field_rejected_check_payment_strg_id
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_payment_strg_ids
+#: model:ir.model.fields,field_description:sky_height.field_sale_order_payment_strg_ids
+#: model:ir.ui.view,arch_db:sky_height.inherit_real_estate_view_sale_order
+#: model:ir.ui.view,arch_db:sky_height.rsreservation_form_view
+#: model:ir.ui.view,arch_db:sky_height.view_payments_details_list_search
+#, python-format
+msgid "Payment"
+msgstr "السداد"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.view_payments_details_list_search
+msgid "Payment Date"
+msgstr "تاريخ الدفع "
+
+#. module: sky_height
+#: model:ir.ui.menu,name:sky_height.payment_details_sub
+#: model:ir.ui.menu,name:sky_height.payment_strategy_details
+msgid "Payment Details"
+msgstr "تفاصيل الدفع "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.form_cancel_process_view
+#: model:ir.ui.view,arch_db:sky_height.inherit_real_estate_view_sale_order
+#: model:ir.ui.view,arch_db:sky_height.payment_strg_tree_view
+#: model:ir.ui.view,arch_db:sky_height.payments_details_form_view
+#: model:ir.ui.view,arch_db:sky_height.rspayment-strategy_details_form_view
+#: model:ir.ui.view,arch_db:sky_height.rsreservation_form_view
+#: model:ir.ui.view,arch_db:sky_height.strategies_report
+#: model:ir.ui.view,arch_db:sky_height.view_payments_details_list_search
+#: model:ir.ui.view,arch_db:sky_height.view_payterm_line_form_inherit
+msgid "Payment Method"
+msgstr "طرق السداد"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_payment_strategy_details_payment_strategy
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_pay_strategy_id
+msgid "Payment Strategy"
+msgstr "طريقه الدفع "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.payments_details_form_view
+#: model:ir.ui.view,arch_db:sky_height.rspayment-strategy_details_form_view
+msgid "Payment Strategy Detail"
+msgstr "تفاصيل طريقه الدفع "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.payment_strg_tree_view
+#: model:ir.ui.view,arch_db:sky_height.rspayment_strategy_details_tree_view
+msgid "Payment Strategy Details"
+msgstr "تفاصيل طريقه الدفع "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:42
+#: model:ir.model,name:sky_height.model_account_payment_term
+#, python-format
+msgid "Payment Term"
+msgstr "شروط السداد"
+
+#. module: sky_height
+#: model:ir.model,name:sky_height.model_account_payment_term_line
+msgid "Payment Term Line"
+msgstr "الدفع الأجل "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:184
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_payment_method_id
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_type
+#: model:ir.model.fields,field_description:sky_height.field_rs_payment_strategy_details_payment_type
+#, python-format
+msgid "Payment Type"
+msgstr "طريقه الدفع "
+
+#. module: sky_height
+#: model:ir.model,name:sky_height.model_account_payment
+msgid "Payments"
+msgstr "مدفوعات"
+
+#. module: sky_height
+#: model:ir.actions.act_window,name:sky_height.payments_details_list_action
+msgid "Payments Details"
+msgstr "تفاصيل الدفع "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:170
+#: selection:rs.payment_strategy_details,calculate_by:0
+#, python-format
+msgid "Percentage"
+msgstr "النسبه المئويه "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_inherit_opportunity.py:16
+#: code:addons/sky_height/models/real_estate_project.py:76
+#: code:addons/sky_height/models/real_estate_property.py:42
+#: code:addons/sky_height/models/real_estate_reservation.py:18
+#: model:ir.model.fields,field_description:sky_height.field_crm_lead_phase_id
+#: model:ir.model.fields,field_description:sky_height.field_product_product_phase_id
+#: model:ir.model.fields,field_description:sky_height.field_project_property_phase_id
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_phase_id
+#: model:ir.ui.view,arch_db:sky_height.inherit_search_product2
+#, python-format
+msgid "Phase"
+msgstr "مرحلة "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.phase_form_view
+msgid "Phase Form"
+msgstr "نموذج المرحلة "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_project_phase_phase_no
+msgid "Phase NO."
+msgstr "رقم المرحله "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.phase_form_view
+msgid "Phase Name"
+msgstr "اسم المرحلة "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_project.py:17
+#: model:ir.actions.act_window,name:sky_height.phase_list_action
+#: model:ir.model.fields,field_description:sky_height.field_project_project_phase_ids
+#: model:ir.ui.menu,name:sky_height.phase_menu
+#: model:ir.ui.view,arch_db:sky_height.isky_form_view_project_form_inherit
+#, python-format
+msgid "Phases"
+msgstr "المراحل "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_phone
+msgid "Phone"
+msgstr "هاتف"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_crm_lead_id_photo
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_id_photo
+msgid "Photo ID"
+msgstr "رقم الصوره "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_property_platform_name
+#: model:ir.ui.view,arch_db:sky_height.inherit_search_product2
+msgid "Platform"
+msgstr "Platform"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:504
+#, python-format
+msgid "Please Choose Archived journal"
+msgstr "من فضلك إختار اليوميه المؤرشفه"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:586
+#, python-format
+msgid "Please Choose Collected journal"
+msgstr "من فضلك إختار اليوميه المجمع "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:378
+#, python-format
+msgid "Please Choose Customer Before Create Payment"
+msgstr "برجاء إختار العميل قبل إنشاء الدفعه "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_sales_order.py:119
+#, python-format
+msgid "Please Choose Delivery Credit Account"
+msgstr "رجاء إختار الحساب الدائن للتسليم "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_sales_order.py:117
+#, python-format
+msgid "Please Choose Delivery Debit Account"
+msgstr "رجاء إختار الحساب المدين للتسليم "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_sales_order.py:115
+#, python-format
+msgid "Please Choose Delivery journal"
+msgstr "برجاء إختار يوميه التسليم "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_sales_order.py:178
+#, python-format
+msgid "Please Choose Expense Credit Account"
+msgstr "برجاء إختار الحساب الدائن للمصروف "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_sales_order.py:176
+#, python-format
+msgid "Please Choose Expense Debit Account"
+msgstr "برجاء إختار الحساب المدين للمصروف "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_sales_order.py:174
+#, python-format
+msgid "Please Choose Expense journal"
+msgstr "برجاء إختار اليوميه للمصروف "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:506
+#, python-format
+msgid "Please Choose Extension Archived journal"
+msgstr "Please Choose Extension Archived journal"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:588
+#, python-format
+msgid "Please Choose Extension Collected journal"
+msgstr "Please Choose Extension Collected journal"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:413
+#, python-format
+msgid "Please Choose Extension Proved journal"
+msgstr "Please Choose Extension Proved journal"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:411
+#, python-format
+msgid "Please Choose Proved journal"
+msgstr "برجاء إختار اليوميه المثبته "
+
+
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:374
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:417
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:420
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:423
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:512
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:515
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:518
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:592
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:595
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:598
+#: code:addons/sky_height/models/real_estate_reservation.py:191
+#: code:addons/sky_height/wizard/real_estate_cancel_process.py:47
+#: code:addons/sky_height/wizard/real_estate_rejected_check.py:33
+#, python-format
+msgid "Please define default credit/debit accounts on the journal \"%s\"."
+msgstr "برجاء تعريف الجانب الدائن أو المدين لهذا الحساب  \"%s\"."
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_property.py:60
+#: model:ir.model.fields,field_description:sky_height.field_product_product_plot_area
+#, python-format
+msgid "Plot Area"
+msgstr "قطعه أرضيه "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_product_product_property_pool
+msgid "Pool"
+msgstr "حمام سباحه"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_product_product_pool_area
+msgid "Pool Area"
+msgstr "منطقه حمام السباحه "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_product_product_pool_dimensions
+msgid "Pool Dimensions"
+msgstr "أبعاد حمام السباحه "
+
+
+
+#. module: sky_height
+#: model:ir.model,name:sky_height.model_product_product
+#: model:ir.model.fields,field_description:sky_height.field_account_move_product_id
+msgid "Product"
+msgstr "المنتج"
+
+#. module: sky_height
+#: model:ir.model,name:sky_height.model_product_template
+msgid "Product Template"
+msgstr "قالب المنتج"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_account_payment_product_ids
+msgid "Products"
+msgstr "المنتجات"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_inherit_opportunity.py:15
+#: code:addons/sky_height/models/real_estate_project.py:26
+#: code:addons/sky_height/models/real_estate_project.py:75
+#: code:addons/sky_height/models/real_estate_property.py:41
+#: code:addons/sky_height/models/real_estate_reservation.py:17
+#: model:ir.model,name:sky_height.model_project_project
+#: model:ir.model.fields,field_description:sky_height.field_account_move_line_project_id
+#: model:ir.model.fields,field_description:sky_height.field_account_move_project_id
+#: model:ir.model.fields,field_description:sky_height.field_crm_lead_project_id
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_project_id
+#: model:ir.model.fields,field_description:sky_height.field_product_product_project_id
+#: model:ir.model.fields,field_description:sky_height.field_project_phase_project_id
+#: model:ir.model.fields,field_description:sky_height.field_project_property_project_id
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_project_id
+#: model:ir.ui.view,arch_db:sky_height.inherit_search_product2
+#, python-format
+msgid "Project"
+msgstr "المشروع"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.strategies_report
+msgid "Project Name :"
+msgstr "إسم المشروع "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.phase_tree_view
+#: model:ir.ui.view,arch_db:sky_height.rsreservation_tree_view
+msgid "Projects"
+msgstr "المشروعات"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_project.py:27
+#: model:ir.model.fields,field_description:sky_height.field_project_phase_property_line_ids
+#, python-format
+msgid "Properties"
+msgstr "الخصائص "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_project.py:77
+#: code:addons/sky_height/models/real_estate_property.py:20
+#: code:addons/sky_height/models/real_estate_property.py:34
+#: model:ir.actions.act_window,name:sky_height.property_normal_action
+#: model:ir.model.fields,field_description:sky_height.field_crm_lead_property_id
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_property_id
+#: model:ir.model.fields,field_description:sky_height.field_project_property_property_id
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_unit
+#: model:ir.ui.menu,name:sky_height.main_property_menu
+#: model:ir.ui.view,arch_db:sky_height.inherit_search_product2
+#: model:ir.ui.view,arch_db:sky_height.phase_form_view
+#: model:ir.ui.view,arch_db:sky_height.rs_property_product2_form_view
+#: model:ir.ui.view,arch_db:sky_height.view_payments_details_list_search
+#, python-format
+msgid "Property"
+msgstr "العقار "
+
+#. module: sky_height
+#: model:res.groups,name:sky_height.rs_user
+msgid "Property / User"
+msgstr "مستخدم العقار "
+
+#. module: sky_height
+#: model:ir.actions.act_window,name:sky_height.property_block_action
+#: model:ir.ui.menu,name:sky_height.property_block
+#: model:ir.ui.view,arch_db:sky_height.inherit_search_product2
+msgid "Property Block"
+msgstr "Property Block"
+
+#. module: sky_height
+#: model:ir.actions.act_window,name:sky_height.property_floor_action
+#: model:ir.ui.menu,name:sky_height.property_floor
+msgid "Property Floor"
+msgstr "دور العقار "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.rs_property_product2_form_view
+msgid "Property Information"
+msgstr "معلومات العقار "
+
+#. module: sky_height
+#: model:ir.actions.act_window,name:sky_height.property_level_action
+#: model:ir.model.fields,field_description:sky_height.field_property_level_name
+#: model:ir.ui.menu,name:sky_height.property_level
+msgid "Property Level"
+msgstr "مستوي العقار "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.strategies_report
+msgid "Property Name :"
+msgstr "اسم العقار : "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.strategies_report
+msgid "Property No. :"
+msgstr "Property No. :"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_product_product_property_no
+#: model:ir.model.fields,field_description:sky_height.field_project_property_property_no
+#: model:ir.ui.view,arch_db:sky_height.inherit_search_product2
+msgid "Property Number"
+msgstr "رقم العقار "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_property.py:129
+#, python-format
+msgid "Property Number already exist!"
+msgstr "رقم العقار موجود بالفعل "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_property.py:57
+#: model:ir.actions.act_window,name:sky_height.property_platform_action
+#: model:ir.model.fields,field_description:sky_height.field_product_product_property_platform_id
+#: model:ir.ui.menu,name:sky_height.property_platform
+#, python-format
+msgid "Property Platform"
+msgstr "Property Platform"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_cancel_process_property_price
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_property_price
+msgid "Property Price"
+msgstr "سعر العقار "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.strategies_report
+msgid "Property Price :"
+msgstr "سعر العقار "
+
+#. module: sky_height
+#: code:addons/sky_height/wizard/real_estate_cancel_process.py:132
+#, python-format
+msgid "Property Price Must Be > 0.0"
+msgstr "سعر العقار يجب ان يكون اكبر من  > 0.0"
+
+#. module: sky_height
+#: model:ir.actions.report.xml,name:sky_height.report_property_reservation
+msgid "Property Reservation Report"
+msgstr "تقرير حجوزات العقارات"
+
+#. module: sky_height
+#: model:ir.actions.report.xml,name:sky_height.report_property_eng_reservation
+msgid "Property Reservation Report English"
+msgstr "تقرير حجوزات العقارات باللغه الانجليزيه"
+
+#. module: sky_height
+#: model:ir.actions.act_window,name:sky_height.property_type_action
+#: model:ir.model.fields,field_description:sky_height.field_property_type_name
+#: model:ir.ui.menu,name:sky_height.property_type
+msgid "Property Type"
+msgstr "نوع العقار "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.payments_details_form_view
+msgid "Prove"
+msgstr "إسمح "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:315
+#: selection:payment.strg,cheque_status:0
+#, python-format
+msgid "Proved"
+msgstr "تم السماح"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:301
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_proved_journal_id
+#, python-format
+msgid "Proved Journal"
+msgstr "اليوميه المسموحه "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:307
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_proved_journal_entry_id
+#, python-format
+msgid "Proved Journal Entry"
+msgstr "قيد اليوميه ال"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:10
+#: code:addons/sky_height/models/real_estate_sales_order.py:16
+#: selection:payment.strg,type:0
+#, python-format
+msgid "Purchase"
+msgstr "الشراء "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:10
+#: code:addons/sky_height/models/real_estate_sales_order.py:16
+#: selection:payment.strg,type:0
+#, python-format
+msgid "Purchase Refund"
+msgstr "مرتجع الشراء "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.rsreservation_form_view
+msgid "Purchaser Details"
+msgstr "تفاصيل المشتري "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:179
+#: selection:rs.payment_strategy_details,by_period:0
+#, python-format
+msgid "Quarterly"
+msgstr "ربع سنوي "
+
+#. module: sky_height
+#: model:res.groups,name:sky_height.group_real_state
+msgid "Real state"
+msgstr "العقارات "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_receive_checks
+#: model:ir.ui.view,arch_db:sky_height.rsreservation_form_view
+msgid "Receive Checks"
+msgstr "استلام الشيكات "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.form_rejected_check_view
+#: model:ir.ui.view,arch_db:sky_height.payments_details_form_view
+msgid "Reject"
+msgstr "رفض"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:315
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_rejected
+#: model:ir.model.fields,field_description:sky_height.field_rejected_check_rejected
+#: selection:payment.strg,cheque_status:0
+#, python-format
+msgid "Rejected"
+msgstr "تم الرفض "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:667
+#, python-format
+msgid "Rejection"
+msgstr "الرفض "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_rejection_action
+#: model:ir.model.fields,field_description:sky_height.field_rejected_check_rejection_action
+msgid "Rejection Action"
+msgstr "Rejection Action"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.rsreservation_form_view
+msgid "Request Exception"
+msgstr "Request Exception"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_reservation.py:58
+#: selection:rs.reservation,state:0
+#, python-format
+msgid "Request For Exception"
+msgstr "Request For Exception"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_request_user_id
+msgid "Request User"
+msgstr "طلب المستخدم"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:291
+#: code:addons/sky_height/models/real_estate_sales_order.py:23
+#: model:ir.model.fields,field_description:sky_height.field_cancel_process_reserve_id
+#: model:ir.model.fields,field_description:sky_height.field_ir_attachment_reserve_id
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_reserve_id
+#: model:ir.model.fields,field_description:sky_height.field_sale_order_reservation_id
+#: model:ir.ui.view,arch_db:sky_height.isky_form_view_lead_form_inherit
+#: model:ir.ui.view,arch_db:sky_height.isky_form_view_opportunity_form_inherit
+#: model:ir.ui.view,arch_db:sky_height.view_payments_details_list_search
+#, python-format
+msgid "Reservation"
+msgstr "الحجز "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_reservation_code
+msgid "Reservation Code"
+msgstr "كود الحجز "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.inherit_real_estate_view_sale_order
+#: model:ir.ui.view,arch_db:sky_height.rsreservation_form_view
+msgid "Reservation Conditions"
+msgstr "شروط الحجز "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.inherit_real_estate_view_sale_order
+msgid "Reservation Details"
+msgstr "تفاصيل الحجز "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.rsreservation_form_view
+msgid "Reservation Form"
+msgstr "استماره حجز "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_name
+msgid "Reservation Name"
+msgstr "اسم الحجز "
+
+#. module: sky_height
+#: model:ir.actions.act_window,name:sky_height.rsreservation_list_action
+#: model:ir.ui.menu,name:sky_height.reservation_menu
+msgid "Reservations"
+msgstr "الحجوزات "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_inherit_opportunity.py:27
+#: code:addons/sky_height/models/real_estate_property.py:46
+#: selection:product.product,status:0
+#, python-format
+msgid "Reserved"
+msgstr "تم الحجز "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:315
+#: selection:payment.strg,cheque_status:0
+#, python-format
+msgid "Reveived"
+msgstr "تم الإستلام "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_reservation.py:60
+#: model:ir.ui.view,arch_db:sky_height.rsreservation_form_view
+#: selection:rs.reservation,state:0
+#, python-format
+msgid "Review Contract"
+msgstr "عقد المراجعه "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_review_user_id
+msgid "Review user"
+msgstr "اسم المراجع "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:9
+#: code:addons/sky_height/models/real_estate_sales_order.py:15
+#: selection:payment.strg,type:0
+#, python-format
+msgid "Sale"
+msgstr "بيع "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:290
+#: model:ir.model.fields,field_description:sky_height.field_cancel_process_order_id
+#: model:ir.model.fields,field_description:sky_height.field_payment_strg_sale_order_id
+#: model:ir.model.fields,field_description:sky_height.field_rejected_check_sale_order_id
+#: model:ir.ui.view,arch_db:sky_height.view_payments_details_list_search
+#, python-format
+msgid "Sale Order"
+msgstr "امر مبيعات "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:9
+#: code:addons/sky_height/models/real_estate_sales_order.py:15
+#: selection:payment.strg,type:0
+#, python-format
+msgid "Sale Refund"
+msgstr "مرتجع المبيعات "
+
+#. module: sky_height
+#: model:ir.model,name:sky_height.model_sale_order
+msgid "Sales Order"
+msgstr "أمر البيع"
+
+#. module: sky_height
+#: model:ir.model,name:sky_height.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "بند أمر البيع"
+
+#. module: sky_height
+#: model:ir.actions.act_window,name:sky_height.salesperson_list_action
+#: model:ir.model.fields,field_description:sky_height.field_crm_lead_user_ids
+#: model:ir.model.fields,field_description:sky_height.field_sale_order_user_ids
+#: model:ir.ui.menu,name:sky_height.salesperson_menu
+#: model:ir.ui.view,arch_db:sky_height.report_property_reservation_eng_document
+msgid "Sales Persons"
+msgstr "اشخاص المبيعات "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_user_ids
+msgid "Sales Representative"
+msgstr "ممثل المبيعات "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_sales_team_id
+msgid "Sales Team"
+msgstr "فريق المبيعات"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_product_product_sea_view
+msgid "Sea View"
+msgstr "واجهه بحر "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_property.py:20
+#: code:addons/sky_height/models/real_estate_property.py:34
+#, python-format
+msgid "Service"
+msgstr "خدمه "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.phase_form_view
+msgid "Set Properties To Available"
+msgstr "Set Properties To Available"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.phase_form_view
+msgid "Set Properties To Un available"
+msgstr "Set Properties To Un available"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.rs_property_product2_form_view
+msgid "Set Property To Available"
+msgstr "Set Property To Available"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.rs_property_product2_form_view
+msgid "Set Property To Un available"
+msgstr "Set Property To Un available"
+
+#. module: sky_height
+#: model:ir.ui.menu,name:sky_height.real_estate_menu_sale_order
+msgid "Sky Contract"
+msgstr "عقد الشركه "
+
+#. module: sky_height
+#: model:ir.ui.menu,name:sky_height.menu_real_estate
+msgid "Sky Heights"
+msgstr "سكاي هايتس "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.payment_details_report
+msgid ""
+"Sky Heights For Real estate Development\n"
+"                                                                <br/>"
+msgstr ""
+"Sky Heights For Real estate Development\n"
+"                                                                <br/>"
+
+#. module: sky_height
+#: model:ir.ui.menu,name:sky_height.real_estate_menu_sale_quotations
+msgid "Sky Quotation"
+msgstr "عرض سعر "
+
+#. module: sky_height
+#: model:ir.module.category,name:sky_height.module_real_estate_management
+msgid "Sky heights Real Estate Management"
+msgstr "إداره العقارات ل سكاي هايتس "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_source_id
+msgid "Source"
+msgstr "الأصل"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.form_cancel_process_view
+msgid "Start Cancellation Process"
+msgstr "بدء عمليه الرفض "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_reservation.py:61
+#: model:ir.model.fields,field_description:sky_height.field_crm_lead_status
+#: model:ir.model.fields,field_description:sky_height.field_product_product_status
+#: model:ir.model.fields,field_description:sky_height.field_rs_reservation_state
+#: model:ir.ui.view,arch_db:sky_height.inherit_search_product2
+#, python-format
+msgid "Status"
+msgstr "الحالة"
+
+#. module: sky_height
+#: model:ir.actions.act_window,name:sky_height.rsproject_strategy_details_list_action
+msgid "Strategy Details"
+msgstr "تفاصيل الاستراتيجيه "
+
+#. module: sky_height
+#: model:ir.actions.report.xml,name:sky_height.payment_strategy_id
+msgid "Strategy Report"
+msgstr "تقرير الاستراتيجيه "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_account_move_line.py:67
+#, python-format
+msgid "The payment cannot be processed because the invoice is not open!"
+msgstr "لا يمكنك الدفع لأن الفاتوره مازالت مفتوحه "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_inherit_opportunity.py:36
+#, python-format
+msgid "There is already Lead with the same data"
+msgstr "هناك ترشيح اخر بنفس الإسم "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_reservation.py:97
+#, python-format
+msgid "There ia already reservation with the same data"
+msgstr "هناك حجز أخر بنفس البيانات الموجوده "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_reservation.py:446
+#, python-format
+msgid "There is no Brokers"
+msgstr "ليس هناك مقاول "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_reservation.py:482
+#, python-format
+msgid "There is no Sales Representative"
+msgstr "ليس هناك ممثل مبيعات "
+
+#. module: sky_height
+#: model:ir.model.fields,help:sky_height.field_rs_reservation_source_id
+msgid "This is the source of the link Ex: Search Engine, another domain, or name of email list"
+msgstr "هذا هو مصدر الرابط، مثل: محرك بحث، موقع آخر، اسم قائمة مراسلات."
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_reservation.py:398
+#: code:addons/sky_height/models/real_estate_reservation.py:402
+#, python-format
+msgid "Total Amount of Payments Must Be Equal Net Price \"%s\". "
+msgstr "اجمالي المبالغ المدفوعه يجب ان يكون مساو لصافي السعر  \"%s\". "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_project.py:83
+#: code:addons/sky_height/models/real_estate_property.py:53
+#: model:ir.model.fields,field_description:sky_height.field_product_product_total_area
+#: model:ir.model.fields,field_description:sky_height.field_project_property_total_area
+#, python-format
+msgid "Total Area"
+msgstr "اجمالي المنطقه "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_property.py:123
+#, python-format
+msgid "Total Area Must be greater Than Zero"
+msgstr "اجمالي المنطقه يجب ان يكون اكبر من صفر "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_property.py:63
+#: model:ir.model.fields,field_description:sky_height.field_product_product_total_covered_area
+#, python-format
+msgid "Total Covered Area"
+msgstr "إجمالي المنطقه المغطاه"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_property.py:54
+#: model:ir.model.fields,field_description:sky_height.field_product_product_total_open_area
+#, python-format
+msgid "Total Open Area"
+msgstr "إجمالي المنطقه المفتوحه"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_account_payment_term_total_percentage
+msgid "Total Percentage"
+msgstr "اجمالي النسبه "
+
+#. module: sky_height
+#: model:ir.ui.menu,name:sky_height.menu_transactions
+msgid "Transactions"
+msgstr "العمليات "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:324
+#: code:addons/sky_height/wizard/real_estate_rejected_check.py:13
+#: selection:payment.strg,rejection_action:0
+#: selection:rejected.check,rejection_action:0
+#, python-format
+msgid "Transfer To Cash"
+msgstr "تحويل إلي نقديه "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_project.py:80
+#: code:addons/sky_height/models/real_estate_property.py:50
+#: model:ir.model.fields,field_description:sky_height.field_product_product_type_of_property_id
+#: model:ir.model.fields,field_description:sky_height.field_project_property_type_of_property_id
+#: model:ir.ui.view,arch_db:sky_height.inherit_search_product2
+#, python-format
+msgid "Type"
+msgstr "النوع"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.report_property_reservation_eng_document
+msgid "Unit Number:"
+msgstr "رقم الوحده"
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_rs_payment_strategy_details_unit_price
+msgid "Unit Price"
+msgstr "سعر الوحدة"
+
+#. module: sky_height
+#: model:ir.model,name:sky_height.model_res_users
+#: model:ir.ui.view,arch_db:sky_height.rsreservation_form_view
+msgid "Users"
+msgstr "المستخدمون"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:170
+#: selection:rs.payment_strategy_details,calculate_by:0
+#, python-format
+msgid "Value"
+msgstr "القيمه "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:29
+#: model:ir.model.fields,field_description:sky_height.field_account_payment_term_virtual
+#, python-format
+msgid "Virtual"
+msgstr "وهمي "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.rsreservation_form_view
+msgid "Workflow Dates"
+msgstr "Workflow Dates"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_inherit_opportunity.py:18
+#: code:addons/sky_height/models/real_estate_reservation.py:22
+#: selection:crm.lead,marital_status:0
+#, python-format
+msgid "Yes"
+msgstr "نعم"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_reservation.py:450
+#: code:addons/sky_height/models/real_estate_reservation.py:486
+#, python-format
+msgid "You Can not create invoice , Reservation state is cancelled"
+msgstr "لا يمكنك عمل فاتوره ، حاله الحجز تم إلغائها"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_reservation.py:448
+#: code:addons/sky_height/models/real_estate_reservation.py:484
+#, python-format
+msgid "You Can not create invoice , Reservation state is draft"
+msgstr "لا يمكنك عمل فاتوره ، حاله الحجز مازالت مسوده"
+
+#. module: sky_height
+#: code:addons/sky_height/wizard/real_estate_rejected_check.py:57
+#, python-format
+msgid "You Must Cancel Sale Order First"
+msgstr "يجب عليك إلغاء أمر المبيعات أولاً"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_reservation.py:316
+#: code:addons/sky_height/models/real_estate_reservation.py:348
+#: code:addons/sky_height/models/real_estate_sales_order.py:64
+#, python-format
+msgid "You Must Choose Customer"
+msgstr "يجب عليك إختيار العميل "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:430
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:465
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:525
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:546
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:604
+#: code:addons/sky_height/models/real_estate_pay_strategy.py:621
+#, python-format
+msgid "You Must Choose Description"
+msgstr "يجب عليك إختيار الوصف "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_reservation.py:298
+#, python-format
+msgid "You Must Choose Id No. , ID Photo And ID Type"
+msgstr "يجب عليك إختيار رقم البطاقه ورقم الصوره ونوع البطاقه "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_reservation.py:318
+#, python-format
+msgid "You Must Choose Payment Strategy"
+msgstr "يجب عليك إختيار طريقه الدفع "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_reservation.py:456
+#, python-format
+msgid "You Must Enter Commission percentage for this broker \"%s\" "
+msgstr "يجب عليك إضافه نسبه العموله لهذا المقاول\"%s\" "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_reservation.py:286
+#, python-format
+msgid "You Must Enter Exception Request"
+msgstr "You Must Enter Exception Request"
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_reservation.py:492
+#, python-format
+msgid "You Must Enter Sales Commission percentage for this sales person \"%s\" "
+msgstr "يجب عليك إدخال نسبه العموله لهذا رجل المبيعات  \"%s\" "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_reservation.py:329
+#, python-format
+msgid "You Must Receive Checks Before Create Contract"
+msgstr "يجب عليك إستلام الشيكات قبل انشاء العقد "
+
+#. module: sky_height
+#: model:ir.actions.act_window,help:sky_height.property_normal_action
+msgid ""
+"You must define a product for everything you buy or sell,\n"
+"                    whether it's a physical product, a consumable or service."
+msgstr "يجب عليك ان تعرف منتج لكل شيء تشتريه او تبيعه  إن كان منتج مستهلك أم منتج مخزني "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_reservation.py:342
+#, python-format
+msgid "You should attach Cancellation papers."
+msgstr "يجب عليك ارفاق أوراق الإلغاء "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_reservation.py:304
+#: code:addons/sky_height/models/real_estate_reservation.py:346
+#, python-format
+msgid "You should attach File that has size."
+msgstr "يجب عليك إرفاق الملف الذي له حجم "
+
+#. module: sky_height
+#: code:addons/sky_height/models/real_estate_reservation.py:300
+#, python-format
+msgid "You should attach legal papers."
+msgstr "يجب عليك ارفاق المرفقات القانونيه"
+
+#. module: sky_height
+#: model:ir.model,name:sky_height.model_property_block
+msgid "block"
+msgstr "block"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.form_cancel_process_view
+msgid "cancel process"
+msgstr "إلغاء العمليه "
+
+#. module: sky_height
+#: model:ir.model,name:sky_height.model_cancel_process
+msgid "cancel.process"
+msgstr "إلغاء العمليه "
+
+#. module: sky_height
+#: model:ir.model.fields,field_description:sky_height.field_cancel_process_customer_id
+#: model:ir.model.fields,field_description:sky_height.field_rejected_check_customer_id
+msgid "customer"
+msgstr "العميل "
+
+#. module: sky_height
+#: model:ir.model,name:sky_height.model_customer_id_type
+msgid "customer.id.type"
+msgstr "customer.id.type"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.view_payments_details_list_search
+msgid "payment_detail_ids"
+msgstr "التفاصيل "
+
+#. module: sky_height
+#: model:ir.model,name:sky_height.model_ir_attachment
+msgid "ir.attachment"
+msgstr "ir.attachment"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.inherit_real_estate_view_sale_order
+#: model:ir.ui.view,arch_db:sky_height.rsreservation_form_view
+msgid "payment"
+msgstr "الدفع "
+
+#. module: sky_height
+#: model:ir.model,name:sky_height.model_payment_bank
+msgid "payment.bank"
+msgstr "payment.bank"
+
+#. module: sky_height
+#: model:ir.model,name:sky_height.model_payment_bank_cus
+msgid "payment.bank.cus"
+msgstr "payment.bank.cus"
+
+#. module: sky_height
+#: model:ir.model,name:sky_height.model_payment_strg
+msgid "payment.strg"
+msgstr "payment.strg"
+
+#. module: sky_height
+#: model:ir.model,name:sky_height.model_project_phase
+msgid "project.phase"
+msgstr "project.phase"
+
+#. module: sky_height
+#: model:ir.model,name:sky_height.model_project_property
+msgid "project.property"
+msgstr "project.property"
+
+#. module: sky_height
+#: model:res.groups,name:sky_height.group_admin
+msgid "property / Administrator"
+msgstr "property / Administrator"
+
+#. module: sky_height
+#: model:res.groups,name:sky_height.group_consltant
+msgid "property / Consultant"
+msgstr "property / Consultant"
+
+#. module: sky_height
+#: model:ir.model,name:sky_height.model_property_type
+msgid "property Types"
+msgstr "انواع العقارات"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.property_block_form_view
+msgid "property block Form"
+msgstr "property block Form"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.property_block_list_view
+msgid "property block List"
+msgstr "property block List"
+
+#. module: sky_height
+#: model:ir.model,name:sky_height.model_property_floor
+msgid "property floor"
+msgstr "دور العقار "
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.property_floor_form_view
+msgid "property floor Form"
+msgstr "property floor Form"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.property_floor_list_view
+msgid "property floor List"
+msgstr "property floor List"
+
+#. module: sky_height
+#: model:ir.model,name:sky_height.model_property_level
+msgid "property level"
+msgstr "مستوي الطابق"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.property_level_form_view
+msgid "property level Form"
+msgstr "property level Form"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.property_level_list_view
+msgid "property level List"
+msgstr "قائمه مستوي الطابق"
+
+#. module: sky_height
+#: model:ir.model,name:sky_height.model_property_platform
+msgid "property platform"
+msgstr "property platform"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.property_platform_form_view
+msgid "property platform Form"
+msgstr "property platform Form"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.property_platform_list_view
+msgid "property platform List"
+msgstr "property platform List"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.property_type_form_view
+msgid "property type Form"
+msgstr "property type Form"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.property_type_list_view
+msgid "property type List"
+msgstr "property type List"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.form_rejected_check_view
+msgid "rejected check"
+msgstr "شيك مرفوض "
+
+#. module: sky_height
+#: model:ir.model,name:sky_height.model_rejected_check
+msgid "rejected.check"
+msgstr "شيك مرفوض "
+
+#. module: sky_height
+#: model:ir.model,name:sky_height.model_rs_payment_strategy_details
+msgid "rs.payment_strategy_details"
+msgstr "rs.payment_strategy_details"
+
+#. module: sky_height
+#: model:ir.model,name:sky_height.model_rs_reservation
+msgid "rs.reservation"
+msgstr "rs.reservation"
+
+#. module: sky_height
+#: model:ir.ui.view,arch_db:sky_height.payment_details_report
+msgid ""
+"مدينة نصر : 5 ب حافظ رمضان - العمار بلازا - برج\n"
+"                                                ب - بجوار سيتي سنتر - ت :‫‪22723512/3‬‬ الخط الساخن : 16410"
+msgstr ""
+"مدينة نصر : 5 ب حافظ رمضان - العمار بلازا - برج\n"
+"                                                ب - بجوار سيتي سنتر - ت :‫‪22723512/3‬‬ الخط الساخن : 16410"

@@ -1,0 +1,188 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * account_yodlee
+# 
+# Translators:
+# Robert Frykelius <robert.frykelius@linserv.se>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo 9.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-18 12:01+0000\n"
+"PO-Revision-Date: 2016-09-09 11:51+0000\n"
+"Last-Translator: Robert Frykelius <robert.frykelius@linserv.se>\n"
+"Language-Team: Swedish (http://www.transifex.com/odoo/odoo-9/language/sv/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: sv\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: account_yodlee
+#: model:ir.model.fields,field_description:account_yodlee.field_online_account_account_id
+msgid "Account"
+msgstr "Konto"
+
+#. module: account_yodlee
+#: code:addons/account_yodlee/models/yodlee.py:176
+#, python-format
+msgid "An error has occured while trying to get transactions, try again later"
+msgstr "Ett fel uppstod vid försök att hämta transaktioner, försök igen senare"
+
+#. module: account_yodlee
+#: code:addons/account_yodlee/models/res_config.py:46
+#: code:addons/account_yodlee/models/res_config.py:61
+#: code:addons/account_yodlee/models/yodlee.py:71
+#: code:addons/account_yodlee/models/yodlee.py:91
+#: code:addons/account_yodlee/models/yodlee.py:117
+#, python-format
+msgid "An error has occurred while trying to connect to yodlee service"
+msgstr "Ett fel uppstod vid försök att koppla upp mot Yodlee tjänsten"
+
+#. module: account_yodlee
+#: model:ir.model,name:account_yodlee.model_res_company
+msgid "Companies"
+msgstr "Bolag"
+
+#. module: account_yodlee
+#: model:ir.ui.view,arch_db:account_yodlee.account_config_settings_view_inherit_yodlee
+msgid "Create New User"
+msgstr "Skapa ny användare"
+
+#. module: account_yodlee
+#: model:ir.ui.view,arch_db:account_yodlee.account_config_settings_view_inherit_yodlee
+msgid "Create new User"
+msgstr "Skapa ny användare"
+
+#. module: account_yodlee
+#: model:ir.model,name:account_yodlee.model_online_account
+msgid "Email Thread"
+msgstr "E-posttråd"
+
+#. module: account_yodlee
+#: code:addons/account_yodlee/models/res_config.py:49
+#, python-format
+msgid "Incorrect Yodlee login/password, please check your credentials"
+msgstr "Felaktig Yodlee användarnamn / lösenord, kontrollera dina uppgifter"
+
+#. module: account_yodlee
+#: code:addons/account_yodlee/models/yodlee.py:74
+#, python-format
+msgid ""
+"Incorrect Yodlee login/password, please check your credentials in "
+"accounting/settings"
+msgstr "Felaktig Yodlee användarnamn / lösenord, kontrollera dina uppgifter i redovisning / inställningar"
+
+#. module: account_yodlee
+#: model:ir.model,name:account_yodlee.model_account_journal
+msgid "Journal"
+msgstr "Journal"
+
+#. module: account_yodlee
+#: model:ir.model.fields,field_description:account_yodlee.field_res_company_yodlee_last_login
+msgid "Last login"
+msgstr "Sista inloggningen"
+
+#. module: account_yodlee
+#: model:ir.model.fields,field_description:account_yodlee.field_account_journal_onlinesync_config_yodlee_account_id
+msgid "Online Account"
+msgstr "Onlinekonto"
+
+#. module: account_yodlee
+#: code:addons/account_yodlee/models/yodlee.py:63
+#, python-format
+msgid "Please configure your yodlee account first in accounting>settings"
+msgstr "Var god konfigurera ditt Yodlee konto i redovisning / inställningar"
+
+#. module: account_yodlee
+#: code:addons/account_yodlee/models/res_config.py:36
+#, python-format
+msgid "Please fill all fields related to yodlee first!"
+msgstr "Var god fyll i alla fält tillhörande Yodlee först!"
+
+#. module: account_yodlee
+#: model:ir.model.fields,field_description:account_yodlee.field_online_account_site_account_id
+msgid "Site"
+msgstr "webbplats "
+
+#. module: account_yodlee
+#: model:ir.ui.view,arch_db:account_yodlee.account_config_settings_view_inherit_yodlee
+msgid "Use Existing User"
+msgstr "Använd existerande användare"
+
+#. module: account_yodlee
+#: model:ir.ui.view,arch_db:account_yodlee.account_config_settings_view_inherit_yodlee
+msgid "Yodlee Configuration"
+msgstr "Yodlee konfiguration"
+
+#. module: account_yodlee
+#: model:ir.model.fields,field_description:account_yodlee.field_account_config_settings_yodlee_id
+msgid "Yodlee ID"
+msgstr "Yodlee ID"
+
+#. module: account_yodlee
+#: model:ir.model.fields,field_description:account_yodlee.field_account_config_settings_yodlee_service_url
+msgid "Yodlee Service URL"
+msgstr "Yodlee Service URL"
+
+#. module: account_yodlee
+#: model:ir.model.fields,field_description:account_yodlee.field_account_config_settings_yodlee_new_user_email
+msgid "Yodlee User Email"
+msgstr "Yodlee användarens email"
+
+#. module: account_yodlee
+#: model:ir.model.fields,field_description:account_yodlee.field_account_config_settings_yodlee_new_user_login
+#: model:ir.model.fields,field_description:account_yodlee.field_account_config_settings_yodlee_user_login
+msgid "Yodlee User Login"
+msgstr "Yodlee användarens login"
+
+#. module: account_yodlee
+#: model:ir.model.fields,field_description:account_yodlee.field_account_config_settings_yodlee_new_user_password
+#: model:ir.model.fields,field_description:account_yodlee.field_account_config_settings_yodlee_user_password
+msgid "Yodlee User Password"
+msgstr "Yodlee användarens lösenord"
+
+#. module: account_yodlee
+#: model:ir.model.fields,field_description:account_yodlee.field_res_company_yodlee_user_access_token
+msgid "Yodlee access token"
+msgstr "Yodlee åtkomst tecken"
+
+#. module: account_yodlee
+#: model:ir.model.fields,field_description:account_yodlee.field_res_company_yodlee_user_login
+msgid "Yodlee login"
+msgstr "Yodlee login"
+
+#. module: account_yodlee
+#: model:ir.model.fields,field_description:account_yodlee.field_res_company_yodlee_user_password
+msgid "Yodlee password"
+msgstr "Yodlee lösenord"
+
+#. module: account_yodlee
+#: model:ir.model.fields,field_description:account_yodlee.field_res_company_yodlee_access_token
+msgid "access_token"
+msgstr "Åtkomst_tecken"
+
+#. module: account_yodlee
+#: model:ir.model,name:account_yodlee.model_account_config_settings
+msgid "account.config.settings"
+msgstr "account.config.settings"
+
+#. module: account_yodlee
+#: model:ir.model,name:account_yodlee.model_account_journal_onlinesync_config
+msgid "account.journal.onlinesync.config"
+msgstr ""
+
+#. module: account_yodlee
+#: model:ir.model.fields,field_description:account_yodlee.field_res_company_yodlee_user_last_login
+msgid "last login"
+msgstr "Senaste inloggningen"
+
+#. module: account_yodlee
+#: model:ir.model,name:account_yodlee.model_online_institution
+msgid "online.institution"
+msgstr "online.institution"
+
+#. module: account_yodlee
+#: model:ir.model.fields,field_description:account_yodlee.field_account_config_settings_yodlee_secret
+msgid "yodlee Secret"
+msgstr "Yodlee hemlighet"

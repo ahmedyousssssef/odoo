@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="isky_excuse_request_view_form" model="ir.ui.view">
+            <field name="name">isky.excuse.request.view.form</field>
+            <field name="model">isky.excuse.request</field>
+            <field name="arch" type="xml">
+                <form string="Excuse/Late Arrival Request">
+                    <sheet>
+                        <group name="group_top">
+                            <group name="group_left">
+                                <field name="name"/>
+                                <field name="type_request"/>
+                                <label for="date_from" string="Duration"/>
+                                <div>
+                                    <group col="3">
+                                        <field name="date_from" nolabel="1" class="oe_inline"/>
+                                        <label string="-" class="oe_inline"/>
+                                        <field name="date_to" nolabel="1" class="oe_inline"/>
+                                    </group>
+                                    <div>
+                                        <field name="no_hours" class="oe_inline"/>
+                                        hours
+                                    </div>
+                                </div>
+                            </group>
+                            <group name="group_right">
+                                <field name="employee_id"/>
+                                <field name="department"/>
+                                <field name="position"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="isky_excuse_request_view_tree" model="ir.ui.view">
+            <field name="name">isky.excuse.request.view.tree</field>
+            <field name="model">isky.excuse.request</field>
+            <field name="arch" type="xml">
+                <tree string="Excuse/Late Arrival Request">
+                    <field name="name"/>
+                    <field name="type_request"/>
+                    <field name="employee_id"/>
+                    <field name="department"/>
+                    <field name="position"/>
+                    <field name="no_hours"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="isky_excuse_request_action">
+            <field name="name">Excuse/Late Arrival Request</field>
+            <field name="res_model">isky.excuse.request</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+
+    </data>
+</openerp>

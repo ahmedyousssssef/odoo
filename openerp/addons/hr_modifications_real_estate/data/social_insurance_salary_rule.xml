@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="hr_salary_rule_social_insurance_ee" model="hr.salary.rule">
+            <field name="code">EE</field>
+            <field name="name">Social Insurance EE</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = ((contract.social_insurance_fixed*payslip.insurance_per*0.14) + (contract.social_insurance_variable*payslip.insurance_per*0.11))</field>
+            <field name="sequence" eval="101"/>
+        </record>
+
+        <record id="hr_salary_rule_social_insurance_er" model="hr.salary.rule">
+            <field name="code">ER</field>
+            <field name="name">Social Insurance ER</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = ((contract.social_insurance_fixed*payslip.insurance_per*0.26) + (contract.social_insurance_variable*payslip.insurance_per*0.24))</field>
+            <field name="sequence" eval="102"/>
+        </record>
+
+
+
+
+        <record id="isky_hr_salary_rule_mobile" model="hr.salary.rule">
+            <field name="code">Mobile</field>
+            <field name="name">Mobile Allowance Basic</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.mobile_allowance</field>
+            <field name="sequence" eval="11"/>
+            <field name="note">Mobile Allowance Basic</field>
+        </record>
+
+        <record id="isky_hr_salary_rule_trans" model="hr.salary.rule">
+            <field name="code">TRANS</field>
+            <field name="name">Transportation Allowance Basic</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.transportation_allowance</field>
+            <field name="sequence" eval="12"/>
+            <field name="note">Transportation Allowance Basic</field>
+        </record>
+
+    </data>
+</openerp>

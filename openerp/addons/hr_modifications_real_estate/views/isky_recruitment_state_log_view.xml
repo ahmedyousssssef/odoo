@@ -1,0 +1,42 @@
+<openerp>
+    <data>
+
+        <record id="isky_recruitment_state_log_search_view" model="ir.ui.view">
+        	<field name="name">isky.recruitment.state.log.search.view</field>
+        	<field name="model">recruitment.state.log</field>
+        	<field name="arch" type="xml">
+        		<search string="Search">
+        			<field name="name" string="Name"/>
+        			<separator />
+        			<group expand="0" string="Group By...">
+        				<filter string="State" context="{'group_by':'state'}" />
+        				<filter string="Department" context="{'group_by':'department_id'}" />
+        				<filter string="Recruitment Responsible" context="{'group_by':'user_id'}" />
+        			</group>
+        		</search>
+        	</field>
+        </record>
+
+        <record model="ir.ui.view" id="isky_recruitment_state_log_tree_view">
+        	<field name="name">isky.state.log.tree.view</field>
+        	<field name="model">recruitment.state.log</field>
+        	<field name="type">tree</field>
+        	<field name="arch" type="xml">
+                <tree string="Recruitment Job States Log">
+                    <field name="name"/>
+                    <field name="department_id"/>
+                    <field name="user_id"/>
+                    <field name="no_of_recruitment"/>
+                    <field name="state"/>
+                    <field name="date"/>
+                </tree>
+        	</field>
+        </record>
+
+        <act_window id="action_recruitment_state_log"
+                    name="Recruitment States Log"
+                    res_model="recruitment.state.log"
+                    />
+
+    </data>
+</openerp>

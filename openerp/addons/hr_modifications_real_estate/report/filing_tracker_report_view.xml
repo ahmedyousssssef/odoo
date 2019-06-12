@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="filing_tracker">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="report.external_layout">
+                        <div class="page">
+                            <center><h1>Hiring Documents</h1>
+                                <style>
+                                    tr:nth-child(even) {background: #CCC}
+                                    tr:nth-child(odd) {background: #FFF}
+                                </style>
+                            <table border = "2" style="width:75%">
+                                <tr>
+                                    <th><center><font size = "4">Labor Law &#38; Company Requirement
+                                    </font></center></th>
+                                </tr>
+                                <tr>
+                                    <td height= "50"><font size = "4">1. Original Birth Certificate
+                                    </font></td>
+                                </tr>
+                                 <tr>
+                                    <td height= "50"><font size = "4">2. Original Graduation Certificate
+                                    </font></td>
+                                </tr>
+                                 <tr>
+                                    <td height= "50"><font size = "4">3. Copy of ID/Passport
+                                    </font></td>
+                                </tr>
+                                 <tr>
+                                    <td height= "50"><font size = "4">4. Criminal Report
+                                    </font></td>
+                                </tr>
+                                 <tr>
+                                    <td height= "50"><font size = "4">5. 6 Personal Photo
+                                    </font></td>
+                                </tr>
+                                 <tr>
+                                    <td height= "50"><font size = "4">6. Work Permit
+                                    </font></td>
+                                </tr>
+                                 <tr>
+                                    <td height= "50"><font size = "4">7. Military Certificate
+                                    </font></td>
+                                </tr>
+                                 <tr>
+                                    <td height= "50"><font size = "4">8. Form 6
+                                    </font></td>
+                                </tr>
+                                 <tr>
+                                    <td height= "50"><font size = "4">9. Medical Checkup
+                                    </font></td>
+                                </tr>
+                                 <tr>
+                                    <td height= "50"><font size = "4">10. Resume
+                                    </font></td>
+                                </tr>
+                                 <tr>
+                                    <td height= "50"><font size = "4">11. Certificates
+                                    </font></td>
+                                </tr>
+                            </table>
+                            </center>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

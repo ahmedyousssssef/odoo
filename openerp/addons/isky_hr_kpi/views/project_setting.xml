@@ -1,0 +1,34 @@
+<openerp>
+    <data>
+        <!-- inherit project config view -->
+        <record id="project_config_setting_inherit" model="ir.ui.view">
+            <field name="name">project.config.settings.inherit.form</field>
+            <field name="model">project.config.settings</field>
+            <field name="inherit_id" ref="project.view_config_settings"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[1]" position="after">
+                    <separator/>
+                    <group>
+                        <label for="achievement_share" string="Achievement Share"/>
+                        <div>
+                            <div>
+                                <label for="Achievement Share"/>
+                                <field name="achievement_share" class="oe_inline"/>
+                            </div>
+                        </div>
+                    </group>
+                    <separator/>
+                    <group>
+                        <label for="quality_share" string="Quality Share"/>
+                        <div>
+                            <div>
+                                <label for="Quality Share"/>
+                                <field name="quality_share" class="oe_inline"/>
+                            </div>
+                        </div>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

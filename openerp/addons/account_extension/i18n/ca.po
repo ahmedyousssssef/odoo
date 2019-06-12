@@ -1,0 +1,112 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * account_extension
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo 9.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-07 14:51+0000\n"
+"PO-Revision-Date: 2016-09-14 09:49+0000\n"
+"Last-Translator: Martin Trigaux\n"
+"Language-Team: Catalan (http://www.transifex.com/odoo/odoo-9/language/ca/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: ca\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: account_extension
+#: model:ir.ui.view,arch_db:account_extension.account_config_settings_inherit
+msgid "Bank Statements"
+msgstr "Extractes bancaris"
+
+#. module: account_extension
+#: model:ir.model.fields,help:account_extension.field_account_config_settings_module_account_plaid
+msgid ""
+"Get your bank statements from you bank and import them through plaid.com.\n"
+"-that installs the module account_plaid."
+msgstr "Obtingui els seus extractes bancaris i importi'ls a través de plaid.com\n- S'instal·larà el mòdul account_plaid."
+
+#. module: account_extension
+#: model:ir.model.fields,help:account_extension.field_account_config_settings_module_account_yodlee
+msgid ""
+"Get your bank statements from you bank and import them through yodlee.com.\n"
+"-that installs the module account_yodlee."
+msgstr ""
+
+#. module: account_extension
+#: model:ir.model.fields,help:account_extension.field_account_config_settings_module_account_bank_statement_import_ofx
+msgid ""
+"Get your bank statements from your bank and import them in Odoo in the .OFX format.\n"
+"This installs the module account_bank_statement_import_ofx."
+msgstr "Obtingui els seus extractes bancaris i importi'ls a Odoo en format .OXF\nS'instal·larà el mòdul account_bank_statement_import_oxf."
+
+#. module: account_extension
+#: model:ir.model.fields,help:account_extension.field_account_config_settings_module_account_bank_statement_import_qif
+msgid ""
+"Get your bank statements from your bank and import them in Odoo in the .QIF format.\n"
+"This installs the module account_bank_statement_import_qif."
+msgstr "Obtingui els seus extractes bancaris a Odoo en format .QIF.\nS'instal·larà el mòdul account_bank_statement_import_qif."
+
+#. module: account_extension
+#: model:ir.model.fields,help:account_extension.field_account_config_settings_module_account_sepa
+msgid ""
+"If you check this box, you will be able to register your payment using SEPA.\n"
+"-This installs the module account_sepa."
+msgstr "Si es marca aquesta casella, podrà registrar els seus pagaments utilitzant SEPA.\n- S'instal·larà el mòdul account_sepa."
+
+#. module: account_extension
+#: model:ir.model.fields,field_description:account_extension.field_account_config_settings_module_account_plaid
+msgid "Import of Bank Statements from Plaid."
+msgstr ""
+
+#. module: account_extension
+#: model:ir.model.fields,field_description:account_extension.field_account_config_settings_module_account_yodlee
+msgid "Import of Bank Statements from Yodlee."
+msgstr ""
+
+#. module: account_extension
+#: model:ir.model.fields,field_description:account_extension.field_account_config_settings_module_account_bank_statement_import_ofx
+msgid "Import of Bank Statements in .OFX Format"
+msgstr ""
+
+#. module: account_extension
+#: model:ir.model.fields,field_description:account_extension.field_account_config_settings_module_account_bank_statement_import_qif
+msgid "Import of Bank Statements in .QIF Format."
+msgstr ""
+
+#. module: account_extension
+#: model:ir.model.fields,field_description:account_extension.field_account_config_settings_module_account_reports_followup
+msgid "Manage customer payment follow-ups"
+msgstr "Gestionar seguiments de pagos de clients"
+
+#. module: account_extension
+#: model:ir.model.fields,help:account_extension.field_account_config_settings_module_account_reports_followup
+msgid ""
+"This allows to automate letters for unpaid invoices, with multi-level recalls.\n"
+"-This installs the module account_reports_followup."
+msgstr "Això li permet automatitzar cartes sobre factures impagades, amb recordatoris multinivell.\n- S'instal·larà el mòdul account_reports_followup."
+
+#. module: account_extension
+#: model:ir.model.fields,help:account_extension.field_account_config_settings_module_account_batch_deposit
+msgid ""
+"This allows you to group received checks before you deposit them to the bank.\n"
+"-This installs the module account_batch_deposit."
+msgstr "Això li permetrà rebre xecs abans de dipositar-los en el banc.\n- S'instal·larà el mòdul account_batch_deposit."
+
+#. module: account_extension
+#: model:ir.model.fields,field_description:account_extension.field_account_config_settings_module_account_batch_deposit
+msgid "Use batch deposit"
+msgstr "Utilitzar dipòsit automàtic"
+
+#. module: account_extension
+#: model:ir.model.fields,field_description:account_extension.field_account_config_settings_module_account_sepa
+msgid "Use sepa payment"
+msgstr ""
+
+#. module: account_extension
+#: model:ir.model,name:account_extension.model_account_config_settings
+msgid "account.config.settings"
+msgstr "account.config.settings"

@@ -1,0 +1,281 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* isky_employee_custody
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c-20160217\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-08 11:01+0000\n"
+"PO-Revision-Date: 2016-08-08 14:41+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: ar_SY\n"
+"X-Generator: Poedit 1.8.8\n"
+
+#. module: isky_employee_custody
+#: model:ir.model,name:isky_employee_custody.model_account_move
+msgid "Account Entry"
+msgstr "قيد الحساب"
+
+#. module: isky_employee_custody
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_product_expense_amount
+msgid "Amount"
+msgstr "المبلغ"
+
+#. module: isky_employee_custody
+#: model:ir.ui.view,arch_db:isky_employee_custody.view_employee_custody_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: isky_employee_custody
+#: selection:employee.custody,state:0
+msgid "Cancelled"
+msgstr "تم الغائه"
+
+#. module: isky_employee_custody
+#: selection:employee.custody,state:0
+msgid "Closed"
+msgstr "مغلق "
+
+#. module: isky_employee_custody
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_custody_custody_close_date
+msgid "Closed On"
+msgstr "إقفال يوم"
+
+#. module: isky_employee_custody
+#: model:ir.ui.view,arch_db:isky_employee_custody.view_employee_custody_form
+msgid "Closing Balance"
+msgstr "رصيد الإقفال"
+
+#. module: isky_employee_custody
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_custody_company_id
+msgid "Company"
+msgstr "المؤسسة"
+
+#. module: isky_employee_custody
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_custody_create_uid
+#: model:ir.model.fields,field_description:isky_employee_custody.field_custody_category_create_uid
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_product_expense_create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: isky_employee_custody
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_custody_create_date
+#: model:ir.model.fields,field_description:isky_employee_custody.field_custody_category_create_date
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_product_expense_create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: isky_employee_custody
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_custody_currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: isky_employee_custody
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_custody_custody_date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: isky_employee_custody
+#: model:ir.model.fields,field_description:isky_employee_custody.field_custody_category_loan_description
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_product_expense_name
+msgid "Description"
+msgstr "الوصف"
+
+#. module: isky_employee_custody
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_custody_display_name
+#: model:ir.model.fields,field_description:isky_employee_custody.field_custody_category_display_name
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_product_expense_display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: isky_employee_custody
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_custody_employee_id
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: isky_employee_custody
+#: model:ir.actions.act_window,name:isky_employee_custody.action_employee_custody
+#: model:ir.model.fields,field_description:isky_employee_custody.field_account_move_custody_id
+#: model:ir.model.fields,field_description:isky_employee_custody.field_account_move_line_custody_id
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_product_expense_employee_custody_id
+#: model:ir.ui.menu,name:isky_employee_custody.employee_custody_menu
+#: model:ir.ui.view,arch_db:isky_employee_custody.view_employee_custody_form
+#: model:ir.ui.view,arch_db:isky_employee_custody.view_employee_custody_tree
+msgid "Employee Custody"
+msgstr "عناية الموظف"
+
+#. module: isky_employee_custody
+#: model:ir.ui.view,arch_db:isky_employee_custody.isky_view_custody_category_form
+msgid "Employee Loan"
+msgstr "قرض الموظف"
+
+#. module: isky_employee_custody
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_custody_close_balance
+msgid "Ending Balance"
+msgstr "رصيد ختامي"
+
+#. module: isky_employee_custody
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_custody_move_line_ids
+msgid "Entry lines"
+msgstr "سطور القيود"
+
+#. module: isky_employee_custody
+#: model:ir.ui.view,arch_db:isky_employee_custody.view_employee_custody_form
+msgid "Generate Journal Entries"
+msgstr "انشاء دفاتر اليويمة"
+
+#. module: isky_employee_custody
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_custody_id
+#: model:ir.model.fields,field_description:isky_employee_custody.field_custody_category_id
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_product_expense_id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: isky_employee_custody
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_custody_journal_id
+msgid "Journal"
+msgstr "اليومية"
+
+#. module: isky_employee_custody
+#: model:ir.ui.view,arch_db:isky_employee_custody.view_employee_custody_form
+msgid "Journal Entries"
+msgstr "قيود اليومية"
+
+#. module: isky_employee_custody
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_custody_move_id
+msgid "Journal Entry"
+msgstr "قيد يومية"
+
+#. module: isky_employee_custody
+#: model:ir.model,name:isky_employee_custody.model_account_move_line
+msgid "Journal Item"
+msgstr "عنصر يومية"
+
+#. module: isky_employee_custody
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_custody___last_update
+#: model:ir.model.fields,field_description:isky_employee_custody.field_custody_category___last_update
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_product_expense___last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: isky_employee_custody
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_custody_write_uid
+#: model:ir.model.fields,field_description:isky_employee_custody.field_custody_category_write_uid
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_product_expense_write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: isky_employee_custody
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_custody_write_date
+#: model:ir.model.fields,field_description:isky_employee_custody.field_custody_category_write_date
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_product_expense_write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: isky_employee_custody
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_custody_loan_id
+msgid "Loan"
+msgstr "قرض "
+
+#. module: isky_employee_custody
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_custody_custody_account_id
+msgid "Loan Account"
+msgstr "حساب القرض"
+
+#. module: isky_employee_custody
+#: model:ir.model.fields,field_description:isky_employee_custody.field_custody_category_name
+msgid "Loan Name"
+msgstr "اسم القرض "
+
+#. module: isky_employee_custody
+#: selection:employee.custody,state:0
+msgid "New"
+msgstr "جديد"
+
+#. module: isky_employee_custody
+#: selection:employee.custody,state:0
+msgid "Open"
+msgstr "مفتوح"
+
+#. module: isky_employee_custody
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_custody_open_balance
+#: model:ir.ui.view,arch_db:isky_employee_custody.view_employee_custody_form
+msgid "Opening Balance"
+msgstr "رصيد الافتتاح "
+
+#. module: isky_employee_custody
+#: selection:employee.custody,state:0
+msgid "Payment"
+msgstr "دفع "
+
+#. module: isky_employee_custody
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_product_expense_product_id
+msgid "Product"
+msgstr "المنتج"
+
+#. module: isky_employee_custody
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_product_expense_quantity
+msgid "Quantity"
+msgstr "الكمية"
+
+#. module: isky_employee_custody
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_custody_name
+msgid "Reference"
+msgstr "الإشارة"
+
+#. module: isky_employee_custody
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_custody_state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: isky_employee_custody
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_custody_total_transactions
+msgid "Total Transactions"
+msgstr "مجموع التعاملات "
+
+#. module: isky_employee_custody
+#: model:ir.ui.view,arch_db:isky_employee_custody.view_employee_custody_form
+msgid "Tranactions"
+msgstr "التعاملات "
+
+#. module: isky_employee_custody
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_custody_line_ids
+#: model:ir.ui.view,arch_db:isky_employee_custody.view_employee_custody_form
+msgid "Transactions"
+msgstr "التعاملات "
+
+#. module: isky_employee_custody
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_product_expense_price_unit
+msgid "Unit Price"
+msgstr "سعر الوحدة"
+
+#. module: isky_employee_custody
+#: model:ir.model.fields,field_description:isky_employee_custody.field_employee_product_expense_product_uom_id
+msgid "Unit of Measure"
+msgstr "وحدة القياس"
+
+#. module: isky_employee_custody
+#: model:ir.ui.view,arch_db:isky_employee_custody.view_employee_custody_form
+msgid "Validate"
+msgstr "تحقق"
+
+#. module: isky_employee_custody
+#: model:ir.model,name:isky_employee_custody.model_employee_custody
+msgid "employee.custody"
+msgstr "employee.custody"
+
+#. module: isky_employee_custody
+#: model:ir.model,name:isky_employee_custody.model_custody_category
+msgid "custody.category"
+msgstr "custody.category"
+
+#. module: isky_employee_custody
+#: model:ir.model,name:isky_employee_custody.model_employee_product_expense
+msgid "employee.product.expense"
+msgstr "employee.product.expense"

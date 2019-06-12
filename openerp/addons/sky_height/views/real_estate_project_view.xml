@@ -1,0 +1,149 @@
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="isky_form_view_project_form_inherit">
+            <field name="name">rs.project.form</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/notebook/page[1]" position="before">
+                    <page string="Phases">
+                        <group>
+                            <field name="phase_ids"
+                                   groups="sky_height.group_real_state">
+                                <tree editable="Top">
+                                    <field name="name"/>
+                                    <field name="phase_no"/>
+                                    <field name="available"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                </xpath>
+                <xpath expr="//form/sheet/notebook/page[2]" position="after">
+                    <page string="Terms and Conditions">
+                        <field name="terms_conditions"/>
+                    </page>
+                </xpath>
+
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="property_phase_form_view">
+            <field name="name">phase.form</field>
+            <field name="model">project.phase</field>
+            <field name="arch" type="xml">
+                <form string="Phase Form">
+                    <sheet>
+                        <h1>
+                            <field name="name"
+                                   default_focus="1"
+                                   placeholder="Phase Name"
+                                   required="1"/>
+
+                        </h1>
+                        <group>
+                            <group groups="sky_height.group_real_state">
+                                <field name="phase_no"/>
+                                <field name="available"/>
+                                <field name="project_id" readonly="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="phase_form_view">
+            <field name="name">phase.form</field>
+            <field name="model">project.phase</field>
+            <field name="arch" type="xml">
+                <form string="Phase Form" create="false">
+                    <header>
+                        <button string="Get Properties"
+                                name="get_property"
+                                type="object"
+                                class="oe_highlight"/>
+                        <button string="Set Properties To Available"
+                                name="update_properties_state_to_available"
+                                type="object"
+                                class="oe_highlight"/>
+                        <button string="Set Properties To Un available"
+                                name="update_properties_state_to_not_available"
+                                type="object"
+                                class="oe_highlight"/>
+
+                    </header>
+                    <sheet>
+                        <h1>
+                            <field name="name"
+                                   default_focus="1"
+                                   placeholder="Phase Name"
+                                   required="1"/>
+
+                        </h1>
+                        <group>
+
+                            <group groups="sky_height.group_real_state">
+
+                                <field name="phase_no"/>
+                                <field name="available"/>
+                                <field name="project_id"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Property">
+
+                                <group>
+                                    <field name="property_line_ids"
+                                           groups="sky_height.group_real_state">
+                                        <tree create="false" delete="false">
+                                            <field name="property_id"/>
+                                            <field name="project_id"
+                                                   groups="sky_height.group_real_state"/>
+                                            <field name="property_no"/>
+                                            <field name="property_block_id"/>
+                                            <field name="type_of_property_id"/>
+                                            <field name="level_id"/>
+                                            <field name="total_area"/>
+                                        </tree>
+                                    </field>
+                                </group>
+
+                            </page>
+                        </notebook>
+
+                    </sheet>
+
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="phase_tree_view">
+            <field name="name">phase.tree</field>
+            <field name="model">project.phase</field>
+            <field name="arch" type="xml">
+                <tree string="Projects"
+                      colors="red:available == False "
+                      create="false"
+                      delete="false">
+                    <field name="name"
+                           groups="sky_height.group_real_state"/>
+                    <field name="phase_no"
+                           groups="sky_height.group_real_state"/>
+                    <field name="available"
+                           groups="sky_height.group_real_state"/>
+                    <field name="project_id"
+                           groups="sky_height.group_real_state"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="phase_list_action">
+            <field name="name">Phases</field>
+            <field name="res_model">project.phase</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+    </data>
+</openerp>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve" id="kpi_dashboard_report">
+
+    <div t-name="isky_kpi_gui.dash"
+         class="container o_family_dashboard" style="width:1032px; !important">
+         <div class="row box"
+             style="max-width: 100%;height: 80px;margin-left:-2px; !important">
+             <div id="employees_select"
+                 class="col-sm-12">
+                 <span style="color:#000000;"> <h3>Select Employee: </h3></span>
+                 <select t-attf-name="employees"
+                         id="employees"
+                         class="employees_select">
+                    <option value=""></option>
+                    <t t-foreach="employees" t-as="i">
+                        <option t-att-id ="i.id" t-att-value="i.display_name">
+                            <t t-esc="i.display_name"/>
+                        </option>
+                    </t>
+                 </select>
+             </div>
+         </div>
+        <div class="row box"
+             style="height: 100%; !important">
+            <div class="row">
+                <div id="content_graph2"
+                 class="col-sm-12"
+                 style="max-width: 100%; height: 350px; "/>
+            </div>
+            <div class="row box" style="margin-top: 11px;!important">
+            <div id="hr_kpi" class="hr_kpi" style="visibility: hidden;">
+                <!--<div id='tasks'-->
+                     <!--class="col-md-4 btn-success"-->
+                     <!--style="background-color: #000000 ;height:50px!important;">-->
+                    <!--<center>-->
+                        <!--<h2 style="color:#ffffff ;margin-top: 14px;!important;">-->
+                        <!--Tasks</h2>-->
+                    <!--</center>-->
+                <!--</div>-->
+                <div id='subdornate'
+                     class="col-md-6 btn-success"
+                     style="background-color: #000000 ;height:50px!important;">
+                    <center>
+                        <h2 style="color:#ffffff ;margin-top: 14px;!important;">
+                        Supervisory</h2>
+                    </center>
+                </div>
+                <div id='final'
+                     class="col-md-6 btn-success"
+                     style="background-color: #000000 ;height:50px!important;">
+                    <center>
+                        <h2 style="color:#ffffff ;margin-top: 14px;!important;">
+                        Final Appraisal</h2>
+                    </center>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</templates>

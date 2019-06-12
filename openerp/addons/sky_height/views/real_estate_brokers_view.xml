@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="form_brokers_view" model="ir.ui.view">
+            <field name="name">form brokers view</field>
+            <field name="model">property.broker</field>
+            <field name="arch" type="xml">
+                <form string="Brokers">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="broker_id"
+                                       required="1"
+                                       context="{'default_is_broker':1, 'default_supplier':1}"
+                                       groups="sky_height.group_real_state"/>
+
+                            </group>
+                            <group>
+                                <field name="commission_amount"
+                                       required="1"
+                                       groups="sky_height.group_real_state"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="tree_broker_view" model="ir.ui.view">
+            <field name="name">tree broker view</field>
+            <field name="model">property.broker</field>
+            <field name="arch" type="xml">
+                <tree string="Brokers">
+                    <field name="broker_id"
+                           groups="sky_height.group_real_state"/>
+                    <field name="commission_amount"
+                           groups="sky_height.group_real_state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_broker" model="ir.actions.act_window">
+            <field name="name">Brokers Commission</field>
+            <field name="res_model">property.broker</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</openerp>

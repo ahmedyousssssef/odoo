@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="isk_view_sales_config_inherit">
+            <field name="name">isky.sale.config.settings.view</field>
+            <field name="model">sale.config.settings</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="sale.view_sales_config"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[1]" position="after">
+                    <group>
+                        <field name="lead_period" class="oe_inline"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

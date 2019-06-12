@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="isky_custody_configuration_form_view" model="ir.ui.view">
+            <field name="name">isky.custody.configuration.form.view</field>
+            <field name="model">custody.configuration</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Custody Configuration">
+                    <sheet>
+                        <h1>
+                            <field name="name"
+                                   default_focus="1"
+                                   placeholder="Name"/>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="journal_id"/>
+                            </group>
+                            <group>
+                                <field name="payment_method_id"
+                                       options="{'no_create':True}"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="isky_custody_configuration_tree_view" model="ir.ui.view">
+            <field name="name">isky.custody.configuration.tree.view</field>
+            <field name="model">custody.configuration</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Custody Configuration">
+                    <field name="name"/>
+                    <field name="journal_id"/>
+                    <field name="payment_method_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_custody_configuration">
+            <field name="name">Custody Configuration</field>
+            <field name="res_model">custody.configuration</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+    </data>
+</openerp>

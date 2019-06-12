@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Custom report.-->
+<openerp>
+    <data>
+        <template id="blue_collar_contract">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="report.external_layout">
+                        <div class="page">
+                            <style>
+                                ul { margin: 0 20px; padding: 0; }
+                                ul li {
+                                    margin: 0; padding: 0;
+                                    list-style: disc url(images/ico-bullet_round.gif);
+                                    direction:rtl;
+                                    text-align: right;
+                                    }
+                                td{ font-size:12pt;}
+
+                            </style>
+                            <center><u><b><font size = "5">خطاب قبول طلب وظيفة</font></b></u></center>
+                           <p align = "right"><font size = "3">
+                               <b>----/--/-- : <u>التاريخ</u></b><br/>
+                               <span t-field="o.partner_name" /> / <b>السيد</b><br/>
+                               <center><b>تحية طيبة وبعد ؛</b></center><br/>
+                               <p align = "right"><font size = "3">
+                                   <b> : </b><b>ترغب شركة / الشهاوي جروب بتعيينكم حسب الشروط التالية</b><br/>
+                                   <ul>
+                                       <li><b>المسمي الوظيفي </b> : <span t-field="o.job_id" /></li>
+                                       <li><b>المدير المباشر  </b> : <span t-field="o.department_id.manager_id.job_id" /> \
+                                           <span t-field="o.department_id.manager_id" /></li>
+                                       <li><b>الادارة  </b> : <span t-field="o.department_id" /></li>
+                                       <li><b> المرتب الاساسي </b> : <span t-field="o.salary_proposed" /> جنيها مصرياو زيادة
+                                       بعد  فترةالاختبار ---- جنيها مصريا</li>
+                                        <li><b>التاريخ الاستحقاق المرتب </b> : يوم 2 من كل شهر</li>
+                                        <li>تقوم الشركة بتوفير <b>السكن و الانتقال من و الى الموقع</b> للموظفين</li>
+                                        <li><b> مدة الإجازة</b> : يوم عمل بعد 6 ايام عمل من السبت للخميس</li>
+                                        <li><b> التأمين الإجتماعى</b> : مغطي طبقاً للأنظمة واللوائح السارية في الشركة والتأمينات الإجتماعية </li>
+                                        <li><b> التأمين الطبي</b> : مغطي طبقاً للأنظمة واللوائح السارية في الشركة</li>
+                                       <li><b> فترة التجربة</b> : 3 شهور و <b>مدة العقد </b> : عقد سنوى</li>
+                                   </ul>
+                                   <center><b>.باقى الشروط حسب النظام المتبع بالشركة</b></center>
+                                   <p align = "right" style="direction:rtl;"><b>موافق علي الشروط أعلاه بإعتبار أول يوم عمل لي بالشركة يوم ----- الموافق ---- / -- / -- و علي ذلك جري التوقيع</b></p>
+                               </font> </p>
+                            </font> </p>
+                            <table style="width:100%">
+
+                                <tr>
+
+                                    <td align = "right" style = "direction:rtl;width:45%;" >
+                                        <b> يعتمد؛</b>
+                                    </td>
+                                    <td align="right" style = "direction:rtl;width:45%;">
+                                        <b>التوقيع:</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align = "right" style="text-indent: 5em;direction:rtl;"><b>المدير العام</b></td>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

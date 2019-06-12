@@ -1,0 +1,50 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+real_state_security_property1,property realstate1,sky_height.model_rs_reservation,group_real_state,1,0,0,0
+real_state_security_property2,property realstate2,sky_height.model_product_product,group_real_state,1,0,0,0
+real_state_security_property3,property realstate3,sky_height.model_payment_strg,group_real_state,1,0,0,0
+real_state_security_property6,reservation accountant,sky_height.model_rs_reservation,account.group_account_user,1,1,0,0
+real_state_security_property9,property realstate4,sky_height.model_payment_strg,account.group_account_manager,1,1,1,0
+real_state_security_property10,property realstate5,sky_height.model_account_payment,account.group_account_user,1,1,1,0
+real_state_security_property12,property realstate7,sky_height.model_sale_order,account.group_account_user,1,0,0,0
+real_state_security_property13,property realstate8,sky_height.model_sale_order,base.group_sale_salesman,1,1,1,0
+real_state_security_property13_sale_team_leader,property realstate8 sale team leader,sky_height.model_sale_order,sky_height.sale_team_leader_group,1,1,1,0
+real_state_security_property14,property realstate9,sky_height.model_project_phase,group_real_state,1,1,1,0
+real_state_security_property15,property realstate10,sky_height.model_project_project,group_real_state,1,0,0,0
+real_state_security_property16,property realstate11,sky_height.model_property_platform,group_real_state,1,0,0,0
+real_state_security_property17,property realstate12,sky_height.model_property_type,group_real_state,1,0,0,0
+real_state_security_property18,property realstate13,sky_height.model_property_floor,group_real_state,1,0,0,0
+real_state_security_property19,property realstate14,sky_height.model_property_block,group_real_state,1,0,0,0
+real_state_security_property20,property realstate15,sky_height.model_payment_bank,group_real_state,1,0,0,0
+real_state_security_property22,property realstate17,sky_height.model_project_property,group_real_state,1,0,0,0
+real_state_security_property23,property realstate18,sky_height.model_property_level,group_real_state,1,0,0,0
+real_state_security_property24,property realstate19,sky_height.model_res_partner,group_real_state,1,0,0,0
+real_state_security_property26,property realstate21,sky_height.model_res_partner,account.group_account_user,1,0,0,0
+real_state_security_property28,property realstate23,sky_height.model_res_partner,base.group_sale_salesman,1,1,1,0
+real_state_security_property29,property realstate24,sky_height.model_crm_lead,sale_team_leader_group,1,1,1,0
+real_state_security_property30,property realstate25,sky_height.model_product_template,base.group_sale_salesman,1,0,0,0
+real_state_security_property30 sale team leader,property realstate25 sale team leader,sky_height.model_product_template,sky_height.sale_team_leader_group,1,0,0,0
+real_state_security_property35,property realstate30,sky_height.model_crm_team,base.group_sale_salesman,1,1,1,0
+real_state_security_property35_team_leader,property realstate30 team leader,sky_height.model_crm_team,sky_height.sale_team_leader_group,1,1,1,0
+real_state_security_property36,property realstate31,account.model_account_payment_method,base.group_sale_salesman,1,1,1,0
+real_state_security_property36_team_leader ,property realstate31 team leader,account.model_account_payment_method,sky_height.sale_team_leader_group,1,1,1,0
+real_state_security_property38,property realstate33,sky_height.model_rs_reservation,base.group_sale_salesman,1,1,1,0
+real_state_security_property38_team_leader,property realstate33 team leader,sky_height.model_rs_reservation,sky_height.sale_team_leader_group,1,1,1,0
+real_state_security_property39,property realstate34,sky_height.model_project_phase,base.group_sale_salesman,1,1,1,0
+real_state_security_property39_team_leader,property realstate34 team leader,sky_height.model_project_phase,sky_height.sale_team_leader_group,1,1,1,0
+real_state_security_property40,property realstate35,sky_height.model_res_users,base.group_sale_salesman,1,0,0,0
+real_state_security_property40_team_leader,property realstate35 team leader,sky_height.model_res_users,sky_height.sale_team_leader_group,1,0,0,0
+
+real_state_security_property41,property realstate36,sky_height.model_crm_lead,group_sky_height_admin,1,0,0,0
+real_state_security_property43,property realstate38,sky_height.model_project_project,base.group_sale_salesman,1,1,1,0
+real_state_security_property43_team_leader,property realstate38 team leader,sky_height.model_project_project,sky_height.sale_team_leader_group,1,1,1,0
+real_state_security_property45,sale order user,sky_height.model_sale_order,,1,0,0,0
+real_state_security_property46,account invoice user1,account.model_account_invoice,,1,0,0,0
+real_state_security_property47,property realstate39,sky_height.model_payment_strg,account.group_account_user,1,0,0,0
+real_state_security_property48,property realstate40,sky_height.model_project_project,,1,0,0,0
+
+real_state_security_property99,property realstate99,stock.model_stock_move,group_legal,1,0,0,0
+real_state_security_property00,property realstate00,sky_height.model_rs_reservation,group_legal,1,0,0,0
+real_state_security_property27,property realstate22,sky_height.model_res_partner,group_legal,1,0,0,0
+real_state_security_property11,property realstate6,sky_height.model_sale_order,group_legal,1,0,0,0
+real_state_security_property8,reservation legal,sky_height.model_rs_reservation,group_legal,1,0,0,0
+access_select_clerk,access_select_clerk,model_select_clerk,,1,1,1,1

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="isky_kpi_report" model="ir.actions.client">
+            <field name="name"> HR KPI </field>
+            <field name="tag">isky_kpi_report_tag</field>
+        </record>
+
+        <record id="isky_emp_report" model="ir.actions.client">
+            <field name="name"> HR KPI </field>
+            <field name="tag">emp_report_tag</field>
+        </record>
+
+        <record id="isky_technical_kpi_report" model="ir.actions.client">
+            <field name="name"> Technical KPI </field>
+            <field name="tag">technical_kpi_tag</field>
+        </record>
+
+        <record id="isky_deadline_report" model="ir.actions.client">
+            <field name="name"> Deadline </field>
+            <field name="tag">deadline_tag</field>
+        </record>
+
+        <menuitem id="kpi_dashboard"
+                  action="isky_kpi_report"
+                  sequence="1"
+                  name="HR KPI"/>
+
+        <menuitem id="kpi_dashboard_menu"
+                  action="isky_kpi_report"
+                  parent="kpi_dashboard"
+                  sequence="1"
+                  name="Dashboard"/>
+    </data>
+</odoo>

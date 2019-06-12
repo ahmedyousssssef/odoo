@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_employee_product_expense,access_employee_product_expense,model_employee_product_expense,,1,1,1,1
+access_custody_category,access_custody_category,model_custody_category,,1,1,1,1
+access_employee_custody,access_employee_custody,model_employee_custody,,1,1,1,1
+access_employee_custody_item,access_employee_custody_item,model_employee_custody_item,,1,1,1,1
+access_isky_custody_transaction,access.isky.custody.transaction,model_isky_custody_transaction,,1,1,1,1
+access_isky_custody_journal_entries,access.isky.custody.journal.entries,model_isky_custody_journal_entries,,1,1,1,1

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Custom report.-->
+<openerp>
+    <data>
+        <template id="hiring_checklist">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="report.external_layout">
+                        <div class="page">
+                            <center><h1>Hiring Process CheckList</h1></center>
+                            <h3>Welcome Message</h3>
+                            <h3>Email Confirmation</h3>
+                            <h3>Orientation Session</h3>
+                            <h3>New Employee Documents</h3>
+                            <font size="5">Office Letter (HR 3)</font><br/>
+                            <font size="5">Application Form (HR 4)</font><br/>
+                            <font size="5">Required hiring documents (HR 5)</font><br/>
+                            <font size="5">Job Description (HR 6)</font><br/>
+                            <font size="5">Employee Contrat (HR 7)</font><br/>
+                            <font size="5">OSales Commission Agreement for Sales ( HR 15 )</font><br/>
+                            <h3>New Employee Request</h3>
+                            <font size="5">Finger Print</font><br/>
+                            <font size="5">Employee Code</font><br/>
+                            <font size="5">Payroll application</font><br/>
+                            <font size="5">Business Card Request (HR 8)</font><br/>
+                            <font size="5">Medical Insurance Card</font><br/>
+                            <font size="5">Employee ID (HR 9)</font><br/>
+                            <br/>
+                            <h3>New Employee Email</h3>
+                            <font size="5">Employee Handbook</font><br/>
+                            <font size="5">Internal Policy (acknowledgement signature)</font><br/>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

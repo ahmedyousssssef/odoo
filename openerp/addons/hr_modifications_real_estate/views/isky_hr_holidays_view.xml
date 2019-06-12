@@ -1,0 +1,37 @@
+<openerp>
+    <data>
+        <record id="isky_hr_holidays_form_view" model="ir.ui.view">
+            <field name="name">isky.hr.holidays.form.view</field>
+            <field name="model">hr.holidays</field>
+            <field name="inherit_id" ref="hr_holidays.edit_holiday_new"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='employee_id']" position="attributes">
+                    <attribute name="domain">[('id', '!=', personal_charge)]</attribute>
+                        </xpath>
+                <xpath expr="//field[@name='department_id']" position="before">
+                    <field name="personal_charge" attrs="{'invisible':[('type','!=','remove')]}"
+                           domain="[('id', '!=', employee_id)]"/>
+                </xpath>
+
+                <xpath expr="//field[@name='notes']" position="before">
+                    <group col="2">
+                        <field name="phone_during_vacation" attrs="{'invisible':[('type','!=','remove')]}"/>
+                        <field name="reason"
+                               attrs="{'invisible':[('state', 'not in', ['validate1','validate','refuse']),('type','!=','remove')],'required':[('state', 'in', ['validate1']),('type','=','remove')]}"/>
+                    </group>
+                </xpath>
+
+                <xpath expr="//button[@name='second_validate']" position="attributes">
+                    <attribute name="groups">base.group_hr_manager</attribute>
+                </xpath>
+                <xpath expr="//button[@name='refuse']" position="attributes">
+                    <attribute name="states">confirm</attribute>
+                </xpath>
+                <xpath expr="//button[@name='second_validate']" position="after">
+                    <button string="Refuse" name="refuse_1" states="validate,validate1" type="workflow" groups="base.group_hr_manager"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

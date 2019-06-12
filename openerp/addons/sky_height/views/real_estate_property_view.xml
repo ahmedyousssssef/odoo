@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="rs_property_product3_form_view">
+            <field name="name">rs_property.product.form3</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/notebook/page[1]"
+                       position="attributes">
+                    <attribute name="attrs">{'invisible':[('type', '=', 'property')]}</attribute>
+                </xpath>
+                <xpath expr="//sheet/notebook/page[2]"
+                       position="attributes">
+                    <attribute name="attrs">{'invisible':[('type', '=', 'property')]}</attribute>
+                </xpath>
+                <xpath expr="//sheet/notebook/page[3]"
+                       position="attributes">
+                    <attribute name="attrs">{'invisible':[('type', '=', 'property')]}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='purchase_ok']" position="attributes">
+                    <attribute name="attrs">{'invisible':[('type', '=', 'property')]}</attribute>
+                </xpath>
+                <xpath expr="//label[@for='purchase_ok']" position="attributes">
+                    <attribute name="attrs">{'invisible':[('type', '=', 'property')]}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='can_be_expensed']" position="attributes">
+                <attribute name="attrs">{'invisible':[('type', '=', 'property')]}</attribute>
+                </xpath>
+                <xpath expr="//label[@for='can_be_expensed']" position="attributes">
+                <attribute name="attrs">{'invisible':[('type', '=', 'property')]}</attribute>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="product.product_template_action" model="ir.actions.act_window">
+            <field name="name">Products</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.template</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_type">form</field>
+            <field name="res_model">product.template</field>
+            <field name="context">{'default_purchase_ok':False}</field>
+        </record>
+
+
+        <record model="ir.ui.view" id="rs_property_product2_form_view">
+            <field name="name">rs_property.product.form2</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/notebook/page[1]" position="attributes">
+                    <attribute name="attrs">{'invisible':[('type', '=', 'property')]}</attribute>
+                </xpath>
+
+                <xpath expr="//sheet/notebook/page[2]" position="attributes">
+                    <attribute name="attrs">{'invisible':[('type', '=', 'property')]}</attribute>
+                </xpath>
+
+                <xpath expr="//sheet/notebook/page[3]" position="attributes">
+                    <attribute name="attrs">{'invisible':[('type', '=', 'property')]}</attribute>
+                </xpath>
+
+                <xpath expr="//sheet/notebook/page[4]" position="inside">
+                    <group>
+                        <field name="categ_id" string="Internal Category"/>
+                    </group>
+
+                </xpath>
+                <xpath expr="//field[@name='property_account_income_id']" position="replace"/>
+                <xpath expr="//field[@name='property_account_expense_id']" position="replace"/>
+                <xpath expr="//field[@name='taxes_id']" position="replace"/>
+                <xpath expr="//field[@name='supplier_taxes_id']" position="replace"/>
+
+                <xpath expr="//sheet/notebook/page[1]" position="before">
+                    <page string="Property" attrs="{'invisible' : [('type', '!=', 'property')]}" sequence="0"
+                          groups="sky_height.group_real_state">
+                        <group groups="sky_height.group_real_state">
+                            <group string="Property Information" groups="sky_height.group_real_state">
+                                <field name="property_no"
+                                       attrs="{'required' : [('type', '=', 'property')],'readonly':[('search_admin','=',True)]}"/>
+                                <field name="project_id"
+                                       attrs="{'required' : [('type', '=', 'property')],'readonly':[('search_admin','=',True)]}"/>
+                                <field name="phase_id"
+                                       context="{'default_project_id': project_id,'form_view_ref':'property_phase_form_view'}"
+                                       attrs="{'required' : [('type', '=', 'property')],'readonly':[('search_admin','=',True)]}"/>
+                                <field name="search_admin"
+                                       invisible="1"/>
+
+                                <field name="property_block_id"
+                                       attrs="{'readonly':[('search_admin','=',True)]}"/>
+                                <field name="type_of_property_id"
+                                       attrs="{'readonly':[('search_admin','=',True)]}"/>
+                                <field name="level_id"
+                                       attrs="{'readonly':[('search_admin','=',True)]}"/>
+                                <field name="total_area"
+                                       attrs="{'readonly':[('search_admin','=',True)]}"/>
+                                <field name="total_open_area"
+                                       attrs="{'readonly':[('search_admin','=',True)]}"/>
+                                <field name="property_floor_id"
+                                       attrs="{'readonly':[('search_admin','=',True)]}"/>
+                                <field name="property_platform_id"
+                                       attrs="{'readonly':[('search_admin','=',True)]}"/>
+                                <field name="bedrooms_no"
+                                       attrs="{'readonly':[('search_admin','=',True)]}"/>
+                            </group>
+
+                            <group string="Extensions"
+                                   groups="sky_height.group_real_state"
+                                   attrs="{'readonly':[('search_admin','=',True)]}">
+                                <field name="garden"
+                                       attrs="{'readonly':[('search_admin','=',True)]}"/>
+                                <field name="garden_area"
+                                       attrs="{'invisible' : [('garden', '!=', True)]}"/>
+                                <field name="property_pool"
+                                       attrs="{'readonly':[('search_admin','=',True)]}"/>
+
+                                <field name="pool_dimensions"
+                                       attrs="{'invisible' : [('property_pool', '!=', True)]}"/>
+                                <field name="pool_area"
+                                       attrs="{'invisible' : [('property_pool', '!=', True)],'readonly':[('search_admin','=',True)]}"/>
+                                <field name="garage"
+                                       attrs="{'readonly':[('search_admin','=',True)]}"/>
+                                <field name="corner"
+                                       attrs="{'readonly':[('search_admin','=',True)]}"/>
+                                <field name="sea_view"
+                                       attrs="{'readonly':[('search_admin','=',True)]}"/>
+                                <field name="lake_or_pool_view"
+                                       attrs="{'readonly':[('search_admin','=',True)]}"/>
+                                <field name="landscape_view"
+                                       attrs="{'readonly':[('search_admin','=',True)]}"/>
+                                <field name="clear_view"
+                                       attrs="{'readonly':[('search_admin','=',True)]}"/>
+                                <field name="main_spine"
+                                       attrs="{'readonly':[('search_admin','=',True)]}"/>
+                            </group>
+
+                            <group string="Area" groups="sky_height.group_real_state">
+                                <group>
+                                    <field name="plot_area"
+                                           attrs="{'readonly':[('search_admin','=',True)]}"/>
+                                    <field name="indoor_area"
+                                           attrs="{'readonly':[('search_admin','=',True)]}"/>
+                                    <field name="covered_terrace"
+                                           attrs="{'readonly':[('search_admin','=',True)]}"/>
+                                    <field name="total_covered_area"
+                                           attrs="{'readonly':[('search_admin','=',True)]}"/>
+                                    <field name="court_yard"
+                                           attrs="{'readonly':[('search_admin','=',True)]}"/>
+                                    <field name="open_terrace"
+                                           attrs="{'readonly':[('search_admin','=',True)]}"/>
+                                </group>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+
+
+                <xpath expr="//field[@name='sale_ok']" position="attributes">
+                    <attribute name="invisible">[('type', '=', 'property')]</attribute>
+                </xpath>
+                <xpath expr="//label[@for='sale_ok']" position="attributes">
+                    <attribute name="invisible">[('type', '=', 'property')]</attribute>
+                </xpath>
+
+                <xpath expr="//label[@for='name']" position="replace">
+                    <label class="oe_edit_only"
+                           for="name"
+                           string="Name"/>
+                </xpath>
+                <xpath expr="//field[@name='lst_price']" position="replace">
+
+                </xpath>
+                <xpath expr="//field[@name='name']" position="replace">
+                    <field name="name"
+                           placeholder="Name"
+                           modifiers="{'required': true}"/>
+                </xpath>
+                <xpath expr="//field[@name='type']" position="replace"/>
+
+                <xpath expr="//field[@name='product_tmpl_id']" position="after">
+                    <h6>
+                        <group>
+
+                            <field name="lst_price" attrs="{'readonly':[('search_admin','=',True)]}"/>
+                            <field name="type" readonly="1" attrs="{'readonly':[('search_admin','=',True)]}"/>
+                            <field name="resp_user_id" readonly="1"
+                                   attrs="{'invisible':[('status','!=','not_available')]}"/>
+                        </group>
+                    </h6>
+
+                </xpath>
+                <xpath expr="/form/*" position="before">
+                    <header attrs="{'invisible' : [('type', '!=', 'property')]}">
+
+                        <button name="create_reservation"
+                                id="create_reservation"
+                                type="object"
+                                attrs="{'invisible' : [('status', 'in', ['reserved','delivered','contracted','not_available', 'blocked'])]}"
+                                string="Create Reservation"
+                                groups="sky_height.sale_team_leader_group,base.group_sale_salesman,sky_height.group_sky_height_admin"
+                                class="oe_highlight"/>
+
+
+                        <button string="Set Property To Blocked"
+                                name="update_state_to_blocked"
+                                type="object"
+                                class="oe_highlight"
+                                groups="sky_height.development_head_user,sky_height.group_sky_height_admin"
+                                attrs="{'invisible' : [('status', '!=', 'available')]}"/>
+
+                        <button string="Set Property To Available"
+                                name="update_state_to_available"
+                                type="object"
+                                groups="sky_height.sales_head_user,sky_height.operation_sr_manager_user,sky_height.operation_manager_user,sky_height.operation_senior_supervisor_user,sky_height.operation_supervisor_user,sky_height.operation_sr_executive_user,sky_height.operation_executive_user,sky_height.group_sky_height_admin"
+                                attrs="{'invisible' : [('status', 'not in', ['not_available','blocked'])]}"/>
+
+                        <button string="Set Property To Unavailable"
+                                name="%(change_property_status_action)d"
+                                type="action"
+                                context="{'default_product_id':active_id}"
+                                class="oe_highlight"
+                                attrs="{'invisible' : [('status', '!=', 'available')]}"
+                                groups="sky_height.sales_head_user,sky_height.operation_sr_manager_user,sky_height.operation_manager_user,sky_height.operation_senior_supervisor_user,sky_height.operation_supervisor_user,sky_height.operation_sr_executive_user,sky_height.operation_executive_user,sky_height.group_sky_height_admin"/>
+
+                        <field name="status" widget="statusbar"
+                               statusbar_colors="{'not_available':'red','delivered':'blue'}"/>
+                    </header>
+                </xpath>
+
+            </field>
+        </record>
+
+
+        <record id="inherit_search_product2" model="ir.ui.view">
+            <field name="name">property Search</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_search_form_view"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='name']"
+                       position="after">
+                    <filter string="Property Number"
+                            domain="[]"
+                            context="{'group_by':'property_no'}"/>
+                    <filter string="Property Block"
+                            domain="[]"
+                            context="{'group_by':'property_block_id'}"/>
+                    <filter string="Type"
+                            domain="[]"
+                            context="{'group_by':'type_of_property_id'}"/>
+                    <filter string="Level"
+                            domain="[]"
+                            context="{'group_by':'level_id'}"/>
+                    <filter string="Floor"
+                            domain="[]"
+                            context="{'group_by':'property_floor_id'}"/>
+                    <filter string="Platform"
+                            domain="[]"
+                            context="{'group_by':'property_platform_id'}"/>
+                    <filter string="Project"
+                            domain="[]"
+                            context="{'group_by':'project_id'}"/>
+                    <filter string="Phase"
+                            domain="[]"
+                            context="{'group_by':'phase_id'}"/>
+                    <filter string="Status"
+                            domain="[]"
+                            context="{'group_by':'status'}"/>
+                </xpath>
+                <xpath expr="//filter[@name='services']"
+                       position="after">
+                    <filter string="Property"
+                            name="property"
+                            domain="[('type','=','property')]"/>
+                    <filter string="Available"
+                            name="Available"
+                            domain="[('status','=','available')]"/>
+                    <filter string="Not Available"
+                            name="Not Available"
+                            domain="[('status','=','not_available')]"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="rs_property_inherit_tree_view">
+            <field name="name">Property Tree</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_product_tree_view"/>
+            <field name="arch" type="xml">
+
+                <field name="lst_price" position="after">
+                    <field name="total_area"/>
+                    <field name="type_of_property_id"/>
+                    <field name="property_floor_id"/>
+                    <field name="status"/>
+                </field>
+                <xpath expr="//field[@name='virtual_available']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='qty_available']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='barcode']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='default_code']" position="attributes">
+                    <attribute name="invisible">[('type', '=', 'property')]</attribute>
+                </xpath>
+                <xpath expr="//field[@name='attribute_value_ids']" position="attributes">
+                    <attribute name="invisible">[('type', '=', 'property')]</attribute>
+                </xpath>
+                <xpath expr="//field[@name='uom_id']" position="attributes">
+                    <attribute name="invisible">[('type', '=', 'property')]</attribute>
+                </xpath>
+
+            </field>
+        </record>
+
+         <!--Server Action-->
+        <record id="block_property_action" model="ir.actions.server">
+            <field name="name">Block Properties</field>
+            <field name="model_id" ref="model_product_product"/>
+            <field name="code">
+                if context.get('active_model') == 'product.product' and context.get('active_ids'):
+                    self.block_property(cr, uid, context['active_ids'], context=context)
+            </field>
+        </record>
+
+        <record model="ir.values" id="block_property">
+            <field name="model_id" ref="model_product_product" />
+            <field name="name">Block Properties</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.server,' +str(ref('block_property_action'))" />
+            <field name="key">action</field>
+            <field name="model">product.product</field>
+        </record>
+
+        <record id="available_property_action" model="ir.actions.server">
+            <field name="name">Available Properties</field>
+            <field name="model_id" ref="model_product_product"/>
+            <field name="code">
+                if context.get('active_model') == 'product.product' and context.get('active_ids'):
+                self.available_property(cr, uid, context['active_ids'], context=context)
+            </field>
+        </record>
+
+        <record model="ir.values" id="available_property">
+            <field name="model_id" ref="model_product_product" />
+            <field name="name">Available Properties</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.server,' +str(ref('available_property_action'))" />
+            <field name="key">action</field>
+            <field name="model">product.product</field>
+        </record>
+
+        <record id="sky_height.property_normal_action" model="ir.actions.act_window">
+            <field name="name">Property</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.product</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="view_type">form</field>
+            <field name="search_view_id" ref="product.product_search_form_view"/>
+            <field name="context">{"search_default_property":1,"default_type":"property"}}</field>
+            <field name="domain">[('type','=','property')]</field>
+            <field name="view_id" eval="False"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to define a new product.
+                </p>
+                <p>
+                    You must define a product for everything you buy or sell,
+                    whether it's a physical product, a consumable or service.
+                </p>
+            </field>
+        </record>
+
+        <record id="sky_height.property_reserved_action" model="ir.actions.act_window">
+            <field name="name">Reserved Property</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.product</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="view_type">form</field>
+            <field name="search_view_id" ref="product.product_search_form_view"/>
+            <field name="context">{"search_default_property":1,"default_type":"property"}}</field>
+            <field name="domain">[('type','=','property'),('status','=','reserved')]</field>
+            <field name="view_id" eval="False"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to define a new product.
+                </p>
+                <p>
+                    You must define a product for everything you buy or sell,
+                    whether it's a physical product, a consumable or service.
+                </p>
+            </field>
+        </record>
+        <record id="sky_height.property_available_action" model="ir.actions.act_window">
+            <field name="name">Available Property</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.product</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="view_type">form</field>
+            <field name="search_view_id" ref="product.product_search_form_view"/>
+            <field name="context">{"search_default_property":1,"default_type":"property"}}</field>
+            <field name="domain">[('type','=','property'),('status','=','available')]</field>
+            <field name="view_id" eval="False"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to define a new product.
+                </p>
+                <p>
+                    You must define a product for everything you buy or sell,
+                    whether it's a physical product, a consumable or service.
+                </p>
+            </field>
+        </record>
+
+        <record id="product.product_normal_action" model="ir.actions.act_window">
+            <field name="name">Property</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.product</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="view_type">form</field>
+            <field name="search_view_id" ref="product.product_search_form_view"/>
+            <field name="context">{"search_default_property":1}}</field>
+            <field name="view_id" eval="False"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to define a new product.
+                </p>
+                <p>
+                    You must define a product for everything you buy or sell,
+                    whether it's a physical product, a consumable or service.
+                </p>
+            </field>
+        </record>
+
+        <!--Property Block-->
+        <record model="ir.ui.view" id="property_block_form_view">
+            <field name="name">property.block.form</field>
+            <field name="model">property.block</field>
+            <field name="arch" type="xml">
+                <form string="property block Form">
+
+                    <header></header>
+                    <sheet>
+
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+
+                        </group>
+
+                    </sheet>
+                    <footer></footer>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="property_block_list_view">
+            <field name="name">property.block.list</field>
+            <field name="model">property.block</field>
+            <field name="arch" type="xml">
+                <tree string="property block List">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="property_block_action">
+            <field name="name">Property Block</field>
+            <field name="res_model">property.block</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--Property Floor-->
+        <record model="ir.ui.view" id="property_floor_form_view">
+            <field name="name">property.floor.form</field>
+            <field name="model">property.floor</field>
+            <field name="arch" type="xml">
+                <form string="property floor Form">
+
+                    <header></header>
+                    <sheet>
+
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+
+                        </group>
+
+                    </sheet>
+                    <footer></footer>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="property_floor_list_view">
+            <field name="name">property.floor.list</field>
+            <field name="model">property.floor</field>
+            <field name="arch" type="xml">
+                <tree string="property floor List">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="property_floor_action">
+            <field name="name">Property Floor</field>
+            <field name="res_model">property.floor</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--Property platform-->
+        <record model="ir.ui.view" id="property_platform_form_view">
+            <field name="name">property.platform.form</field>
+            <field name="model">property.platform</field>
+            <field name="arch" type="xml">
+                <form string="property platform Form">
+
+                    <header></header>
+                    <sheet>
+
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+
+                        </group>
+
+                    </sheet>
+                    <footer></footer>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="property_platform_list_view">
+            <field name="name">property.platform.list</field>
+            <field name="model">property.platform</field>
+            <field name="arch" type="xml">
+                <tree string="property platform List">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="property_platform_action">
+            <field name="name">Property Platform</field>
+            <field name="res_model">property.platform</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--Property type-->
+        <record model="ir.ui.view" id="property_type_form_view">
+            <field name="name">property.type.form</field>
+            <field name="model">property.type</field>
+            <field name="arch" type="xml">
+                <form string="property type Form">
+
+                    <header></header>
+                    <sheet>
+
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+
+                        </group>
+
+                    </sheet>
+                    <footer></footer>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="property_type_list_view">
+            <field name="name">property.type.list</field>
+            <field name="model">property.type</field>
+            <field name="arch" type="xml">
+                <tree string="property type List">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="property_type_action">
+            <field name="name">Property Type</field>
+            <field name="res_model">property.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--Property level-->
+        <record model="ir.ui.view" id="property_level_form_view">
+            <field name="name">property.level.form</field>
+            <field name="model">property.level</field>
+            <field name="arch" type="xml">
+                <form string="property level Form">
+
+                    <header></header>
+                    <sheet>
+
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+
+                        </group>
+
+                    </sheet>
+                    <footer></footer>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="property_level_list_view">
+            <field name="name">property.level.list</field>
+            <field name="model">property.level</field>
+            <field name="arch" type="xml">
+                <tree string="property level List">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="property_level_action">
+            <field name="name">Property Level</field>
+            <field name="res_model">property.level</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</openerp>

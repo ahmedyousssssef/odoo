@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!--<record forcecreate="1" id="real_estate_project_no_seq_type" model="ir.sequence.type">-->
+            <!--<field name="name">Project No. Sequence</field>-->
+            <!--<field name="code">real.estate.project.no.seq</field>-->
+        <!--</record>-->
+
+        <record forcecreate="1" id="real_estate_project_no_seq" model="ir.sequence">
+            <field name="name">Project No. Sequence</field>
+            <field name="code">real.estate.project.no.seq</field>
+            <field eval="1" name="number_increment"/>
+            <field name="prefix">PRO/</field>
+            <field name="padding">5</field>
+        </record>
+
+
+        <record forcecreate="1" id="real_estate_property_no_seq" model="ir.sequence">
+            <field name="name">Property ID Sequence</field>
+            <field name="code">real.estate.property.id.seq</field>
+            <field eval="1" name="number_increment"/>
+            <field name="prefix">PROPERTY/</field>
+            <field name="padding">5</field>
+        </record>
+
+
+
+        <record forcecreate="1" id="real_estate_reservation_no_seq" model="ir.sequence">
+            <field name="name">Reservation ID Sequence</field>
+            <field name="code">real.estate.reservation.id.seq</field>
+            <field eval="1" name="number_increment"/>
+            <field name="prefix">Res/</field>
+            <!--<field name="suffix">%(user_id)s</field>-->
+            <field name="padding">5</field>
+            <field name="implementation">no_gap</field>
+        </record>
+
+
+
+        <record forcecreate="1" id="real_estate_payment_code_seq" model="ir.sequence">
+            <field name="name">Payment Code Sequence</field>
+            <field name="code">real.estate.payment.code.seq</field>
+            <field eval="1" name="number_increment"/>
+            <field name="prefix">PAYMENT/</field>
+            <field name="padding">5</field>
+        </record>
+
+        <record forcecreate="1" id="real_estate_partner_code_seq" model="ir.sequence">
+            <field name="name">customer Sequence</field>
+            <field name="code">real.estate.customer.code.seq</field>
+            <field eval="1" name="number_increment"/>
+            <field name="prefix">Partner/</field>
+            <field name="padding">5</field>
+        </record>
+    </data>
+</openerp>

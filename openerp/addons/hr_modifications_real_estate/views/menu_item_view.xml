@@ -1,0 +1,13 @@
+<openerp>
+    <data>
+        <menuitem name="Recruitment Job's State Log" action="action_recruitment_state_log"
+                  id="isky_recruitment_state_log_menu" parent="hr_recruitment.menu_hr_recruitment_root"/>
+
+        <record id="mail.menu_contacts" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6,0,[ref('base.group_sale_salesman')])]"/>
+        </record>
+
+        <menuitem name="Excuse/Late Arrival Request" parent="hr_holidays.menu_hr_holidays_my_leaves"
+                  id="isky_excuse_request_menu" action="isky_excuse_request_action" sequence="10"/>
+    </data>
+</openerp>

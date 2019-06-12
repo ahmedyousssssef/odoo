@@ -1,0 +1,494 @@
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="rsreservation_form_view">
+            <field name="name">rsreservation.form</field>
+            <field name="model">rs.reservation</field>
+            <field name="arch" type="xml">
+                <form string="Reservation Form">
+                    <header>
+                        <button name="button_request_exception"
+                                states="draft"
+                                string="Request Exception"
+                                type="object"
+                                groups="base.group_sale_salesman,sky_height.sale_team_leader_group,base.group_sale_manager,sky_height.sales_head_user,sky_height.group_sky_height_admin"
+                                class="oe_highlight"/>
+
+                        <button name="button_exception_approval"
+                                states="request_exception"
+                                type="object"
+                                string="Approve Exception"
+                                groups="sky_height.group_sky_height_admin"
+                                class="oe_highlight"/>
+
+                        <button name="button_exception_rejection"
+                                type="object"
+                                states="request_exception"
+                                string="Reject Exception"
+                                groups="sky_height.group_sky_height_admin"
+                                class="oe_highlight"/>
+
+                        <button name="button_in_progress"
+                                type="object"
+                                states="draft,exception_approval"
+                                string="Reserve"
+                                groups="base.group_sale_salesman,sky_height.rs_group_finance,sky_height.group_sky_height_admin"
+                                class="oe_highlight"/>
+
+                        <button name="button_initialize"
+                                type="object"
+                                attrs="{'invisible' : ['|',('initalized_check', '=', True),('state','!=','under_collection')]}"
+                                string="Initialize Contract"
+                                groups="sky_height.group_legal,sky_height.group_sky_height_admin"
+                                class="oe_highlight"/>
+
+                        <button name="button_confirm_receive_checks"
+                                type="object"
+                                attrs="{'invisible' : ['|',('receive_checks', '=', True),('state','!=','in_progress')]}"
+                                string="Receive Checks"
+                                groups="account.group_account_user,sky_height.rs_group_finance,sky_height.group_sky_height_admin"
+                                class="oe_highlight"/>
+
+                        <button name="under_collection_check"
+                                type="object"
+                                attrs="{'invisible' : ['|',('undercollection_check', '=', True),('state','!=','confirm')]}"
+                                string="Under Collection"
+                                groups="account.group_account_user,sky_height.rs_group_finance,sky_height.group_sky_height_admin"
+                                class="oe_highlight"/>
+
+                        <button name="create_sale_order"
+                                type="object"
+                                states="review"
+                                string="Create Sale Order"
+                                groups="sky_height.rs_group_finance,sky_height.group_legal,sky_height.group_sky_height_admin"
+                                class="oe_highlight"/>
+
+
+                        <button name="button_review"
+                                type="object"
+                                string="Review Contract"
+                                attrs="{'invisible' : ['|',('reviewed_check', '=', True),('state','!=','initialize')]}"
+                                groups="sky_height.group_sky_height_admin,sky_height.group_legal"
+                                class="oe_highlight"/>
+
+                        <button name="%(commission_wizard_action)d"
+                                string="Create Commission"
+                                groups="account.group_account_user,sky_height.rs_group_finance,sky_height.group_sky_height_admin"
+                                type="action"
+                                class="btn-primary"
+                                attrs="{'invisible' : ['|',('commission_flag', '=', True),('state','not in',['initialize','review','create_so'])]}"
+                                context="{'default_reservation_id':active_id,'default_reservation_tot_amount':property_price,'default_sales_type':sales_type}"/>
+
+                        <button name="cancel"
+                                type="object"
+                                string="Cancel"
+                                class="oe_highlight"
+                                groups="sky_height.group_real_state"
+                                attrs="{'invisible' : ['|',('cancelled', '=', True),('state','not in',['draft','in_progress','confirm','request_exception','exception_approval','initialize','review'])]}"/>
+
+                        <button name="print_payment_report"
+                                type="object"
+                                string="Print Payment Report"
+                                class="oe_highlight"/>
+
+                        <field name="state"
+                               widget="statusbar"
+                               statusbar_visible="draft,request_exception,exception_approval,in_progress,initialize,confirm,under_collection,review,create_so"
+                               groups="sky_height.rs_group_finance,sky_height.group_sky_height_admin"/>
+                    </header>
+                    <sheet>
+                        <field name="name" invisible="1" class="oe_inline"/>
+                        <div class="oe_title">
+                            <label for="reservation_code" style="color:#893b74;"/>
+                            <h1>
+                                <field name="reservation_code"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group style="color:#893b74;" string="Property Details"/>
+                            <group style="color:#893b74;" string="Sales Details"/>
+                            <group>
+                                <field name="project_id"
+                                       attrs="{'readonly' : [('state', 'in', ['in_progress','confirm','create_so','initialize','review','under_collection'])]}"
+                                       options="{'no_quick_create':True, 'no_create_edit' : True,'no_open': True}"/>/>
+                                <field name="phase_id"
+                                       attrs="{'readonly' : [('state', 'in', ['in_progress','confirm','create_so','initialize','review','under_collection'])]}"
+                                       options="{'no_quick_create':True, 'no_create_edit' : True,'no_open': True}"/>
+                                <field name="unit_ids"
+                                       widget="many2many_tags"
+                                       attrs="{'readonly' : [('state', 'in', ['in_progress','confirm','create_so','initialize','review','under_collection'])]}"
+                                       options="{'no_quick_create':True, 'no_create_edit' : True,'no_open': True}"/>
+                                <field name="pay_strategy_id"
+                                       widget="selection"
+                                       attrs="{'readonly' : [('state', 'in', ['in_progress','confirm','create_so','initialize','review','under_collection'])]}"
+                                       domain="[('state','=','approved')]"
+                                       required="1"/>
+                                <field name="currency_id" invisible="1"/>
+                                <field name="property_price"/>
+                                <field name="pdc_id"
+                                       attrs="{'readonly' : [('state', 'in', ['in_progress','confirm','create_so','initialize','review','under_collection'])]}"/>
+                                <field name="payment_term_discount" readonly="1"/>
+                                <field name="discount"
+                                       attrs="{'readonly' : [('state', 'in', ['in_progress','confirm','create_so','initialize','review','under_collection'])]}"/>
+                                <field name="total_discount" invisible="1"/>
+                                <field name="net_price"/>
+                                <field name="discount_approval" attrs="{'invisible':[('discount','=',0)]}"
+                                       groups="sky_height.group_sky_height_admin"/>
+                            </group>
+                            <group>
+                                <field name="sale_order_id"/>
+                                <field name="hide_payment_button"
+                                       invisible="1"/>
+                                <field name="receive_checks"
+                                       invisible="1"/>
+                                <field name="undercollection_check"
+                                       invisible="1"/>
+                                <field name="initalized_check"
+                                       invisible="1"/>
+                                <field name="reviewed_check"
+                                       invisible="1"/>
+                                <field name="cancelled"
+                                       invisible="1"/>
+                                <field name="button_broker_paid"
+                                       invisible="1"/>
+                                <field name="button_salescommission_paid"
+                                       invisible="1"/>
+                                <field name="commission_flag" invisible="1"/>
+                                <field name="lead_id"
+                                       readonly="1" invisible="1"/>
+                                <field name="source"/>
+                                <field name="other"
+                                       attrs="{'invisible':[('source','!=', 'other')],'required':[('source','=', 'other')],'readonly':[('button_salescommission_paid','=',True)]}"/>
+
+                                <field name="sales_type"
+                                       attrs="{'readonly':[('button_salescommission_paid','=',True)]}"/>
+                                <field name="marital_status"
+                                       invisible="1"/>
+                                <field name="sales_customer_id"
+                                       attrs="{'invisible':[('sales_type','not in', ['client_referral','resale'])],'required':[('sales_type','in', ['client_referral','resale'])]}"
+                                       context="{'default_customer':1}"/>
+
+                                <field name="sales_employee_id"
+                                       attrs="{'invisible':[('sales_type','!=', 'employee_referral')],'required':[('sales_type','=', 'employee_referral')]}"/>
+                                <field name="no_of_kids"
+                                       attrs="{'invisible' : [('marital_status', '=', 'single')],'readonly':[('button_salescommission_paid','=',True)]}"
+
+                                />
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Customer Details" style="color:#893b74;"/>
+                            <group string="Internal Information" style="color:#893b74;"/>
+                            <group>
+                                <field name="customer_id"
+                                       attrs="{'readonly' : [('state', 'in', ['create_so','button_salescommission_paid'])]}"
+                                       options="{'no_create': True,'no_open': True}"/>
+                                <field name="partner_ids" widget="many2many_tags"
+                                       attrs="{'readonly' : [('state', 'in', ['create_so','button_salescommission_paid'])]}"/>
+                                <field name="address"
+                                       readonly="1"/>
+                                <field name="phone"
+                                       readonly="1"/>
+                                <field name="mobile1_type" readonly="1"/>
+                                <field name="mobile"
+                                       readonly="1"/>
+                                <field name="mobile2_type" readonly="1"/>
+                                <field name="mobile2" readonly="1"/>
+                                <field name="email"
+                                       readonly="1"/>
+                                <field name="function"
+                                       readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="user_ids" required="1" widget="many2many_tags"
+                                       attrs="{'readonly' : [('state', '=', 'create_so')]}"/>
+
+                                <field name="sales_team_ids" widget="many2many_tags"
+                                       attrs="{'readonly' : [('state', '=', 'create_so')]}"
+                                       options="{'no_quick_create':True, 'no_create_edit' : True,'no_open': True}"/>
+
+                                <field name="team_leader_ids" widget="many2many_tags"
+                                       readonly="1"
+                                       options="{'no_quick_create':True, 'no_create_edit' : True,'no_open': True}"/>
+                                <field name="sales_manager_ids" widget="many2many_tags"
+                                       readonly="1"
+                                       options="{'no_quick_create':True, 'no_create_edit' : True,'no_open': True}"/>
+                            </group>
+                        </group>
+                        <group string="Attachments" style="color:#893b74;"/>
+                        <group col="4">
+                            <field name="id_no"
+                                   attrs="{'readonly' : [('state', '=', 'create_so')]}"/>
+                            <field name="id_type"
+                                   attrs="{'readonly' : [('state', '=', 'create_so')]}"/>
+                            <field name="id_photo"
+                                   attrs="{'readonly' : [('state', '=', 'create_so')]}"/>
+                        </group>
+                        <notebook>
+                            <page name="reservation_conditions" string="Reservation Conditions">
+                                <group>
+                                    <field name="conditions"
+                                           attrs="{'readonly' : [('state', '=', 'create_so')]}"/>
+                                </group>
+                            </page>
+                            <page name="payment" string="Payment"
+                                  groups="sky_height.rs_group_finance,sky_heights.group_legal,base.group_sale_salesman,base.group_sale_salesman_all_leads,base.group_sale_manager,account.group_account_invoice,account.group_account_user,account.group_account_manager,sky_height.sale_team_leader_group,sky_height.group_sky_height_admin">
+                                <field name="sales_status"
+                                       invisible="1"/>
+                                <group>
+                                    <field name='is_payment_strg' invisible="1"/>
+                                    <field name="payment_approval" string="Payment Approval"
+                                           attrs="{'invisible':[('is_payment_strg','=',False)]}"
+                                           groups="sky_height.rs_group_finance,sky_height.group_sky_height_admin"/>
+                                </group>
+                                <button name="%(fill_payment_wizard_action)d"
+                                        string="Update Bank and check Number"
+                                        type="action"
+                                        attrs="{'invisble' : [('state', 'not in ', ['draft','request_exception','exception_approval','in_progress','confirm','under_collection'])]}"
+                                        class="btn-primary"
+                                        context="{'default_reservation_id':active_id,}"/>
+
+                                <field name="payment_strg_ids"
+                                       widget="one2many_list"
+                                       nolabel="1"
+                                       class="oe_inline oe_no_button"
+                                       context="{'default_project_id':project_id}"
+                                       attrs="{'readonly' : [('state', 'in', ['confirm','create_so','initialize','review','under_collection'])]}"
+                                >
+                                    <tree string="payment"
+                                          editable="buttom"
+                                          colors="red:move_check == True;green:cancelled == True">
+                                        <field name="accountant_status"
+                                               invisible="1"/>
+                                        <field name="move_check"
+                                               invisible="1"/>
+                                        <field name="project_id"
+                                               invisible="1"/>
+                                        <field name="payment_method_id"
+                                               invisible="1"/>
+                                        <field name="type"
+                                               invisible="1"/>
+                                        <field name="cancelled"
+                                               invisible="1"/>
+                                        <field name="description"
+                                               attrs="{'readonly':[('move_check','=',True)]}"/>
+                                        <field name="amount"
+                                               attrs="{'readonly':[('move_check','=',True)]}"/>
+                                        <field name="payment_date"
+                                               attrs="{'readonly':[('move_check','=',True)]}"/>
+                                        <field name="journal_id"
+                                               domain="[('type','in',['bank', 'cash'])]"
+                                               widget="selection"
+                                               string="Payment Method"
+                                               attrs="{'readonly' : [('move_check', '=', True)]}"/>
+                                        <field name="bank_name"
+                                               attrs="{'readonly':[('type','!=','bank')]}"/>
+                                        <field name="cheque"
+                                               attrs="{'readonly':[('type','!=','bank')]}"/>
+                                        <field name="deposite"
+                                               attrs="{'readonly':[('move_check','=',True)]}"/>
+                                        <field name="add_extension"
+                                               attrs="{'readonly':[('move_check','=',True)]}"/>
+                                        <field name="maintainance_fees"
+                                               attrs="{'readonly':[('add_extension','=',True)]}"/>
+                                        <field name="move_id"
+                                               readonly="1"/>
+                                        <field name="cheque_status" invisible="1"/>
+                                        <button type="object"
+                                                name="create_deposite_entry"
+                                                string="Pay"
+                                                class="oe_highlight"
+                                                attrs="{'invisible' : ['|',('deposite', '=', False),('move_check', '=', True)]}"
+                                                groups="account.group_account_user,sky_height.rs_group_finance,sky_height.group_sky_height_admin"/>
+
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="brokers" string="Brokers"
+                                  attrs="{'invisible':[('source','!=', 'broker'),('sales_type','not in', ['individual_broker','indirect'])]}">
+                                <group>
+                                    <group string="Brokers">
+                                        <field name="broker_ids"
+                                               nolabel="1"
+                                               context="{'default_is_broker':1, 'default_supplier':1}"
+                                               attrs="{'readonly' : [('state', '=', 'create_so')]}">
+                                            <tree>
+                                                <field name="name"/>
+                                                <field name="broker_commission_amount"/>
+                                            </tree>
+                                        </field>
+                                    </group>
+                                </group>
+                                <button type="object"
+                                        name="action_paid_broker_amount"
+                                        string="Create Broker Payment"
+                                        class="oe_highlight"
+                                        attrs="{'invisible' : ['|',('button_broker_paid', '=', True),('state','in',['draft','cancel'])]}"/>
+                            </page>
+                            <page name="exception_request" string="Exception Request">
+                                <field name="request_exception"
+                                       attrs="{'readonly' : [('state','not in',['draft','request_exception'])]}"/>
+                            </page>
+                            <page name="log" string="Log">
+                                <group>
+                                    <group string="Users">
+                                        <field name="request_user_id"
+                                               readonly="1"/>
+                                        <field name="exception_approval_user_id"
+                                               readonly="1"/>
+                                        <field name="exception_rejection_user_id"
+                                               readonly="1"/>
+                                        <field name="in_progress_user_id"
+                                               readonly="1"/>
+                                        <field name="confirm_user_id"
+                                               readonly="1"/>
+                                        <field name="initialize_user_id"
+                                               readonly="1"/>
+                                        <field name="review_user_id"
+                                               readonly="1"/>
+                                        <field name="contract_user_id"
+                                               readonly="1"/>
+                                        <field name="cancel_user_id"
+                                               readonly="1"/>
+                                    </group>
+                                    <group string="Workflow Dates">
+                                        <field name="created_date"
+                                               groups="sky_height.group_sky_height_admin"
+                                               attrs="{'readonly' : [('state', 'in', ['create_so','button_salescommission_paid'])]}"
+                                               required="1"/>
+                                        <field name="create_date"
+                                               attrs="{'readonly' : [('state', 'in', ['create_so','button_salescommission_paid'])]}"
+                                               required="0" invisible="1"/>
+                                        <field name="expire_date"/>
+                                        <field name="reservation_date"
+                                               readonly="1"/>
+                                        <field name="reservation_expiry_date"
+                                               invisible="1"/>
+                                        <field name="confirm_date"
+                                               readonly="1"/>
+                                        <field name="expire_date_difference"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page name="legal_papers" string="Legal Papers"
+                                  groups="sky_height.group_legal,sky_height.sales_head_user,base.group_sale_salesman,sky_height.sale_team_leader_group,sky_height.group_sky_height_admin">
+                                <group>
+                                    <field name="attach_ids"
+                                           nolabel="1">
+                                        <tree editable="top">
+                                            <field name="name"/>
+                                            <field name="datas"/>
+                                            <field name="legal_type"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+                            <page name="payment_attachments" string="Payment Attachments"
+                                  groups="sky_height.rs_group_finance,sky_height.group_legal,base.group_sale_salesman,base.group_sale_salesman_all_leads,base.group_sale_manager,account.group_account_invoice,account.group_account_user,account.group_account_manager,sky_height.sale_team_leader_group,sky_height.group_sky_height_admin"
+                                  attrs="{'readonly':[('sales_status','=',True)]}">
+                                <group>
+                                    <field name="admin_status"
+                                           invisible="1"/>
+                                    <field name="approve_cancellation"
+                                           attrs="{'readonly':[('admin_status','=',False)]}"/>
+
+                                </group>
+                                <group>
+                                    <field name="payment_attach_ids"
+                                           nolabel="1">
+                                        <tree editable="top">
+                                            <field name="name"/>
+                                            <field name="datas"/>
+                                            <field name="attach_type"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+                            <page string="commissions" name="Commissions" groups="sky_height.group_sky_height_admin">
+                                <field name="account_invoice_ids"
+                                       readonly="1"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <!--<div class="oe_chatter">-->
+                    <!--<field name="message_follower_ids"-->
+                    <!--widget="mail_followers"-->
+                    <!--groups="base.group_user"/>-->
+                    <!--<field name="message_ids"-->
+                    <!--widget="mail_thread"/>-->
+                    <!--</div>-->
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="rsreservation_tree_view">
+            <field name="name">rs.reservation.tree</field>
+            <field name="model">rs.reservation</field>
+            <field name="arch" type="xml">
+                <tree string="Projects"
+                      colors="red:state == 'cancel';green:state == 'create_so';orange:state == 'confirm' ;blue:expire_date_difference &gt; 0;">
+                    <field name="expire_date_difference"
+                           invisible="1"/>
+                    <field name="name"
+                           invisible="1"/>
+                    <field name="reservation_code"/>
+                    <field name="customer_id"/>
+                    <field name="project_id"/>
+                    <field name="phase_id"/>
+                    <field name="pay_strategy_id"
+                           invisible="1"/>
+                    <!--<field name="payment_strg_name" />-->
+                    <field name="property_price"
+                           sum="Total Price"/>
+                    <field name="discount"
+                           sum="Total Discount"/>
+                    <field name="net_price"
+                           sum="Total Net Price"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="resreservation_search_view">
+            <field name="name">rsreservation.search</field>
+            <field name="model">rs.reservation</field>
+            <field name="arch" type="xml">
+                <search string="Search Reservation">
+                    <group colspan='4'>
+                        <field name="project_id"/>
+                        <field name="customer_id"/>
+                    </group>
+                    <newline/>
+                    <group string="Group By">
+                        <filter string="Project"
+                                context="{'group_by':'project_id'}"/>
+                        <filter string="Status"
+                                context="{'group_by':'state'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="rsreservation_list_action">
+            <field name="name">Reservations</field>
+            <field name="res_model">rs.reservation</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="search_view_id" ref="resreservation_search_view"/>
+            <field name="context">{'default_sales_type':'direct','default_source':'self_generated'}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to define a Reservation.
+                </p>
+                <p>
+                    You must define a reservation for everything you purchase units,
+                </p>
+                <p>
+                    The reservation form contains detailed information to improve the
+                    purchase of property units process: prices, accounting data,cheques,
+                    available units, etc.
+                </p>
+            </field>
+
+        </record>
+
+    </data>
+</openerp>

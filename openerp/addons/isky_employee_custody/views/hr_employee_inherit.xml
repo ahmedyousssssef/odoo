@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="hr_employee_form_view_inherit">
+            <field name="name">hr.employee.form.inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//label[@for='name']" position="before">
+                    <label for="employee_code" class="oe_edit_only"/>
+                    <h1>
+                        <field name="employee_code" placeholder="Employee Code"/>
+                    </h1>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

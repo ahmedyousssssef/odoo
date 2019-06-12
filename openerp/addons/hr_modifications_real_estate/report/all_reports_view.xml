@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report
+                id="hiring_checklist_report"
+                model="hr.applicant"
+                string="Hiring Checklist"
+                report_type="qweb-pdf"
+                name="hr_modifications_real_estate.hiring_checklist"
+                attachment_use="False"
+                file="hr_modifications_real_estate.hiring_checklist"
+        />
+
+        <report
+                id="isky_excuse_report"
+                model="isky.excuse.request"
+                string="Excuse Report"
+                report_type="qweb-pdf"
+                name="hr_modifications_real_estate.report_excuse_document"
+                attachment_use="False"
+                file="hr_modifications_real_estate.report_excuse_document"
+        />
+
+        <report id="part_time_report_id"
+                string="Part Time Report"
+                model="hr.applicant"
+                report_type="qweb-pdf"
+                name="hr_modifications_real_estate.part_time_report"
+        />
+
+        <report id="full_report_acceptance"
+                string="Consulting  Report"
+                model="hr.applicant"
+                report_type="qweb-pdf"
+                name="hr_modifications_real_estate.consulting_offer"
+        />
+
+        <report id="full_report"
+                string="Full Time Report"
+                model="hr.applicant"
+                report_type="qweb-pdf"
+                name="hr_modifications_real_estate.full_time_report"
+        />
+
+        <report
+                id="filing_tracker_report"
+                model="hr.applicant"
+                string="Filing Tracker"
+                report_type="qweb-pdf"
+                name="hr_modifications_real_estate.filing_tracker"
+                attachment_use="False"
+                file="hr_modifications_real_estate.filing_tracker"
+        />
+
+        <report
+                id="blue_collar_contract_report"
+                model="hr.applicant"
+                string="Blue Collar Contract"
+                report_type="qweb-pdf"
+                name="hr_modifications_real_estate.blue_collar_contract"
+                attachment_use="False"
+                file="hr_modifications_real_estate.blue_collar_contract"
+        />
+
+    </data>
+</openerp>

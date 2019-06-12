@@ -1,0 +1,1202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- CRM Lead salesperson and sales team leader -->
+        <record id="crm_lead_sales_person_inherit_view" model="ir.ui.view">
+            <field name="name">crm.lead.inherit.view</field>
+            <field name="model">crm.lead</field>
+            <field name="groups_id"
+                   eval="[(6, 0, [ref('base.group_sale_salesman'), ref('sky_height.sale_team_leader_group')])]"/>
+            <field name="inherit_id" ref="sky_height.isky_form_view_opportunity_form_inherit"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='team_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Inherit Property Form View to Modify it -->
+        <record id="product_product_inherit_view" model="ir.ui.view">
+            <field name="name">product.product.inherit.view</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="sky_height.rs_property_product2_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='update_state_to_available']" position="attributes">
+                    <attribute name="groups">
+                        sky_height.group_sky_height_admin,sky_height.sales_head_user,sky_height.operation_sr_manager_user,sky_height.operation_manager_user,sky_height.operation_senior_supervisor_user,sky_height.operation_supervisor_user,sky_height.operation_sr_executive_user,sky_height.operation_executive_user,sky_height.development_head_user,isky_access_rights.development_user,base.group_sale_salesman,sky_height.sale_team_leader_group
+                    </attribute>
+                </xpath>
+                <xpath expr="//button[@name='update_state_to_blocked']" position="attributes">
+                    <attribute name="groups">
+                        sky_height.development_head_user,isky_access_rights.development_user,sky_height.group_sky_height_admin
+                    </attribute>
+                </xpath>
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('status', 'in', ['reserved', 'contracted', 'delivered'])]}
+                    </attribute>
+                </xpath>
+                <xpath expr="//field[@name='description_sale']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('status', 'in', ['reserved', 'contracted', 'delivered'])]}
+                    </attribute>
+                </xpath>
+                <xpath expr="//field[@name='description_purchase']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('status', 'in', ['reserved', 'contracted', 'delivered'])]}
+                    </attribute>
+                </xpath>
+                <xpath expr="//field[@name='description_picking']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('status', 'in', ['reserved', 'contracted', 'delivered'])]}
+                    </attribute>
+                </xpath>
+                <xpath expr="//field[@name='description_picking']" position="after">
+                    <field name="reserved_user_ids" invisible="1"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <!-- Inherit reservation Form View to Modify it -->
+        <record id="rsreservation_inherit_view_1" model="ir.ui.view">
+            <field name="name">rs.reservation.inherit.view.1</field>
+            <field name="model">rs.reservation</field>
+            <field name="groups_id"
+                   eval="[(6, 0, [ref('isky_access_rights.accounting_supervisor'), ref('isky_access_rights.financial_manager')])]"/>
+            <field name="inherit_id" ref="sky_height.rsreservation_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/group/group[3]/field[@name='project_id']" position="attributes">
+                    <attribute name="attrs">{'readonly':1}</attribute>
+                </xpath>
+                <xpath expr="//sheet/group/group[3]/field[@name='phase_id']" position="attributes">
+                    <attribute name="attrs">{'readonly':1}</attribute>
+                </xpath>
+                <xpath expr="//sheet/group/group[3]/field[@name='unit_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly':1}</attribute>
+                </xpath>
+                <xpath expr="//sheet/group/group[3]/field[@name='pay_strategy_id']" position="attributes">
+                    <attribute name="attrs">{'readonly':1}</attribute>
+                </xpath>
+                <xpath expr="//sheet/group/group[3]/field[@name='property_price']" position="attributes">
+                    <attribute name="attrs">{'readonly':1}</attribute>
+                </xpath>
+                <xpath expr="//sheet/group/group[3]/field[@name='pdc_id']" position="attributes">
+                    <attribute name="attrs">{'readonly':1}</attribute>
+                </xpath>
+                <xpath expr="//sheet/group/group[3]/field[@name='discount']" position="attributes">
+                    <attribute name="attrs">{'readonly':1}</attribute>
+                </xpath>
+                <xpath expr="//sheet/group/group[3]/field[@name='net_price']" position="attributes">
+                    <attribute name="attrs">{'readonly':1}</attribute>
+                </xpath>
+                <xpath expr="//sheet/group/group[3]/field[@name='discount_approval']" position="attributes">
+                    <attribute name="attrs">{'readonly':1}</attribute>
+                    <attribute name="attrs">{'invisible':[('discount','=',0)]}</attribute>
+                </xpath>
+                <!--================================-->
+                <xpath expr="//sheet/group/group[4]/field[@name='source']" position="attributes">
+                    <attribute name="attrs">{'readonly':1}</attribute>
+                </xpath>
+                <xpath expr="//sheet/group/group[4]/field[@name='other']" position="attributes">
+                    <attribute name="attrs">{'readonly':1}</attribute>
+                </xpath>
+                <xpath expr="//sheet/group/group[4]/field[@name='sales_type']" position="attributes">
+                    <attribute name="attrs">{'readonly':1}</attribute>
+                </xpath>
+                <xpath expr="//sheet/group/group[4]/field[@name='sales_customer_id']" position="attributes">
+                    <attribute name="attrs">{'readonly':1}</attribute>
+                </xpath>
+                <xpath expr="//sheet/group/group[4]/field[@name='sales_employee_id']" position="attributes">
+                    <attribute name="attrs">{'readonly':1}</attribute>
+                </xpath>
+                <xpath expr="//sheet/group/group[4]/field[@name='no_of_kids']" position="attributes">
+                    <attribute name="attrs">{'readonly':1}</attribute>
+                </xpath>
+                <!--=================================-->
+                <xpath expr="//sheet/group[2]/group[3]/field[@name='customer_id']" position="attributes">
+                    <attribute name="attrs">{'readonly':1}</attribute>
+                </xpath>
+                <xpath expr="//sheet/group[2]/group[3]/field[@name='partner_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly':1}</attribute>
+                </xpath>
+                <!--================================-->
+                <xpath expr="//sheet/group[2]/group[4]/field[@name='user_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly':1}</attribute>
+                </xpath>
+                <xpath expr="//sheet/group[2]/group[4]/field[@name='sales_team_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly':1}</attribute>
+                </xpath>
+                <!--=================================-->
+                <xpath expr="//sheet/notebook/page[@name='payment']" position="attributes">
+                    <attribute name="groups">
+                        isky_access_rights.financial_manager,isky_access_rights.accounting_supervisor,sky_height.rs_group_finance,sky_heights.group_legal,base.group_sale_salesman,base.group_sale_salesman_all_leads,base.group_sale_manager,account.group_account_invoice,account.group_account_user,account.group_account_manager,sky_height.sale_team_leader_group
+                    </attribute>
+                </xpath>
+                <xpath expr="//sheet/notebook/page[@name='payment']/group/field[@name='payment_approval']"
+                       position="attributes">
+                    <attribute name="attrs">{'readonly':1}</attribute>
+                </xpath>
+                <xpath expr="//sheet/notebook/page[@name='payment']/field[@name='payment_strg_ids']"
+                       position="attributes">
+                    <attribute name="attrs">{'readonly':1}</attribute>
+                </xpath>
+                <!--================================-->
+                <xpath expr="//field[@name='request_exception']" position="attributes">
+                    <attribute name="attrs">{'readonly':1}</attribute>
+                </xpath>
+                <!--================================-->
+                <xpath expr="//sheet/notebook/page[@name='legal_papers']" position="attributes">
+                    <attribute name="groups">
+                        isky_access_rights.financial_manager,isky_access_rights.accounting_supervisor,sky_height.group_legal,sky_height.sales_head_user,base.group_sale_salesman,sky_height.sale_team_leader_group
+                    </attribute>
+                </xpath>
+                <xpath expr="//field[@name='attach_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly':1}</attribute>
+                </xpath>
+                <!--===============================-->
+                <xpath expr="//field[@name='conditions']" position="attributes">
+                    <attribute name="attrs">{'readonly':1}</attribute>
+                </xpath>
+
+                <xpath expr="//button[@name='%(sky_height.commission_wizard_action)d']" position="attributes">
+                    <attribute name="groups">
+                        isky_access_rights.financial_manager,isky_access_rights.accounting_supervisor,account.group_account_user,sky_height.rs_group_finance
+                    </attribute>
+                </xpath>
+                <xpath expr="//field[@name='payment_attach_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='id_no']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='id_photo']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='id_type']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+
+            </field>
+        </record>
+
+        <record id="rsreservation_inherit_view_general" model="ir.ui.view">
+            <field name="name">rs.reservation.inherit.view.1</field>
+            <field name="model">rs.reservation</field>
+            <field name="inherit_id" ref="sky_height.rsreservation_form_view"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//button[@name='%(sky_height.fill_payment_wizard_action)d']" position="attributes">
+                    <attribute name="groups">
+                        sky_height.group_sky_height_admin,isky_access_rights.group_ar,isky_access_rights.group_treasury,isky_access_rights.group_ar_sup
+                    </attribute>
+                </xpath>
+
+                <xpath expr="//button[@name='create_sale_order']" position="attributes">
+                    <attribute name="groups">
+                        sky_height.group_sky_height_admin,sky_height.accounting_supervisor
+                    </attribute>
+                </xpath>
+
+                <xpath expr="//button[@name='action_paid_broker_amount']" position="attributes">
+                    <attribute name="groups">
+                        isky_access_rights.accounting_supervisor,sky_height.group_sky_height_admin,isky_access_rights.group_general_ar
+                    </attribute>
+                </xpath>
+
+            </field>
+        </record>
+
+
+        <!-- Inherit reservation form view for Financial manager group -->
+        <record id="rsreservation_inherit_view_f_m" model="ir.ui.view">
+            <field name="name">rs.reservation.inherit.view.fm</field>
+            <field name="model">rs.reservation</field>
+            <field name="groups_id" eval="[(6, 0, [ref('isky_access_rights.financial_manager')])]"/>
+            <field name="inherit_id" ref="sky_height.rsreservation_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='approve_cancellation']" position="attributes">
+                    <attribute name="attrs">{'readonly': 0}</attribute>
+                </xpath>
+                <xpath expr="//button[@name='create_deposite_entry']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='discount_approval']" position="attributes">
+                    <attribute name="groups">isky_access_rights.financial_manager,sky_height.group_sky_height_admin
+                    </attribute>
+                    <attribute name="attrs">{'readonly': 0}</attribute>
+                    <attribute name="attrs">{'invisible':[('discount','=',0)]}</attribute>
+
+                </xpath>
+                <xpath expr="//sheet/notebook/page[@name='payment']/field[@name='payment_strg_ids']"
+                       position="attributes">
+                    <attribute name="attrs">{'readonly':1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='payment_approval']" position="attributes">
+                    <attribute name="attrs">{'readonly':0}</attribute>
+                    <attribute name="groups">isky_access_rights.financial_manager,sky_height.group_sky_height_admin
+                    </attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="rsreservation_inherit_view" model="ir.ui.view">
+            <field name="name">rs.reservation.inherit.view</field>
+            <field name="model">rs.reservation</field>
+            <field name="groups_id"
+                   eval="[(6, 0, [ref('sky_height.sale_team_leader_group'),ref('base.group_sale_manager'),ref('base.group_sale_salesman')])]"/>
+            <field name="inherit_id" ref="sky_height.rsreservation_form_view"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//button[@name='button_in_progress']" position="attributes">
+                    <attribute name="groups">sky_height.rs_group_finance</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='project_id']" position="before">
+                    <field name="is_saleperson" invisible="1"/>
+                    <field name="is_sales_head" invisible="1"/>
+                </xpath>
+
+                <xpath expr="//field[@name='payment_strg_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='attach_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='payment_attach_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='approve_cancellation']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='source']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='discount']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='sales_type']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='no_of_kids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='user_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='sales_team_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='broker_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='customer_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('state', 'in', ['in_progress', 'confirm', 'initialize',
+                        'review', 'create_so', 'cancel'])]}
+                    </attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='partner_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('state', 'in', ['in_progress', 'confirm', 'initialize',
+                        'review', 'create_so', 'cancel'])]}
+                    </attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='id_no']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('state', 'in', ['in_progress', 'confirm', 'initialize',
+                        'review', 'create_so', 'cancel'])]}
+                    </attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='id_photo']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('state', 'in', ['in_progress', 'confirm', 'initialize',
+                        'review', 'create_so', 'cancel'])]}
+                    </attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='id_type']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('state', 'in', ['in_progress', 'confirm', 'initialize',
+                        'review', 'create_so', 'cancel'])]}
+                    </attribute>
+                </xpath>
+
+            </field>
+        </record>
+
+        <!-- Inherit reservation Form View (Accountant) -->
+        <record id="rsreservation_inherit_group_rs_accountant_view" model="ir.ui.view">
+            <field name="name">rs.reservation.inherit.accountant.view</field>
+            <field name="model">rs.reservation</field>
+            <field name="inherit_id" ref="sky_height.rsreservation_form_view"/>
+            <field name="groups_id" eval="[(6, 0, [ref('isky_access_rights.rs_accountant')])]"/>
+
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='button_initialize']" position="attributes">
+                    <attribute name="groups">sky_height.group_sky_height_admin</attribute>
+                </xpath>
+                <xpath expr="//field[@name='project_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='phase_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='unit_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='pay_strategy_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='pdc_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='customer_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='partner_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='id_no']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='id_photo']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='id_type']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='request_exception']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='account_invoice_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='source']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='sales_type']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='no_of_kids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='user_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='sales_team_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='team_leader_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='sales_manager_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='conditions']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='payment_strg_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='payment_attach_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='broker_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='attach_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//button[@name='button_exception_approval']" position="attributes">
+                    <attribute name="groups">sky_height.group_sky_height_admin</attribute>
+                </xpath>
+                <xpath expr="//button[@name='create_deposite_entry']" position="attributes">
+                    <attribute name="groups">
+                        sky_height.group_sky_height_admin
+                    </attribute>
+                </xpath>
+                <xpath expr="//button[@name='button_in_progress']" position="attributes">
+                    <attribute name="groups">
+                        sky_height.group_sky_height_admin
+                    </attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_paid_broker_amount']" position="attributes">
+                    <attribute name="groups">
+                        sky_height.group_sky_height_admin,isky_access_rights.accounting_supervisor,isky_access_rights.group_general_ar
+                    </attribute>
+                </xpath>
+
+                <xpath expr="//button[@name='print_payment_report']" position="attributes">
+                    <attribute name="groups">sky_height.group_sky_height_admin</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='discount_approval']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                    <attribute name="attrs">{'invisible':[('discount','=',0)]}</attribute>
+
+                </xpath>
+                <xpath expr="//field[@name='payment_approval']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//button[@name='print_payment_report']" position="attributes">
+                    <attribute name="groups">sky_height.group_sky_height_admin</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='legal_papers']" position="attributes">
+                    <attribute name="groups">isky_access_rights.rs_accountant</attribute>
+                </xpath>
+
+            </field>
+        </record>
+
+        <!-- Inherit reservation Form View to Modify it -->
+        <record id="rsreservation_inherit_head_view" model="ir.ui.view">
+            <field name="name">rs.reservation.inherit.view</field>
+            <field name="model">rs.reservation</field>
+            <field name="inherit_id" ref="sky_height.rsreservation_form_view"/>
+            <field name="groups_id" eval="[(6, 0, [ref('sky_height.sales_head_user')])]"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='project_id']" position="after">
+                    <field name="is_commission_created" attrs="{'invisible': 1}"/>
+                </xpath>
+                <xpath expr="//field[@name='project_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='phase_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='unit_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='pay_strategy_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='pdc_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='discount']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='customer_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='partner_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='id_no']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='id_photo']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='id_type']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='payment_strg_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='request_exception']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='attach_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='payment_attach_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='account_invoice_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='conditions']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='source']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('is_commission_created', '=', True)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='sales_type']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('is_commission_created', '=', True)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='no_of_kids']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('is_commission_created', '=', True)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='user_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('is_commission_created', '=', True)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='sales_team_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('is_commission_created', '=', True)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='broker_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('is_commission_created', '=', True)]}</attribute>
+                </xpath>
+                <xpath expr="//page[@name='payment']" position="attributes">
+                    <attribute name="groups">sky_height.sales_head_user</attribute>
+                </xpath>
+                <xpath expr="//page[@name='brokers']" position="attributes">
+                    <attribute name="groups">sky_height.sales_head_user</attribute>
+                </xpath>
+                <xpath expr="//page[@name='payment_attachments']" position="attributes">
+                    <attribute name="groups">sky_height.sales_head_user</attribute>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="rsreservation_inherit_legal_ex12_view" model="ir.ui.view">
+            <field name="name">rs.reservation.inherit.view</field>
+            <field name="model">rs.reservation</field>
+            <field name="inherit_id" ref="sky_height.rsreservation_form_view"/>
+            <field name="groups_id"
+                   eval="[(6, 0, [ref('isky_access_rights.group_legal_ex'),ref('isky_access_rights.group_legal_adv')])]"/>
+
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='button_initialize']" position="attributes">
+                    <attribute name="groups">sky_height.group_legal,isky_access_rights.group_legal_ex</attribute>
+                </xpath>
+                <xpath expr="//button[@name='cancel']" position="attributes">
+                    <attribute name="groups">isky_access_rights.group_treasury</attribute>
+                </xpath>
+                <xpath expr="//button[@name='button_review']" position="attributes">
+                    <attribute name="groups">isky_access_rights.group_legal_adv</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='project_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='phase_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='unit_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='pay_strategy_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='pdc_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='discount']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='customer_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='partner_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='id_no']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='id_photo']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='id_type']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='payment_strg_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='request_exception']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='payment_attach_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='account_invoice_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='conditions']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='source']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='sales_type']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='no_of_kids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='user_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='sales_team_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='team_leader_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='sales_manager_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='discount_approval']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                    <attribute name="attrs">{'invisible':[('discount','=',0)]}</attribute>
+
+                </xpath>
+                <xpath expr="//notebook/page[@name='payment']" position="attributes">
+                    <attribute name="groups">
+                        sky_height.rs_group_finance,sky_heights.group_legal,isky_access_rights.group_legal_ex,isky_access_rights.group_legal_adv,base.group_sale_salesman,base.group_sale_salesman_all_leads,base.group_sale_manager,account.group_account_invoice,account.group_account_user,account.group_account_manager,sky_height.sale_team_leader_group
+                    </attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='payment_attachments']" position="attributes">
+                    <attribute name="groups">
+                        sky_height.rs_group_finance,sky_heights.group_legal,isky_access_rights.group_legal_ex,isky_access_rights.group_legal_adv,base.group_sale_salesman,base.group_sale_salesman_all_leads,base.group_sale_manager,account.group_account_invoice,account.group_account_user,account.group_account_manager,sky_height.sale_team_leader_group
+                    </attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='legal_papers']" position="attributes">
+                    <attribute name="groups">
+                        account.group_account_user,sky_height.rs_group_finance,sky_heights.group_legal,isky_access_rights.group_legal_ex,isky_access_rights.group_legal_adv,base.group_sale_salesman,base.group_sale_salesman_all_leads,base.group_sale_manager,account.group_account_invoice,account.group_account_user,account.group_account_manager,account.group_account_user,sky_height.sale_team_leader_group
+                    </attribute>
+                </xpath>
+
+            </field>
+        </record>
+
+
+        <!-- Group Accountant AR -->
+        <record id="rsreservation_inherit_group_ar_view" model="ir.ui.view">
+            <field name="name">rs.reservation.inherit.view</field>
+            <field name="model">rs.reservation</field>
+            <field name="inherit_id" ref="sky_height.rsreservation_form_view"/>
+            <field name="groups_id" eval="[(6, 0, [ref('isky_access_rights.group_ar')])]"/>
+
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='button_initialize']" position="attributes">
+                    <attribute name="groups">sky_height.group_legal,isky_access_rights.group_legal_ex</attribute>
+                </xpath>
+                <xpath expr="//field[@name='project_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='phase_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='unit_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='pay_strategy_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='pdc_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='customer_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='partner_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='id_no']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='id_photo']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='id_type']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='request_exception']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='account_invoice_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='source']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='sales_type']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='no_of_kids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='user_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='sales_team_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='team_leader_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='sales_manager_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='payment']" position="attributes">
+                    <attribute name="groups">
+                        sky_height.rs_group_finance,sky_heights.group_legal,isky_access_rights.group_legal_ex,isky_access_rights.group_legal_adv,base.group_sale_salesman,base.group_sale_salesman_all_leads,base.group_sale_manager,account.group_account_invoice,account.group_account_user,account.group_account_manager,sky_height.sale_team_leader_group,isky_access_rights.group_ar
+                    </attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='payment_attachments']" position="attributes">
+                    <attribute name="groups">
+                        sky_height.rs_group_finance,sky_heights.group_legal,isky_access_rights.group_legal_ex,isky_access_rights.group_legal_adv,base.group_sale_salesman,base.group_sale_salesman_all_leads,base.group_sale_manager,account.group_account_invoice,account.group_account_user,account.group_account_manager,sky_height.sale_team_leader_group,isky_access_rights.group_ar
+                    </attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='legal_papers']" position="attributes">
+                    <attribute name="groups">
+                        account.group_account_user,sky_height.rs_group_finance,sky_heights.group_legal,isky_access_rights.group_legal_ex,isky_access_rights.group_legal_adv,base.group_sale_salesman,base.group_sale_salesman_all_leads,base.group_sale_manager,account.group_account_invoice,account.group_account_user,account.group_account_manager,sky_height.sale_team_leader_group,isky_access_rights.group_ar
+                    </attribute>
+                </xpath>
+                <xpath expr="//field[@name='attach_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//button[@name='button_exception_approval']" position="attributes">
+                    <attribute name="groups">sky_height.group_sky_height_admin,isky_access_rights.group_ar</attribute>
+                </xpath>
+                <xpath expr="//button[@name='create_deposite_entry']" position="attributes">
+                    <attribute name="groups">
+                        isky_access_rights.group_ar
+                    </attribute>
+                </xpath>
+                <xpath expr="//button[@name='button_in_progress']" position="attributes">
+                    <attribute name="groups">
+                        base.group_sale_salesman,sky_height.rs_group_finance,isky_access_rights.group_ar
+                    </attribute>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="rsreservation_inherit_group_ar_sup_view" model="ir.ui.view">
+            <field name="name">rs.reservation.inherit.view</field>
+            <field name="model">rs.reservation</field>
+            <field name="inherit_id" ref="sky_height.rsreservation_form_view"/>
+            <field name="groups_id" eval="[(6, 0, [ref('isky_access_rights.group_ar_sup')])]"/>
+
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='button_initialize']" position="attributes">
+                    <attribute name="groups">sky_height.group_legal,isky_access_rights.group_legal_ex</attribute>
+                </xpath>
+                <xpath expr="//field[@name='project_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='phase_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='unit_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='pay_strategy_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='pdc_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='customer_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='partner_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='id_no']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='id_photo']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='id_type']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='request_exception']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='account_invoice_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='source']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='sales_type']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='no_of_kids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='user_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='sales_team_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='team_leader_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='sales_manager_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <!--<xpath expr="//field[@name='payment_attach_ids']" position="attributes">-->
+                <!--<attribute name="attrs">{'readonly': 1}</attribute>-->
+                <!--</xpath>-->
+                <!--<xpath expr="//field[@name='conditions']" position="attributes">-->
+                <!--<attribute name="attrs">{'readonly': 1}</attribute>-->
+                <!--</xpath>-->
+                <!--<xpath expr="//field[@name='payment_strg_ids']" position="attributes">-->
+                <!--<attribute name="attrs">{'readonly': 1}</attribute>-->
+                <!--</xpath>-->
+
+                <xpath expr="//notebook/page[@name='payment']" position="attributes">
+                    <attribute name="groups">
+                        sky_height.rs_group_finance,sky_heights.group_legal,isky_access_rights.group_legal_ex,isky_access_rights.group_legal_adv,base.group_sale_salesman,base.group_sale_salesman_all_leads,base.group_sale_manager,account.group_account_invoice,account.group_account_user,account.group_account_manager,sky_height.sale_team_leader_group,isky_access_rights.group_ar,isky_access_rights.group_ar_sup
+                    </attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='payment_attachments']" position="attributes">
+                    <attribute name="groups">
+                        sky_height.rs_group_finance,sky_heights.group_legal,isky_access_rights.group_legal_ex,isky_access_rights.group_legal_adv,base.group_sale_salesman,base.group_sale_salesman_all_leads,base.group_sale_manager,account.group_account_invoice,account.group_account_user,account.group_account_manager,sky_height.sale_team_leader_group,isky_access_rights.group_ar,isky_access_rights.group_ar_sup
+                    </attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='legal_papers']" position="attributes">
+                    <attribute name="groups">
+                        sky_height.rs_group_finance,sky_heights.group_legal,isky_access_rights.group_legal_ex,isky_access_rights.group_legal_adv,base.group_sale_salesman,base.group_sale_salesman_all_leads,base.group_sale_manager,account.group_account_invoice,account.group_account_user,account.group_account_manager,sky_height.sale_team_leader_group,isky_access_rights.group_ar,isky_access_rights.group_ar_sup
+                    </attribute>
+                </xpath>
+                <xpath expr="//field[@name='attach_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//button[@name='button_exception_approval']" position="attributes">
+                    <attribute name="groups">sky_height.group_sky_height_admin,isky_access_rights.group_ar</attribute>
+                </xpath>
+                <xpath expr="//button[@name='create_deposite_entry']" position="attributes">
+                    <attribute name="groups">
+                        isky_access_rights.group_ar
+                    </attribute>
+                </xpath>
+                <xpath expr="//button[@name='button_in_progress']" position="attributes">
+                    <attribute name="groups">
+                        base.group_sale_salesman,sky_height.rs_group_finance,isky_access_rights.group_ar
+                    </attribute>
+                </xpath>
+
+                <xpath expr="//button[@name='print_payment_report']" position="attributes">
+                    <attribute name="groups">isky_access_rights.group_ar_sup</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='discount_approval']" position="attributes">
+                    <attribute name="groups">
+                        sky_height.rs_group_finance,isky_access_rights.group_ar_sup,sky_height.group_sky_height_admin
+                    </attribute>
+                </xpath>
+                <xpath expr="//field[@name='payment_approval']" position="attributes">
+                    <attribute name="groups">
+                        sky_height.rs_group_finance,isky_access_rights.group_ar_sup,sky_height.group_sky_height_admin
+                    </attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- General AR reservation -->
+        <record id="rsreservation_inherit_group_genaral_ar_view" model="ir.ui.view">
+            <field name="name">rs.reservation.group.general.ar.inherit.view</field>
+            <field name="model">rs.reservation</field>
+            <field name="inherit_id" ref="isky_access_rights.rsreservation_inherit_group_ar_sup_view"/>
+            <field name="groups_id" eval="[(6, 0, [ref('isky_access_rights.group_general_ar')])]"/>
+
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='pdc_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': 0}</attribute>
+                </xpath>
+
+                <xpath expr="//button[@name='%(sky_height.commission_wizard_action)d']" position="attributes">
+                    <attribute name="groups">sky_height.group_sky_height_admin,isky_access_rights.group_general_ar
+                    </attribute>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="rsreservation_inherit_group_treasury_view" model="ir.ui.view">
+            <field name="name">rs.reservation.inherit.view</field>
+            <field name="model">rs.reservation</field>
+            <field name="inherit_id" ref="sky_height.rsreservation_form_view"/>
+            <field name="groups_id" eval="[(6, 0, [ref('isky_access_rights.group_treasury')])]"/>
+
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='button_initialize']" position="attributes">
+                    <attribute name="groups">sky_height.group_legal,isky_access_rights.group_legal_ex</attribute>
+                </xpath>
+                <xpath expr="//field[@name='project_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='phase_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='unit_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='pay_strategy_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='pdc_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='customer_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='partner_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='id_no']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='id_photo']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='id_type']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='request_exception']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='account_invoice_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='source']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='sales_type']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='no_of_kids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='user_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='sales_team_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='team_leader_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='sales_manager_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='conditions']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='payment_strg_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//notebook/page[@name='payment']" position="attributes">
+                    <attribute name="groups">
+                        sky_height.rs_group_finance,sky_heights.group_legal,isky_access_rights.group_legal_ex,isky_access_rights.group_legal_adv,base.group_sale_salesman,base.group_sale_salesman_all_leads,base.group_sale_manager,account.group_account_invoice,account.group_account_user,account.group_account_manager,sky_height.sale_team_leader_group,isky_access_rights.group_ar,isky_access_rights.group_ar_sup
+                    </attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='payment_attachments']" position="attributes">
+                    <attribute name="groups">
+                        sky_height.rs_group_finance,sky_heights.group_legal,isky_access_rights.group_legal_ex,isky_access_rights.group_legal_adv,base.group_sale_salesman,base.group_sale_salesman_all_leads,base.group_sale_manager,account.group_account_invoice,account.group_account_user,account.group_account_manager,sky_height.sale_team_leader_group,isky_access_rights.group_ar,isky_access_rights.group_ar_sup
+                    </attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='legal_papers']" position="attributes">
+                    <attribute name="groups">
+                        account.group_account_user,sky_height.rs_group_finance,sky_heights.group_legal,isky_access_rights.group_legal_ex,isky_access_rights.group_legal_adv,base.group_sale_salesman,base.group_sale_salesman_all_leads,base.group_sale_manager,account.group_account_invoice,account.group_account_user,account.group_account_manager,sky_height.sale_team_leader_group,isky_access_rights.group_ar,isky_access_rights.group_ar_sup
+                    </attribute>
+                </xpath>
+                <xpath expr="//field[@name='attach_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//button[@name='button_exception_approval']" position="attributes">
+                    <attribute name="groups">sky_height.group_sky_height_admin,isky_access_rights.group_ar</attribute>
+                </xpath>
+                <xpath expr="//button[@name='create_deposite_entry']" position="attributes">
+                    <attribute name="groups">
+                        isky_access_rights.group_ar
+                    </attribute>
+                </xpath>
+                <xpath expr="//button[@name='button_in_progress']" position="attributes">
+                    <attribute name="groups">
+                        base.group_sale_salesman,sky_height.rs_group_finance,isky_access_rights.group_ar
+                    </attribute>
+                </xpath>
+
+                <xpath expr="//button[@name='print_payment_report']" position="attributes">
+                    <attribute name="groups">isky_access_rights.group_ar_sup</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='discount_approval']" position="attributes">
+                    <attribute name="groups">
+                        sky_height.rs_group_finance,isky_access_rights.group_ar_sup,sky_height.group_sky_height_admin
+                    </attribute>
+                </xpath>
+                <xpath expr="//field[@name='payment_approval']" position="attributes">
+                    <attribute name="groups">
+                        sky_height.rs_group_finance,isky_access_rights.group_ar_sup,sky_height.group_sky_height_admin
+                    </attribute>
+                </xpath>
+                <xpath expr="//button[@name='print_payment_report']" position="attributes">
+                    <attribute name="groups">isky_access_rights.group_treasury,sky_height.group_sky_height_admin
+                    </attribute>
+                </xpath>
+
+
+            </field>
+        </record>
+
+
+        <record id="isky_view_invoice_form_group_ar" model="ir.ui.view">
+            <field name="name">isky view invoice form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='invoice_line_ids']" position="replace">
+                    <field name="invoice_line_ids" nolabel="1" widget="one2many_list" mode="tree,kanban"
+                           context="{'type': type, 'journal_id': journal_id, 'default_invoice_id': id}">
+                        <tree string="Invoice Lines" editable="bottom">
+                            <field name="sequence" widget="handle"/>
+                            <field name="product_id"/>
+                            <field name="name"/>
+                            <field name="company_id" invisible="1"/>
+                            <field name="account_id"
+                                   groups="sky_height.accounting_supervisor,account.group_account_user,isky_access_rights.group_ar,isky_access_rights.group_ar_sup"
+                                   domain="[('company_id', '=', parent.company_id), ('internal_type', '=', 'other')]"/>
+                            <field name="account_analytic_id" groups="analytic.group_analytic_accounting"
+                                   domain="[('company_id', '=', parent.company_id), ('account_type', '=', 'normal')]"/>
+                            <field name="quantity"/>
+                            <field name="uom_id" groups="product.group_uom"/>
+                            <field name="price_unit"/>
+                            <field name="discount" groups="sale.group_discount_per_so_line"/>
+                            <field name="invoice_line_tax_ids" widget="many2many_tags" context="{'type':parent.type}"
+                                   domain="[('type_tax_use','=','sale'),('company_id', '=', parent.company_id)]"
+                                   options="{'no_create': True}"/>
+                            <field name="price_subtotal"/>
+                            <field name="currency_id" invisible="1"/>
+                        </tree>
+                        <kanban class="o_kanban_mobile">
+                            <field name="product_id"/>
+                            <field name="price_subtotal"/>
+                            <field name="quantity"/>
+                            <field name="uom_id" groups="product.group_uom"/>
+                            <templates>
+                                <t t-name="kanban-box">
+                                    <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <strong>
+                                                    <span>
+                                                        <t t-esc="record.product_id.value or 'None'"/>
+                                                    </span>
+                                                </strong>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-8 text-muted">
+                                                <span>
+                                                    <t t-esc="record.quantity.value"/>
+                                                    <t t-esc="record.uom_id.value"/>
+                                                </span>
+                                            </div>
+                                            <div class="col-xs-4 text-muted">
+                                                <span class="text-right">
+                                                    <t t-esc="record.price_subtotal.value"/>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4 text-muted">
+                                        <span class="text-right">
+                                            <t t-esc="record.price_subtotal.value"/>
+                                        </span>
+                                    </div>
+                                </t>
+                            </templates>
+                        </kanban>
+                    </field>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_payterm_form_group_ar_sup_inherit">
+            <field name="name">sup payterm.form</field>
+            <field name="model">account.payment.term</field>
+            <field name="inherit_id" ref="sky_height.view_payterm_form_inherit"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='approved_payment']" position="attributes">
+                    <attribute name="groups">
+                        isky_access_rights.financial_manager,isky_access_rights.group_ar_sup,sky_height.group_sky_height_admin
+                    </attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_payment_strg_inherit">
+            <field name="name">payment.strg.form</field>
+            <field name="model">payment.strg</field>
+            <field name="inherit_id" ref="sky_height.payments_details_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='under_collection_deposit']" position="attributes">
+                    <attribute name="groups">sky_height.group_sky_height_admin,isky_access_rights.group_ar</attribute>
+                </xpath>
+
+                <xpath expr="//button[@name='penalty_fees_check']" position="attributes">
+                    <attribute name="groups">sky_height.group_sky_height_admin,isky_access_rights.group_ar</attribute>
+                </xpath>
+
+                <xpath expr="//button[@name='rejected_check']" position="attributes">
+                    <attribute name="groups">sky_height.group_sky_height_admin,isky_access_rights.group_ar</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_commission_wizard_inherit">
+            <field name="name">commission.wizard.form</field>
+            <field name="model">commission.wizard</field>
+            <field name="inherit_id" ref="sky_height.commission_wizard_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='create_inv_vendor']" position="attributes">
+                    <attribute name="groups">
+                        account.group_account_user,sky_height.rs_group_finance,sky_height.group_sky_height_admin,isky_access_rights.group_general_ar
+                    </attribute>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

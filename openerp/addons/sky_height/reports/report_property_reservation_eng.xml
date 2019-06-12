@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="paperformat_frenchcheck" model="report.paperformat">
+            <field name="name">tls_france paper format</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">40</field>
+            <field name="page_height">200</field>
+            <field name="dpi">90</field>
+        </record>
+        <report id="report_property_eng_reservation"
+                model="rs.reservation"
+                string="Property Reservation Report English"
+                report_type="qweb-pdf"
+                name="sky_height.report_property_reservation_eng_document"
+                file="sky_height.report_property_reservation_eng_document"
+                attachment_use="False"/>
+
+        <record id="report_property_eng_reservation" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="paperformat_frenchcheck"/>
+        </record>
+        <template id="report_property_reservation_eng_document">
+            <div class="header">
+
+                <div class="row">
+
+                    <div class="col-xs-offset-3">
+
+                        <img src="/sky_height/static/src/img/bein1.png" style="width:60%; height:90px;"/>
+
+
+                    </div>
+                </div>
+            </div>
+            <t t-foreach="docs" t-as="o">
+                <div class="page" style=" border:#002B57 3px double; font-family: 'Times New Roman', Georgia, Serif; padding:5px;">
+                    <div class="container">
+                        <div class="row">
+                            <center>
+                                <h1>
+                                    <span style="font-family:times new roman,times,serif;">
+                                        <span style="font-size:22px;">
+                                            <strong>Reservation form</strong>
+                                        </span>
+                                    </span>
+                                </h1>
+                            </center>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <center>
+                                    <strong style="color:#6699ff; margin-left:100px;">
+                                        Sky Heights
+                                    </strong>
+                                </center>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <p style="border-bottom:#002B57 3px double; border-top:#002B57 3px double; ">
+                                    <strong>The Developer:</strong>
+                                    El Shahawi group for developing communities
+                                    <br/>
+                                    14C, Ahmed Kamel street, New Maadi.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <p>
+                                    <span style="font-family:times new roman,times,serif;">
+                                        <span style="color:#0000FF; font-size:18px;">
+                                            <strong>Project:</strong>
+                                        </span>
+                                        <span style="color:#6699ff;" t-field="o.project_id.name"/>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="col-xs-6">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <table align="center"
+                                       border="1"
+                                       cellpadding="1"
+                                       cellspacing="1"
+                                       style="width:100%;"
+                                       class="table table-bordered">
+                                    <tr>
+                                        <th scope="col" style="text-align: center;width: 200px;">Property Type</th>
+                                        <th scope="col" style="text-align: center;width: 200px;">Unit Number</th>
+                                        <th scope="col" style="text-align: center;width: 200px;">Unit Area (M²)</th>
+                                        <th scope="col" style="text-align: center;width: 200px;">Unit Price (<span
+                                                t-field="o.currency_id.name"/>)
+                                        </th>
+
+                                    </tr>
+                                    <tbody>
+                                        <t t-foreach="o.unit_ids" t-as="unit">
+                                            <tr colspan="5" style="text-align: center;">
+
+                                                <td>
+                                                    <span t-field="unit.type_of_property_id"/>
+
+                                                </td>
+
+                                                <td>
+                                                    <span t-field="unit.property_no"/>
+
+                                                </td>
+
+                                                <td>
+                                                    <span t-field="unit.total_area"/>
+                                                    (M²)
+
+                                                </td>
+                                                <td>
+                                                    <span t-field="unit.lst_price"/>
+                                                    (<span t-field="o.currency_id.name"/>)
+                                                </td>
+                                            </tr>
+                                        </t>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <strong>Payment Plan:</strong>
+                                <span t-field="o.pay_strategy_id.name"/>
+                            </div>
+                            <div class="col-xs-6">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <table align="center" border="1" cellpadding="1" cellspacing="1"
+                                       style="width:100%;" class="table table-bordered">
+                                    <!--<thead>-->
+                                    <tr>
+                                        <th scope="col" style="text-align: center;width: 200px;">Description</th>
+                                        <th scope="col" style="text-align: center;width: 200px;">Amount</th>
+                                        <th scope="col" style="text-align: center;width: 200px;">Date</th>
+                                    </tr>
+                                    <!--</thead>-->
+                                    <tbody>
+                                        <t t-foreach="o.payment_strg_ids" t-as="k">
+                                            <tr colspan="5" style="text-align: center;">
+
+                                                <td>
+                                                    <span t-field="k.description"/>
+
+                                                </td>
+                                                <td>
+                                                    <span t-field="k.amount"/>
+
+                                                </td>
+                                                <td>
+                                                    <span t-field="k.payment_date"/>
+
+                                                </td>
+                                            </tr>
+                                        </t>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <strong>Reservation Date:</strong>
+                                <span t-field="o.created_date"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <strong>Exchange Date:</strong>
+                                <span t-field="o.expire_date"/>
+                            </div>
+                        </div>
+                        <br/>
+                        <p>
+                            *Exchange date is the date when you have to complete your purchacing process otherwise the
+                            reservation is canceled.
+                            Deposite will be refunded except for the administration cost (2.5%)
+                        </p>
+                        <p style="border-bottom:#002B57 3px double;"></p>
+                        <p>
+                            <span style="font-family:times new roman,times,serif;">
+                                <span style="color:#0000FF;">
+                                    <span style="font-size:18px;">Purchase Details</span>
+                                </span>
+                            </span>
+                        </p>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <strong>Full Name:</strong>
+                                <span t-field="o.customer_id.name"/>
+                            </div>
+                            <br/>
+                            <div class="col-xs-12">
+                                <strong>Partners:</strong>
+                                <span t-field="o.partners_name"/>
+                            </div>
+                            <br/>
+                            <div class="col-xs-12">
+                                <strong>Job Title:</strong>
+                                <span t-field="o.function"/>
+                            </div>
+                            <br/>
+                            <div class="col-xs-12">
+                                <strong>No. Of Family Member:</strong>
+                                <span t-field="o.no_of_kids"/>
+                            </div>
+                            <br/>
+                            <div class="col-xs-12">
+                                <strong>Address:</strong>
+                                <span t-field="o.customer_id.street"/>
+                                <br/>
+                                <strong>Telephone Home/Mobile:</strong>
+                                <br/>
+                            </div>
+                            <div class="col-xs-12">
+                                <div class="col-xs-6">
+                                    <strong>H:</strong>
+                                    <span t-field="o.customer_id.phone"/>
+                                    <strong>M:</strong>
+                                    <span t-field="o.customer_id.mobile"/>
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <strong>E-Mail:</strong>
+                                <span t-field="o.customer_id.email"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <p style="border-bottom:#002B57 3px double;"></p>
+                            <p>
+                                <span style="font-family:times new roman,times,serif;">
+                                    <span style="color:#0000FF;">
+                                        <span style="font-size:18px;">Internal Information</span>
+                                    </span>
+                                </span>
+                            </p>
+                        </div>
+                        <div class="col-xs-12">
+                            <strong>Salespersons:</strong>
+                            <t t-foreach="o.user_ids" t-as="k">
+                                <tr colspan="5" style="text-align: center;">
+                                    <td>
+                                        <span t-field="k.name"/>,
+                                    </td>
+                                </tr>
+                            </t>
+                        </div>
+                        <div class="col-xs-12">
+                            <strong>Sales Team:</strong>
+                            <span t-field="o.sales_team_id"/>
+                        </div>
+                        <div class="col-xs-12">
+                            <strong>Payment Method:</strong>
+                            <span t-field="o.pdc_id"/>
+                        </div>
+                        <div class="col-xs-12">
+                            <strong>Sales Type:</strong>
+                            <span t-field="o.sales_type"/>
+                        </div>
+                        <t t-if="o.sales_type == 'employee_referral'">
+                            <div class="col-xs-12">
+                                <strong>Employee:</strong>
+                                <span t-field="o.sales_employee_id"/>
+                            </div>
+                        </t>
+                        <t t-if="o.sales_type == 'client_referral' or o.sales_type == 'resale' ">
+                            <div class="col-xs-12">
+                                <strong>Customer:</strong>
+                                <span t-field="o.sales_customer_id"/>
+                            </div>
+                        </t>
+                        <div class="col-xs-12">
+                            <t t-if="o.broker_ids">
+                                <br/>
+                                <table align="center" border="1" cellpadding="1" cellspacing="1"
+                                       style="width:100%;" class="table table-bordered">
+                                    <tr>
+                                        <th scope="col" style="text-align: center;">Broker</th>
+                                        <th scope="col" style="text-align: center;">Broker Commission Percentage</th>
+                                    </tr>
+                                    <tbody>
+                                        <t t-foreach="o.broker_ids" t-as="b">
+                                            <tr colspan="5" style="text-align: center;">
+                                                <td>
+                                                    <span t-field="b.name"/>
+                                                </td>
+                                                <td>
+                                                    <span t-field="b.broker_commission_amount"/>
+                                                </td>
+                                            </tr>
+                                        </t>
+                                    </tbody>
+                                </table>
+                            </t>
+                        </div>
+                        <div class="col-xs-12">
+
+                            <p style="border-bottom:#002B57 3px double;"></p>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <p>
+                                <span style="font-family:times new roman,times,serif;">
+                                    <span style="color:#0000FF;">
+                                        <span style="font-size:18px;">Reservation Condition</span>
+                                    </span>
+                                </span>
+                            </p>
+                            <span t-field="o.conditions"/>
+                            <p style="border-bottom:#002B57 3px double;"></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <p>
+                                <span style="font-family:times new roman,times,serif;">
+                                    <span style="color:#0000FF;">
+                                        <span style="font-size:18px;">Approval</span>
+                                    </span>
+                                </span>
+                            </p>
+                            <p style="border-bottom:#002B57 3px double;"></p>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <p>
+                                <span style="font-family:times new roman,times,serif;">
+                                    <span style="color:#0000FF;">
+                                        <span style="font-size:18px;">Signature</span>
+                                    </span>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+    </data>
+</openerp>

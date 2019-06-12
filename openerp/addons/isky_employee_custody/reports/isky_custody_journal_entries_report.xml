@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="isky_custody_journal_entries_tree" model="ir.ui.view">
+            <field name="name">isky.custody.journal.entries</field>
+            <field name="model">isky.custody.journal.entries</field>
+            <field name="arch" type="xml">
+                <tree string="Employee Journal Entries" create="false">
+                    <!--<field name="date"/>-->
+                    <field name="employee_id"/>
+                    <field name="type"/>
+                    <field name="debit"/>
+                    <field name="credit"/>
+                    <field name="balance"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_expenses_employee_custody_journal_entries">
+            <field name="name">Employee Journal Entries</field>
+            <field name="res_model">isky.custody.journal.entries</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="context">{'group_by': 'employee_id'}</field>
+            <field name="view_id" ref="isky_custody_journal_entries_tree"/>
+        </record>
+    </data>
+</openerp>

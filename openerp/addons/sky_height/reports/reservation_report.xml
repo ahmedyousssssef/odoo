@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="paperformat_reservation_form" model="report.paperformat">
+            <field name="name">European A4 low margin</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">5</field>
+            <field name="margin_bottom">5</field>
+            <field name="margin_left">5</field>
+            <field name="margin_right">5</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">0</field>
+            <field name="dpi">80</field>
+        </record>
+
+        <report id="report_property_reservation"
+                model="rs.reservation"
+                string="Reservation Form"
+                report_type="qweb-pdf"
+                name="sky_height.report_reservation_form"
+                file="sky_height.report_reservation_form"
+                paperformat="paperformat_reservation_form"
+                attachment_use="False"/>
+
+        <template id="report_reservation_form">
+            <t t-call="report.html_container" style="border: 1px solid black;">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+                        <style>
+                            td
+                            {
+                            padding:5px;
+                            vertical-align: bottom;
+                            }
+                        </style>
+                        <div class="container-fluid">
+                            <table style="width: 100%;">
+                                <tbody>
+                                    <tr>
+                                        <td colspan="3">
+                                            <p style="text-align: center;">
+                                                <span style="text-decoration: underline;">
+                                                    <strong style="font-size:20px">Reservation Form</strong>
+                                                </span>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 13%;">
+                                            <strong>Project Name</strong>
+                                        </td>
+                                        <td style="text-align: center; border-bottom: 1px dotted">
+                                            <span t-field="o.project_id"/>
+                                        </td>
+                                        <td style="text-align: right; width: 12%;">
+                                            <strong>اسم مشروع</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>Unit Number</strong>
+                                        </td>
+                                        <td style="text-align: center; border-bottom: 1px dotted">
+                                            <t t-foreach="o.unit_ids" t-as="k">
+                                                <span t-field="k.name"/>
+                                                <t t-if="o.unit_ids[-1] != k">
+                                                    <span>,</span>
+                                                </t>
+                                            </t>
+                                        </td>
+                                        <td style="text-align: right;">
+                                            <strong>رقم الوحدة</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>Unit Area</strong>
+                                        </td>
+                                        <td style="text-align: center; border-bottom: 1px dotted">
+                                            <t t-foreach="o.unit_ids" t-as="k">
+                                                <span t-field="k.total_area"/>
+                                                <t t-if="o.unit_ids[-1] != k">
+                                                    <span>,</span>
+                                                </t>
+                                            </t>
+                                        </td>
+                                        <td style="text-align: right;">
+                                            <strong>مساحة الوحدة</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>Reservation deposit</strong>
+                                        </td>
+                                        <td style="border-bottom: 1px dotted"></td>
+                                        <td style="text-align: right;">
+                                            <strong>دفعة الحجز</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" class="row">
+                                            <div style="text-align: right;" class="col-xs-4">
+                                                <input style="transform: scale(3);" type="checkbox"/>
+                                                <strong>Cheque/شيك</strong>
+                                            </div>
+                                            <div style="text-align: center;" class="col-xs-4">
+                                                <strong>
+                                                    <input style="transform: scale(3);" type="checkbox"/>
+                                                    Transfer /تحويل بنكى
+                                                </strong>
+                                            </div>
+                                            <div style="text-align: left;" class="col-xs-4">
+                                                <input style="transform: scale(3);" type="checkbox"/>
+                                                <strong>Cash</strong>/
+                                                <strong>نقدى</strong>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>Reservation date</strong>
+                                        </td>
+                                        <td style="text-align: center; border-bottom: 1px dotted">
+                                            <t t-if="o.reservation_date">
+                                                <t t-esc="datetime.datetime.strptime(o.reservation_date, '%Y-%m-%d %H:%M:%S').strftime('%Y-%m-%d')"/>
+                                            </t>
+                                            <t t-if="not o.reservation_date">
+                                                <t t-esc="datetime.datetime.strptime(o.created_date, '%Y-%m-%d %H:%M:%S').strftime('%Y-%m-%d')"/>
+                                            </t>
+
+                                        </td>
+                                        <td style="text-align: right;">
+                                            <strong>تاريخ الحجز</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>Contract price:</strong>
+                                        </td>
+                                        <td style="text-align: center; border-bottom: 1px dotted">
+                                            <span t-field="o.net_price"/>
+                                        </td>
+                                        <td style="text-align: right;">
+                                            <strong>قيمة العقد</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>Maintenance price</strong>
+                                        </td>
+                                        <td style="text-align: center;  border-bottom: 1px dotted">
+                                            <t t-set="total_maintenance" t-value="0"/>
+                                            <t t-foreach="o.payment_strg_ids" t-as="k">
+                                                <t t-if="k.add_extension">
+                                                    <t t-set="total_maintenance"
+                                                       t-value="total_maintenance + k.amount"/>
+                                                </t>
+                                                <t t-if="total_maintenance > 0">
+                                                    <t t-esc="total_maintenance"/>
+                                                </t>
+                                            </t>
+                                        </td>
+                                        <td style="text-align: right;">
+                                            <strong>قيمة وديعة الصيانة</strong>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br/>
+                            <div style="padding-left: 5px;">
+                                <p>
+                                    <strong>Payment Plan:</strong>
+                                    <span t-field="o.pay_strategy_id"/>
+                                </p>
+                            </div>
+                            <div style="padding-left: 5px;">
+                                <p>
+                                    <strong>Payment Method:</strong>
+                                    <span t-field="o.pdc_id"/>
+                                </p>
+                            </div>
+                            <div style="padding-left: 5px;">
+                                <p>
+                                    <strong>Source:</strong>
+                                    <span t-field="o.source"/>
+                                </p>
+                            </div>
+                            <!--<div class="row" style="padding-left: 5px;">-->
+                            <!--<div class="col-xs-2">-->
+                            <!--<strong>-->
+                            <!--:-->
+                            <!--</strong>-->
+                            <!--</div>-->
+                            <!--<div class="col-xs-8">-->
+
+                            <!--</div>-->
+                            <!--</div>-->
+                            <table style="width: 100%;">
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 13%;">
+                                            <strong>Comments</strong>
+                                        </td>
+                                        <td style="text-align: center; border-bottom: 1px dotted" colspan="2">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                            <p style="text-align: left;">
+                                                <span style="text-decoration: underline;">
+                                                    <strong>Purchase information:</strong>
+                                                </span>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 13%;">
+                                            <strong>Name</strong>
+                                        </td>
+                                        <td style="text-align: center; border-bottom: 1px dotted">
+                                            <span t-field="o.customer_id"/>
+                                        </td>
+                                        <td style="text-align: right; width: 12%;">
+                                            <strong>الاسم</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 13%;">
+                                            <strong>Address</strong>
+                                        </td>
+                                        <td style="text-align: center; border-bottom: 1px dotted">
+                                            <span t-field="o.address"/>
+                                        </td>
+                                        <td style="text-align: right; width: 12%;">
+                                            <strong>العنوان</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 13%;">
+                                            <strong>Job Title</strong>
+                                        </td>
+                                        <td style="text-align: center; border-bottom: 1px dotted">
+                                            <span t-field="o.function"/>
+                                        </td>
+                                        <td style="text-align: right; width: 12%;">
+                                            <strong>الوظيفة</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 13%;">
+                                            <strong>Telephone</strong>
+                                        </td>
+                                        <td style="text-align: center; border-bottom: 1px dotted">
+                                            <span t-field="o.mobile"/>
+                                        </td>
+                                        <td style="text-align: right; width: 12%;">
+                                            <strong>المحمول</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 13%;">
+                                            <strong>E-mail</strong>
+                                        </td>
+                                        <td style="text-align: center; border-bottom: 1px dotted">
+                                            <span t-field="o.email"/>
+                                        </td>
+                                        <td style="text-align: right; width: 12%;">
+                                            <strong>البريد الالكترونى</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 13%;">
+                                            <strong>Number of family members</strong>
+                                        </td>
+                                        <td style="text-align: center; border-bottom: 1px dotted">
+                                            <span t-field="o.no_of_kids"/>
+                                        </td>
+                                        <td style="text-align: right; width: 12%;">
+                                            <strong>عدد افراد الاسرة</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 13%;">
+                                            <strong>Signature</strong>
+                                        </td>
+                                        <td style="text-align: center; border-bottom: 1px dotted">
+                                        </td>
+                                        <td style="text-align: right; width: 12%;">
+                                            <strong>التوقيع</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                            <p style="text-align: left;">
+                                                <span style="text-decoration: underline;">
+                                                    <strong>Internal information:</strong>
+                                                </span>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 13%;">
+                                            <strong>Sales representative</strong>
+                                        </td>
+                                        <td style="text-align: center; border-bottom: 1px dotted">
+                                            <t t-foreach="o.user_ids" t-as="k">
+                                                <span t-field="k.name"/>
+                                                <t t-if="o.user_ids[-1] != k">
+                                                    <span>,</span>
+                                                </t>
+                                            </t>
+                                        </td>
+                                        <td style="text-align: right; width: 12%;">
+                                            <strong>مسئول المبيعات</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 13%;">
+                                            <strong>Sales Team Leader</strong>
+                                        </td>
+                                        <td style="text-align: center; border-bottom: 1px dotted">
+                                            <t t-foreach="o.team_leader_ids" t-as="k">
+                                                <span t-field="k.name"/>
+                                                <t t-if="o.team_leader_ids[-1] != k">
+                                                    <span>,</span>
+                                                </t>
+                                            </t>
+                                        </td>
+                                        <td style="text-align: right; width: 12%;">
+                                            <strong>مدير الفريق</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 13%;">
+                                            <strong>Sales Manager</strong>
+                                        </td>
+                                        <td style="text-align: center; border-bottom: 1px dotted">
+                                            <t t-foreach="o.sales_manager_ids" t-as="k">
+                                                <span t-field="k.name"/>
+                                                <t t-if="o.sales_manager_ids[-1] != k">
+                                                    <span>,</span>
+                                                </t>
+                                            </t>
+                                        </td>
+                                        <td style="text-align: right; width: 12%;">
+                                            <strong>مدير المبيعات</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 13%;">
+                                            <strong>Broker</strong>
+                                        </td>
+                                        <td style="text-align: center; border-bottom: 1px dotted">
+                                            <t t-foreach="o.broker_ids" t-as="k">
+                                                <span t-field="k.name"/>
+                                                <t t-if="o.broker_ids[-1] != k">
+                                                    <span>,</span>
+                                                </t>
+                                            </t>
+                                        </td>
+                                        <td style="text-align: right; width: 12%;">
+                                            <strong>وسيط</strong>
+                                        </td>
+                                    </tr>
+                                    <t t-if="o.sales_type in ['client_referral','employee_referral']">
+                                        <tr>
+                                            <td style="width: 13%;">
+                                                <t t-if="o.sales_type in ['employee_referral']">
+                                                    <strong>Employee Referral</strong>
+                                                </t>
+                                                <t t-if="o.sales_type in ['client_referral']">
+                                                    <strong>Client Referral</strong>
+                                                </t>
+                                            </td>
+                                            <td style="text-align: center; border-bottom: 1px dotted">
+                                                <t t-if="o.sales_type in ['employee_referral']">
+                                                    <span t-field="o.sales_employee_id.name"/>
+                                                </t>
+                                                <t t-if="o.sales_type in ['client_referral']">
+                                                    <span t-field="o.sales_customer_id.name"/>
+                                                </t>
+                                            </td>
+                                            <td style="text-align: right; width: 12%;">
+
+                                                <t t-if="o.sales_type in ['employee_referral']">
+                                                    <strong>الموظف</strong>
+                                                </t>
+                                                <t t-if="o.sales_type in ['client_referral']">
+                                                    <strong>العميل</strong>
+                                                </t>
+                                            </td>
+                                        </tr>
+
+                                    </t>
+                                    <tr>
+                                        <td style="width: 13%;">
+                                            <strong>Approval</strong>
+                                        </td>
+                                        <td style="text-align: center; border-bottom: 1px dotted">
+                                        </td>
+                                        <td style="text-align: right; width: 12%;">
+                                            <strong>الاعتماد</strong>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br/>
+                            <br/>
+                            <div style="padding:10px;">
+                                <p style="text-align: center;">
+                                    <span style="text-decoration: underline;">
+                                        <strong>احكام وشروط</strong>
+                                    </span>
+                                </p>
+                                <p style="text-align: right; padding:5px; font-size:20px">
+                                    <span t-field="o.project_id.terms_conditions"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</openerp>

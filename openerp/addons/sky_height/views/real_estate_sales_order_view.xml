@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+        <record id="inherit_real_estate_view_sale_order" model="ir.ui.view">
+            <field name="name">sale</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/notebook/page[2]"
+                       position="after">
+
+                    <page string="Payment"
+                          groups="account.group_account_invoice,sky_height.group_sky_height_admin">
+                        <field name="payment_strg_ids"
+                               widget="one2many_list"
+                               nolabel="1"
+                               class="oe_inline oe_no_button"
+                               readonly="1"
+                               groups="sky_height.group_real_state">
+                            <tree string="payment"
+                                  editable="buttom"
+                                  colors="red:move_check == True;green:cancelled == True ">
+                                <field name="description"/>
+                                <field name="amount"/>
+                                <field name="payment_date"/>
+                                <field name="journal_id"
+                                       domain="[('type','in',['bank', 'cash'])]"
+                                       widget="selection"
+                                       string="Payment Method"
+                                       attrs="{'readonly' : [('move_check', '=', True)]}"/>
+                                <field name="payment_id"/>
+                                <field name="move_check"
+                                       invisible="1"/>
+                                <field name="cancelled"
+                                       invisible="1"/>
+
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+                <xpath expr="//header"
+                       position="inside">
+                    <!--<button name="cancel_quo_so"-->
+                            <!--states="done"-->
+                            <!--string="Cancel Order"-->
+                            <!--type="object"-->
+                            <!--groups="sky_height.group_real_state"/>-->
+                    <!--<button name="cancel_quo_so"-->
+                            <!--states="draft,sent"-->
+                            <!--string="Cancel Quotation"-->
+                            <!--type="object"-->
+                            <!--groups="base.group_user"/>-->
+                    <button name="generate_delivery_entries"
+                            attrs="{'invisible' : ['|',('hide_delivery_button', '=', True),('state', '!=', 'done')]}"
+                            string="Generate Delivery Entries"
+                            type="object"
+                            groups="sky_height.group_real_state"/>
+                    <button name="generate_expense_entries"
+                            attrs="{'invisible' : ['|',('hide_expense_button', '=', True),('state', '!=', 'done')]}"
+                            string="Generate Expense Entries"
+                            type="object"
+                            groups="sky_height.group_real_state"/>
+
+                </xpath>
+                <xpath expr="//button[@name='action_cancel']"
+                       position="replace">
+                    <button name="action_cancel"
+                            states="draft,sent,sale"
+                            type="object"
+                            string="Cancel"
+                            groups="sky_height.group_sky_height_admin,sky_height.group_consltant"/>
+                </xpath>
+
+                <xpath expr="//button[@name='%(sale.action_view_sale_advance_payment_inv)d'][1]"
+                       position="replace">
+                    <button name="%(sale.action_view_sale_advance_payment_inv)d"
+                            string="Create Invoice"
+                            type="action"
+                            class="btn-primary"
+                            invisible="1"/>
+                </xpath>
+                <xpath expr="//button[@name='%(sale.action_view_sale_advance_payment_inv)d'][2]"
+                       position="replace">
+                     <button name="%(sale.action_view_sale_advance_payment_inv)d"
+                             string="Create Invoice"
+                             type="action"
+                             context="{'default_advance_payment_method': 'percentage'}"
+                             invisible="1"/>
+                </xpath>
+
+                <xpath expr="//field[@name='order_line']/tree/field[@name='price_unit']"
+                       position="after">
+                    <field name="analytic_account_id"/>
+                </xpath>
+
+                <xpath expr="//group[@name='technical']"
+                       position="after">
+                    <group>
+                        <field name="approve_cancellation"
+                               groups="sky_height.group_sky_height_admin"/>
+                    </group>
+                    <group string="Reservation Details">
+                        <field name="reservation_id"
+                               groups="sky_height.group_real_state"/>
+                        <field name="discount"
+                               groups="sky_height.group_real_state"/>
+                        <field name="net_property_price"
+                               groups="sky_height.group_real_state"/>
+
+                    </group>
+                </xpath>
+                <xpath expr="//field[@name='user_id']"
+                       position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='client_order_ref']"
+                       position="before">
+                    <field name="user_ids"
+                           widget="many2many_tags"/>
+                </xpath>
+                <xpath expr="//form/sheet/notebook/page[2]"
+                       position="after">
+
+                    <page string="Reservation Conditions"
+                          groups="sky_height.group_real_state">
+                        <group>
+                            <field name="conditions"/>
+                        </group>
+                    </page>
+                    <!--<page string="Cancellation Request"-->
+                          <!--groups="sky_height.group_sky_height_admin">-->
+                        <!--<group>-->
+
+                            <!--<field name="approve_cancellation"/>-->
+
+                        <!--</group>-->
+                        <!--<group>-->
+
+                            <!--<field name="cancel_attach_ids" nolabel="1">-->
+                                <!--<tree editable="top">-->
+                                    <!--<field name="name"/>-->
+                                    <!--<field name="datas"/>-->
+                                <!--</tree>-->
+                            <!--</field>-->
+                        <!--</group>-->
+                    <!--</page>-->
+                    <page string="Delivery And Expense Accounting">
+                        <group string="Delivery">
+                            <field name="delivery_journal_id"
+                                   groups="sky_height.group_real_state"/>
+                            <field name="delivery_debit_account_id"
+                                   groups="sky_height.group_real_state"/>
+                            <field name="delivery_credit_account_id"
+                                   groups="sky_height.group_real_state"/>
+                            <field name="delivery_journal_entry_id"
+                                   groups="sky_height.group_real_state"
+                                   readonly="1"/>
+                            <field name="hide_delivery_button"
+                                   invisible="1"/>
+                        </group>
+                        <group string="Expense">
+                            <field name="expense_journal_id"
+                                   groups="sky_height.group_real_state"/>
+                            <field name="expense_debit_account_id"
+                                   groups="sky_height.group_real_state"/>
+                            <field name="expense_credit_account_id"
+                                   groups="sky_height.group_real_state"/>
+                            <field name="expense_journal_entry_id"
+                                   groups="sky_height.group_real_state"
+                                   readonly="1"/>
+                            <field name="hide_expense_button"
+                                   invisible="1"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="sale.action_orders" model="ir.actions.act_window">
+            <field name="name">Sky Contract</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar,graph</field>
+            <field name="search_view_id" ref="sale.view_sales_order_filter"/>
+            <field name="context">{'search_default_my_sale_orders_filter': 1}</field>
+            <field name="domain">[('state', 'not in', ('draft', 'sent', 'cancel'))]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a quotation that can be converted into a sales
+                    order.
+                </p>
+                <p>
+                    Odoo will help you efficiently handle the complete sales flow:
+                    quotation, sales order, delivery, invoicing and payment.
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_sale_view_quotation_tree_inherit">
+            <field name="name">quo</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree"/>
+            <field name="groups_id" eval="[(6,0, [ref('sky_height.group_real_state')])]"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="create">false</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_sale_view_quotation_form_inherit">
+            <field name="name">quo form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="groups_id" eval="[(6,0, [ref('sky_height.group_real_state')])]"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="attributes">
+                    <attribute name="create">false</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_sale_view_order_tree_inherit">
+            <field name="name">sale</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="groups_id" eval="[(6,0, [ref('sky_height.group_real_state')])]"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="create">false</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

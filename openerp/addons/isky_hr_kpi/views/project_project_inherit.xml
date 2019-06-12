@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+
+        <record id="project_project_form_view_inherit" model="ir.ui.view">
+            <field name="name">project.project.form.inherit.view</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project"/>
+            <field name="arch" type="xml">
+
+                <field name="partner_id" position="after">
+                    <field name="is_kpi"/>
+                    <field name="from_date"
+                           attrs="{'invisible' : [('is_kpi', '=', False)],'required':[('is_kpi','=',True)]}"/>
+                    <field name="to_date"
+                           attrs="{'invisible' : [('is_kpi', '=', False)],'required':[('is_kpi','=',True)]}"/>
+                    <field name="technical_weight"
+                           attrs="{'invisible' : [('is_kpi', '=', False)]}"/>
+                    <field name="deadline_weight"
+                           attrs="{'invisible' : [('is_kpi', '=', False)]}"/>
+                    <field name="assigned_title"
+                           attrs="{'invisible' : [('is_kpi', '=', False)]}"/>
+                </field>
+
+            </field>
+        </record>
+
+    </data>
+</openerp>

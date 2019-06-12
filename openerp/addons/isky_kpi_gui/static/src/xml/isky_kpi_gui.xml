@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve" id="kpi_dashboard_report">
+
+
+    <div t-name="isky_kpi_gui.dashreport_searchview" class="row">
+        <div class="row datetimepicker">
+
+            <div class="col-xs-6">
+                <label style="color: #000000;">Date From:</label>
+                <input class="datetime_picker"
+                       type="text"
+                       name="period"
+                       t-att-value="period"/>
+            </div>
+            <div class="col-xs-6">
+                <label style="color: #000000;">Date To:</label>
+                <input class="datetime_picker"
+                       type="text"
+                       name="period_to"
+                       t-att-value="period_to"/>
+            </div>
+
+        </div>
+    </div>
+    <div t-name="isky_kpi_gui.dashreport"
+         class="container o_family_dashboard" style="width:1032px; !important">
+         <div class="row box"
+              id="setting"
+             style="max-width: 100%;height: 50px;margin-left:-2px; !important">
+             <div id="technical_share"
+                 class="col-sm-3">
+                <h3 style="color:#172427;margin-top: 0px; !important;">
+                    <span> Technical Share: </span>
+                    <span style="color:#F36704 !important;">
+                        <t t-esc="technical_share"/>%
+                    </span>
+                </h3>
+             </div>
+             <div id="timeline_share"
+                 class="col-sm-3">
+                <h3 style="color:#172427;margin-top: 0px; !important;">
+                     <span> Timeline Share: </span>
+                     <span style="color:#F36704 !important;">
+                         <t t-esc="timeline_share"/>%
+                     </span>
+                </h3>
+             </div>
+             <div id="net_technical"
+                 class="col-sm-3">
+                <h3 style="color:#172427;margin-top: 0px; !important;">
+                     <span> Net Technical: </span>
+                     <span style="color:#F36704 !important;">
+                         <t t-esc="net_technical"/>%
+                     </span>
+                </h3>
+             </div>
+             <div id="competencies_evaluation"
+                 class="col-sm-3">
+                <h3 style="color:#172427;margin-top: 0px; !important;">
+                     <span> Competencies: </span>
+                     <span style="color:#F36704 !important;">
+                         <t t-esc="competencies_evaluation"/>%
+                     </span>
+                </h3>
+             </div>
+         </div>
+        <div class="row box"
+             style="height: 369px; !important">
+            <div id="content_graph"
+                 class="col-sm-12"
+                 style="max-width: 100%; height: 350px; margin: 0 auto"/>
+        </div>
+        <div class="row box" style="margin-top: 10px;!important">
+            <div class="hr_kpi">
+                <div id='emp_kpi'
+                     class="col-md-3 btn-success"
+                     style="background-color: #000000 ;height:65px;!important;">
+                    <h1 style="color:#ffffff ;margin-top: 14px;!important;">HR KPI </h1>
+                </div>
+
+                <div id='technical_kpi'
+                     class="col-md-3 btn-success"
+                     style="background-color: #000000 ;height:65px; !important;">
+                    <h3 style="color:#F36704 !important;">
+                        <t t-esc="total_technical"/></h3>
+                    <h3 style="color:#F36704 ;margin-top: 16px; !important;">Technical KPI</h3>
+                </div>
+
+                <div id='deadline'
+                     class="col-md-3 btn-success"
+                     style="background-color: #000000 ;height:65px; !important;">
+                    <h3 style="color:#F36704 !important;">
+                        <t t-esc="total_deadline"/></h3>
+                    <h3 style="color:#F36704;margin-top: 16px; !important;">Deadline</h3>
+                </div>
+                <div id='appraisal'
+                     class="col-md-3 btn-success"
+                     style="background-color: #000000 ;height:65px; !important;">
+                    <h3 style="color:#F36704 !important;">
+                        <t t-esc="total_appraisal"/></h3>
+                    <h3 style="color:#F36704;margin-top: 16px; !important;">Appraisals</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</templates>

@@ -1,0 +1,24 @@
+<openerp>
+    <data>
+         <menuitem name="Employee Custody"
+                   parent="account.menu_finance"
+                   id="employee_custody_menu"
+                   sequence="2"
+                   action="action_employee_custody"
+                   groups="base.group_user"/>
+
+        <menuitem name="Employee Custody Transactions"
+                  parent="account.menu_finance_reports"
+                  id="employee_custody_transactions_menu"
+                  sequence="3"
+                  action="action_expenses_employee_custody_transactions"
+                  groups="base.group_user"/>
+
+        <menuitem name="Employee Custody Journal Entries"
+                  parent="account.menu_finance_reports"
+                  id="employee_custody_journal_entries_menu"
+                  sequence="3"
+                  action="action_expenses_employee_custody_journal_entries"/>
+
+    </data>
+</openerp>

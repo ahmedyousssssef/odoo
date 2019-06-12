@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="inherit_job_positions_form" model="ir.ui.view">
+            <field name="name">inherit.job.position.form</field>
+            <field name="model">hr.job</field>
+            <field name="inherit_id" ref="hr.view_hr_job_form"/>
+            <field name="arch" type="xml">
+                <field name="state" position="after">
+                    <field name="sub_state" widget="statusbar" statusbar_visible="hiring_request,
+                    hr_review,ceo_approved,job_posted,receiving_cvs,cv_categorization"
+                           attrs="{'invisible': [('state','=','open')]}"/>
+                </field>
+                <field name="state" position="before">
+                    <button name="hr_review" string="HR Review" type="object"
+                            class="oe_highlight" groups="base.group_user"
+                            attrs="{'invisible': ['|',('state','=','open'),('sub_state','!=','hiring_request')]}"/>
+                    <button name="ceo_approved" string="CEO Approval" type="object"
+                            class="oe_highlight" groups="base.group_user"
+                            attrs="{'invisible': ['|',('state','=','open'),('sub_state','!=','hr_review')]}"/>
+                    <button name="job_posted" string="Post Vacancy" type="object"
+                            class="oe_highlight" groups="base.group_user"
+                            attrs="{'invisible': ['|',('state','=','open'),('sub_state','!=','ceo_approved')]}"/>
+                    <button name="receiving_cvs" string="Receive Cvs" type="object"
+                            class="oe_highlight" groups="base.group_user"
+                            attrs="{'invisible': ['|',('state','=','open'),('sub_state','!=','job_posted')]}"/>
+                    <button name="cv_categorization" string="CV Categorization" type="object"
+                            class="oe_highlight" groups="base.group_user"
+                            attrs="{'invisible': ['|',('state','=','open'),('sub_state','!=','receiving_cvs')]}"/>
+                </field>
+                <label for="description" position="replace"/>
+                <field name="description" position="replace"/>
+                <xpath expr="//sheet" position="inside">
+                    <notebook colspan="4">
+                        <page string="Job Description">
+                            <field name="description"/>
+                        </page>
+                        <page string="Qualifications">
+                            <field name="qualifications"/>
+                        </page>
+                        <page string="States Log">
+                            <group>
+                                <group>
+                                    <field name="recruitment_progress_date" readonly="1"/>
+                                    <field name="hiring_request_date" readonly="1"/>
+                                    <field name="hr_review_date" readonly="1"/>
+                                    <field name="ceo_approval_date" readonly="1"/>
+                                </group>
+                                <group>
+                                    <field name="job_posted_date" readonly="1"/>
+                                    <field name="receiving_cvs_date" readonly="1"/>
+                                    <field name="cv_categorization_date" readonly="1"/>
+                                    <field name="recruitment_closing_date" readonly="1"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Received CVs Analysis">
+                            <group>
+                                <group>
+                                    <field name="total_received_cvs"/>
+                                    <field name="total_accepted_cvs"/>
+                                </group>
+                                <group>
+                                    <field name="total_rejected_cvs"/>
+                                    <field name="total_fit_cvs"/>
+                                </group>
+                            </group>
+                        </page>
+
+                    </notebook>
+                </xpath>
+                <field name="address_id" position="after">
+                    <field name="salary_range"/>
+                    <field name="compensations"/>
+                    <field name="job_family"/>
+                    <field name="section"/>
+                    <field name="unit"/>
+                </field>
+
+                <field name="no_of_recruitment" position="after">
+                    <field name="cycle_closure_date"/>
+                    <field name="post_media_ids" widget="many2many_tags"/>
+                </field>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

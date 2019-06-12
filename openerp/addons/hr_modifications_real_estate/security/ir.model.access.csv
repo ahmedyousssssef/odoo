@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_post_media,access_post_media,model_post_media,,1,1,1,0
+access_hr_certification_and_degree,access_hr_certification_and_degree,model_hr_certification_and_degree,,1,1,1,0
+access_hr_employment_history,access_hr_employment_history,model_hr_employment_history,,1,1,1,0
+access_hr_courses_and_qualification,access_hr_courses_and_qualification,model_hr_courses_and_qualification,,1,1,1,0
+access_career_level,access_career_level,model_career_level,,1,1,1,0
+access_recruitment_state_log,access_recruitment_state_log,model_recruitment_state_log,,1,1,1,0
+access_isky_excuse_request,access_isky_excuse_request,model_isky_excuse_request,,1,1,1,0

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!--salary structure form view-->
+        <record id="isky_hr_structure_inherit_form_view" model="ir.ui.view">
+            <field name="name">hr.payroll.inherit.form.view</field>
+            <field name="model">hr.payroll.structure</field>
+            <field name="inherit_id" ref="hr_payroll.view_hr_employee_grade_form"/>
+            <field name="arch" type="xml">
+                <field name="parent_id" position="after">
+                    <field name="grade"/>
+                </field>
+            </field>
+        </record>
+
+        <!--payslip form view-->
+        <record id="isky_hr_payroll_inherit_form_view" model="ir.ui.view">
+            <field name="name">hr.payslip.inherit.form.view</field>
+            <field name="model">hr.payslip</field>
+            <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form"/>
+            <field name="arch" type="xml">
+                <field name="credit_note" position="after">
+                    <field name="grade"/>
+                    <field name="insurance_per" invisible="True"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>

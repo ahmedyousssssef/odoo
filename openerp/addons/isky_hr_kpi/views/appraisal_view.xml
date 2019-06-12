@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="appraisal_tree_view" model="ir.ui.view">
+            <field name="name">appraisal.tree.view</field>
+            <field name="model">hr.appraisal</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="employee_id" string="Name"/>
+                    <field name="date_close"/>
+                    <field name="date_final_interview"/>
+                    <field name="state"/>
+                    <field name="count_sent_survey" readonly="0"/>
+                    <field name="count_completed_survey" readonly="0"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="appraisal_groupped" model="ir.ui.view">
+            <field name="name">hr.appraisal.grouped</field>
+            <field name="model">hr.appraisal</field>
+            <field name="arch" type="xml">
+                <search>
+                    <group expand="1" string="Group By">
+                        <filter context="{'group_by':['employee_id']}"
+                                name='group_by_employee'/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="appraisal_action">
+            <field name="name">Appraisals</field>
+            <field name="res_model">hr.appraisal</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="domain">[('state','!=','new')]</field>
+            <field name="view_id" ref="appraisal_tree_view"/>
+            <field name="search_view_id" ref="appraisal_groupped"/>
+            <field name="context">{'search_default_group_by_employee': 1}</field>
+
+        </record>
+
+    </data>
+</openerp>

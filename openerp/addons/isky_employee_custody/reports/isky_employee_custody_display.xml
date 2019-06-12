@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <report id="isky_all_employee_custody_report_id"
+                model="employee.custody"
+                string="Employee Custody"
+                report_type="qweb-pdf"
+                name="isky_employee_custody.all_custody_view_id"
+                file="isky_employee_custody.all_custody_view_id"
+                attachment_use="False"
+                menu="False"/>
+        <template id="all_custody_view_id">
+            <t t-call="report.html_container">
+                <t t-call="report.external_layout">
+                    <div class="page">
+                        <br/>
+                        <h3 style="text-align: center;">Employee Custody Report</h3>
+                        <br/>
+                        <table class="table table-condensed"
+                               style="width: 100%; margin-center: auto; margin-right: auto;">
+                            <thead>
+                                <tr>
+                                    <th style="text-align: center;">Employee</th>
+                                    <th style="text-align: center;">Debit</th>
+                                    <th style="text-align: center;">Credit</th>
+                                    <th style="text-align: center;">Balance</th>
+                                    <th style="text-align: center;">Currency</th>
+                                </tr>
+                            </thead>
+                            <tbody class="custody">
+                                <t t-foreach="docs" t-as="t">
+                                    <t t-set="get_currency" t-value="currency(t.id)"/>
+                                        <t t-if="get_currency">
+                                            <t t-foreach="get_currency" t-as="c">
+                                                <tr>
+                                                    <td style="text-align:center">
+                                                        <t t-esc="c[0]"/>
+                                                    </td>
+                                                    <td style="text-align:center">
+                                                        <t t-esc="c[1]"/>
+
+                                                    </td>
+                                                    <td style="text-align:center">
+                                                        <t t-esc="c[3]"/>
+
+                                                    </td>
+                                                    <td style="text-align:center">
+                                                        <t t-esc="c[2]"/>
+                                                    </td>
+                                                    <td style="text-align:center">
+                                                        <t t-esc="c[4]"/>
+                                                    </td>
+                                                </tr>
+                                            </t>
+                                        </t>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

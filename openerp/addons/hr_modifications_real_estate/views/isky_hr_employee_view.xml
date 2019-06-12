@@ -1,0 +1,104 @@
+<openerp>
+    <data>
+        <!--employee form view-->
+        <record id="hr_employee_inherit_form_view" model="ir.ui.view">
+            <field name="name">hr.employee.inherit.form.view</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <field name="job_id" position="after">
+                    <field name="career_level"/>
+                </field>
+                <field name="mobile_phone" position="before">
+                    <field name="employee_id"/>
+                </field>
+                <field name="employee_id" position="after">
+                    <field name="extension_phone"/>
+                </field>
+                <field name="coach_id" position="after">
+                    <field name="employment"/>
+                </field>
+
+                <field name="work_phone" position="after">
+                    <field name="grade"/>
+                    <field name="job_family"/>
+                    <field name="section"/>
+                    <field name="unit"/>
+                    <field name="medical_condition"/>
+                </field>
+
+                <xpath expr="//notebook/page[2]/group" position="after">
+                    <div>
+                        <group col="4">
+                            <field name="graduation"/>
+                            <field name="year" attrs="{'invisible': [('graduation', '=','under_graduate')]}"/>
+                            <field name="major"/>
+                            <field name="institute"/>
+                            <field name="military_status"/>
+                            <field name="address"/>
+                            <field name="city"/>
+                            <field name="personal_mobile"/>
+                        </group>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="hr_employee_grade_form_view" model="ir.ui.view">
+            <field name="name">employee.grade.form.view</field>
+            <field name="model">employee.grade</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="hr_employee_job_family_form_view" model="ir.ui.view">
+            <field name="name">employee.job.family.form.view</field>
+            <field name="model">employee.job.family</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="codes"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="hr_employee_section_form_view" model="ir.ui.view">
+            <field name="name">employee.section.form.view</field>
+            <field name="model">employee.section</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="codes"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="hr_employee_unit_form_view" model="ir.ui.view">
+            <field name="name">employee.unit.form.view</field>
+            <field name="model">employee.unit</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="codes"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</openerp>

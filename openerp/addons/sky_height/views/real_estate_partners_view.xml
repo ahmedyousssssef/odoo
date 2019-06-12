@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+        <record id='inherit_view_partner_form' model='ir.ui.view'>
+            <field name='name'>view.partner.form</field>
+            <field name='model'>res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name='arch' type='xml'>
+                <xpath expr="//field[@name='mobile']" position="replace">
+                    <field name="mobile1_type" required="1"/>
+                    <field name="mobile" string="Mobile 1" required="1"/>
+                    <field name="mobile2_type"/>
+                    <field name="mobile2"/>
+                </xpath>
+                <xpath expr="//notebook/page[3]/group/group/field[@name='supplier']" position="after">
+                    <field name="is_broker" groups="sky_height.group_real_state"/>
+                    <field name="broker_commission_amount"
+                           attrs="{'invisible' : [('is_broker', '!=', True)]}"
+                           groups="sky_height.group_real_state,account.group_account_manager"/>
+                    <field name="broker_commission_account"
+                           attrs="{'invisible' : [('is_broker', '!=', True)]}"
+                           groups="sky_height.group_real_state,account.group_account_manager"/>
+                </xpath>
+                <xpath expr="//field[@name='function']" position="after">
+                    <field name="organization" attrs="{'invisible' : [('company_type', '=', 'company')]}"
+                           groups="sky_height.group_real_state"/>
+                </xpath>
+                <xpath expr="//field[@name='image']" position="after">
+                    <div style="color:#893b74;">
+                        <h3>
+                            <strong>
+                                <field name="partner_code"/>
+                            </strong>
+                        </h3>
+                    </div>
+                </xpath>
+
+                <!-- Make street and job position required -->
+                <xpath expr="//field[@name='function']" position="attributes">
+                    <attribute name="attrs">{'required': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='street']" position="attributes">
+                    <attribute name="attrs">{'required': 1}</attribute>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="view_res_partner_filter_tfproperty_account_prepayableree_search" model="ir.ui.view">
+            <field name="name">res.partner.inherit.search</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                   <field name="mobile" string="Mobile" filter_domain="[('mobile','ilike', self)]"/>
+                   <field name="partner_code" string="Code" filter_domain="[('partner_code','ilike', self)]"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_partners_form_crm1_inherit" model="ir.ui.view">
+            <field name="name">res.partner.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="crm.view_partners_form_crm1"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='opportunity_count']" position="attributes">
+                    <attribute name="string">Leads</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="action_broker_form" model="ir.actions.act_window">
+            <field name="name">Brokers</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="domain">[('is_broker','=',1)]</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="context">{'default_is_broker':1,'default_customer':0}</field>
+            <field name="search_view_id" ref="base.view_res_partner_filter"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Click to add a Broker.</p>
+                <p>
+                    Odoo helps you easily track all activities related to a Brokers
+                </p>
+            </field>
+        </record>
+
+    </data>
+</openerp>

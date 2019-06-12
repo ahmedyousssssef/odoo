@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+
+        <record id="project_task_form_view_inherit" model="ir.ui.view">
+            <field name="name">project.task.form.inherit.view</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch" type="xml">
+                <field name="user_id" position="after">
+                    <field name="from_date" readonly="1"/>
+                    <field name="to_date" readonly="1"/>
+                </field>
+                <field name="project_id" position="replace">
+                    <field name="project_id"
+                           string='Objective'
+                           domain="[('is_kpi', '=', True)]"/>
+                </field>
+                <field name="tag_ids" position="after">
+                    <field name="assigned_title" readonly="1"/>
+                </field>
+                <xpath expr="//page[1]" position="after">
+                    <page name="technical_kpi" string="Technical KPI">
+                        <group>
+                            <group>
+                                <field name="weight"/>
+                                <field name="expected"/>
+                                <field name="achieved"/>
+                            </group>
+                            <group>
+                                <field name="ratio"/>
+                                <field name="final"/>
+                            </group>
+                            <group>
+                                <field name="evaluation"/>
+                                <field name="evaluation_on_score"/>
+                                <field name="final_score"/>
+                            </group>
+                            <group>
+                                <field name="weighted_score"/>
+                                <field name="diff"/>
+                            </group>
+                        </group>
+                    </page>
+                    <page name="deadline" string="Deadline">
+                        <group>
+                            <group>
+                                <field name="weight_deadline"/>
+                            </group>
+                            <group>
+                                <field name="working_days"/>
+                                <field name="achieved_days"/>
+                            </group>
+                            <group>
+                                <field name="weighted_score_deadline"/>
+                                <field name="diff_deadline"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

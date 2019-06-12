@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Custom report.-->
+<openerp>
+    <data>
+        <template id="report_excuse_document">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="report.external_layout">
+                    <div class="page">
+                        <div class="row">
+                            <head>
+                                <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+                                <title>إدارة الموارد البشرية</title>
+                                <meta name="generator" content="LibreOffice 5.0.2.2 (Linux)"/>
+                                <meta name="author" content="iSky"/>
+                                <meta name="created" content="2015-06-13T13:42:00"/>
+                                <meta name="changed" content="2016-02-04T06:55:55.897144079"/>
+                                <style type="text/css">
+                                    @page { size: 8.5in 11in; margin-right: 1.25in; margin-top: 0.79in; margin-bottom:
+                                    1in }
+                                    p { margin-bottom: 0.1in; direction: ltr; color: #000000; line-height: 120%;
+                                    orphans: 2; widows: 2 }
+                                    p.western { font-family: "Times New Roman", serif; font-size: 12pt; so-language:
+                                    en-US }
+                                    p.cjk { font-family: "Times New Roman", serif; font-size: 12pt }
+                                    p.ctl { font-family: "Times New Roman", serif; font-size: 12pt; so-language: ar-SA }
+                                </style>
+                            </head>
+                            <body lang="en-US" text="#000000" dir="ltr">
+                                <p dir="rtl" class="western" align="left"
+                                   style="margin-right: -0.69in; margin-bottom: 0in; line-height: 100%">
+                                    <br/>
+
+                                </p>
+                                <p dir="rtl" class="western" align="right"
+                                   style="margin-bottom: 0in; line-height: 100%">
+                                    <br/>
+
+                                </p>
+                                <p dir="rtl" class="western" align="right"
+                                   style="margin-bottom: 0in; line-height: 100%">
+                                    <br/>
+
+                                </p>
+                                <p dir="rtl" class="western" align="right"
+                                   style="margin-bottom: 0in; line-height: 100%">
+                                    <br/>
+
+                                </p>
+                                <p dir="rtl" class="western" align="right"
+                                   style="margin-bottom: 0in; line-height: 100%">
+                                    <br/>
+
+                                </p>
+                                <p dir="rtl" class="western" align="right"
+                                   style="margin-bottom: 0in; line-height: 100%">
+                                    <br/>
+
+                                </p>
+                                <p dir="rtl" class="western" align="right"
+                                   style="margin-bottom: 0in; line-height: 100%">
+                                    <br/>
+
+                                </p>
+                                <p dir="rtl" class="western" align="right"
+                                   style="margin-bottom: 0in; line-height: 100%">
+                                    <br/>
+
+                                </p>
+                                <p dir="rtl" class="western" align="center"
+                                   style="margin-bottom: 0in; line-height: 100%">
+                                    <font face="Garamond, serif">
+                                        <font size="4" style="font-size: 16pt">
+                                            <b>Excuse/
+                                                Late Coming Permission
+                                            </b>
+                                        </font>
+                                    </font>
+                                </p>
+                                <p dir="rtl" class="western" align="right"
+                                   style="margin-bottom: 0in; line-height: 100%">
+                                    <font face="Tahoma, sans-serif"></font>
+                                </p>
+                                <p dir="rtl" class="western" align="center"
+                                   style="margin-left: -0.63in; margin-right: -0.5in; margin-bottom: 0in; line-height: 100%">
+                                    <font face="Tahoma, sans-serif">
+                                        <span lang="ar-EG">
+                                            <b>أذن تأخير</b>
+                                        </span>
+                                    </font>
+                                    <font face="Tahoma, sans-serif">
+                                        <b>/
+                                        </b>
+                                    </font>
+                                    <font face="Tahoma, sans-serif">
+                                        <span lang="ar-EG">
+                                            <b>أنصراف</b>
+                                        </span>
+                                    </font>
+                                </p>
+                                <p dir="rtl" class="western" align="center"
+                                   style="margin-left: -0.63in; margin-right: -0.5in; margin-bottom: 0in; line-height: 100%">
+                                    <br/>
+
+                                </p>
+                                <p dir="rtl" class="western" align="center"
+                                   style="margin-left: -0.63in; margin-right: -0.5in; margin-bottom: 0in; line-height: 100%">
+                                    <br/>
+
+                                </p>
+                                <p dir="rtl" class="western" align="center"
+                                   style="margin-left: -0.63in; margin-right: -0.5in; margin-bottom: 0in; line-height: 100%">
+                                    <br/>
+
+                                </p>
+                                <table dir="rtl" width="696" cellpadding="7" cellspacing="0">
+                                    <col width="154">
+                                        <col width="346">
+                                            <col width="154">
+                                                <tr>
+                                                    <td width="154" height="21" style="border: none; padding: 0in">
+                                                        <p dir="ltr" class="western">
+                                                            <font face="Arial, sans-serif">
+                                                                <font size="3" style="font-size: 13pt">
+                                                                    <span lang="ar-EG">
+                                                                        <b>الأسم</b>
+                                                                    </span>
+                                                                </font>
+                                                            </font>
+                                                        </p>
+                                                    </td>
+                                                    <td width="346" style="border: none; padding: 0in">
+                                                        <p class="western" align="center">
+                                                            <span t-field="o.employee_id"/>
+
+                                                            <font face="Tahoma, sans-serif">
+                                                                <font size="2" style="font-size: 11pt"></font>
+                                                            </font>
+                                                        </p>
+                                                    </td>
+                                                    <td width="154" style="border: none; padding: 0in">
+                                                        <p dir="ltr" class="western" align="right">
+                                                            <font face="Garamond, serif">
+                                                                <font size="3" style="font-size: 13pt">
+                                                                    <b>Name:</b>
+                                                                </font>
+                                                            </font>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="154" height="21" style="border: none; padding: 0in">
+                                                        <p dir="ltr" class="western">
+                                                            <font face="Arial, sans-serif">
+                                                                <font size="3" style="font-size: 13pt">
+                                                                    <span lang="ar-EG">
+                                                                        <b>الوظيفة</b>
+                                                                    </span>
+                                                                </font>
+                                                            </font>
+                                                        </p>
+                                                    </td>
+                                                    <td width="346" style="border: none; padding: 0in">
+                                                        <p class="western" align="center">
+                                                            <span t-field="o.employee_id.job_id"/>
+
+                                                            <font face="Tahoma, sans-serif">
+                                                                <font size="2" style="font-size: 11pt"></font>
+                                                            </font>
+                                                        </p>
+                                                    </td>
+                                                    <td width="154" style="border: none; padding: 0in">
+                                                        <p dir="ltr" class="western" align="right">
+                                                            <font face="Garamond, serif">
+                                                                <font size="3" style="font-size: 13pt">
+                                                                    <b>Position:</b>
+                                                                </font>
+                                                            </font>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="154" height="21" style="border: none; padding: 0in">
+                                                        <p dir="ltr" class="western">
+                                                            <font face="Arial, sans-serif">
+                                                                <font size="3" style="font-size: 13pt">
+                                                                    <span lang="ar-EG">
+                                                                        <b>الإدارة</b>
+                                                                    </span>
+                                                                </font>
+                                                            </font>
+                                                        </p>
+                                                    </td>
+                                                    <td width="346" style="border: none; padding: 0in">
+                                                        <p class="western" align="center">
+                                                            <span t-field="o.department"/>
+
+                                                            <font face="Tahoma, sans-serif">
+                                                                <font size="2" style="font-size: 11pt"></font>
+                                                            </font>
+                                                        </p>
+                                                    </td>
+                                                    <td width="154" style="border: none; padding: 0in">
+                                                        <p dir="ltr" class="western" align="right">
+                                                            <font face="Garamond, serif">
+                                                                <font size="3" style="font-size: 13pt">
+                                                                    <b>Department:</b>
+                                                                </font>
+                                                            </font>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="154" height="21" style="border: none; padding: 0in">
+                                                        <p dir="ltr" class="western">
+                                                            <font face="Arial, sans-serif">
+                                                                <font size="3" style="font-size: 13pt">
+                                                                    <span lang="ar-EG">
+                                                                        <b>التاريخ</b>
+                                                                    </span>
+                                                                </font>
+                                                            </font>
+                                                        </p>
+                                                    </td>
+                                                    <td width="346" style="border: none; padding: 0in">
+                                                        <p class="western" align="center" style="margin-bottom: 0in">
+                                                            ………………………………………………………………………
+                                                            <font face="Tahoma, sans-serif">
+                                                                <font size="2" style="font-size: 11pt"></font>
+                                                            </font>
+                                                        </p>
+                                                        <p dir="ltr" class="western" align="right">
+                                                            <br/>
+
+                                                        </p>
+                                                    </td>
+                                                    <td width="154" style="border: none; padding: 0in">
+                                                        <p dir="ltr" class="western" align="right">
+                                                            <font face="Garamond, serif">
+                                                                <font size="2" style="font-size: 10pt">
+                                                                    <b>
+                                                                        <font size="3" style="font-size: 13pt">Date:
+                                                                        </font>
+                                                                    </b>
+                                                                </font>
+                                                            </font>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="154" height="21" style="border: none; padding: 0in">
+                                                        <p dir="ltr" class="western">
+                                                            <span lang="ar-SA">
+                                                                <font face="Arial, sans-serif">
+                                                                    <font size="3" style="font-size: 13pt">
+                                                                        <span lang="ar-EG">
+                                                                            <b>من
+                                                                                الساعة ص
+                                                                            </b>
+                                                                        </span>
+                                                                    </font>
+                                                                </font>
+                                                            </span>
+                                                            <font face="Arial, sans-serif">
+                                                                <font size="3" style="font-size: 13pt">
+                                                                    <b>/
+                                                                    </b>
+                                                                </font>
+                                                            </font>
+                                                            <span lang="ar-SA">
+                                                                <font face="Arial, sans-serif">
+                                                                    <font size="3" style="font-size: 13pt">
+                                                                        <span lang="ar-EG">
+                                                                            <b>م</b>
+                                                                        </span>
+                                                                    </font>
+                                                                </font>
+                                                                <font face="Arial, sans-serif">
+                                                                    <font size="3" style="font-size: 13pt">
+                                                                        <span lang="ar-EG">
+                                                                            <b>
+                                                                            </b>
+                                                                        </span>
+                                                                    </font>
+                                                                </font>
+                                                            </span>
+                                                        </p>
+                                                    </td>
+                                                    <td width="346" style="border: none; padding: 0in">
+                                                        <p class="western" align="center">
+                                                            <span t-field="o.date_from"/>
+
+                                                            <font face="Tahoma, sans-serif">
+                                                                <font size="2" style="font-size: 11pt"></font>
+                                                            </font>
+                                                        </p>
+                                                    </td>
+                                                    <td width="154" style="border: none; padding: 0in">
+                                                        <p dir="ltr" class="western" align="right">
+                                                            <font face="Garamond, serif">
+                                                                <font size="3" style="font-size: 13pt">
+                                                                    <b>From:</b>
+                                                                </font>
+                                                            </font>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="154" height="21" style="border: none; padding: 0in">
+                                                        <p dir="ltr" class="western">
+                                                            <font face="Arial, sans-serif">
+                                                                <font size="3" style="font-size: 13pt">
+                                                                    <span lang="ar-EG">
+                                                                        <b>إلى
+                                                                            الساعة ص
+                                                                        </b>
+                                                                    </span>
+                                                                </font>
+                                                            </font>
+                                                            <font face="Arial, sans-serif">
+                                                                <font size="3" style="font-size: 13pt">
+                                                                    <b>/
+                                                                    </b>
+                                                                </font>
+                                                            </font>
+                                                            <font face="Arial, sans-serif">
+                                                                <font size="3" style="font-size: 13pt">
+                                                                    <span lang="ar-EG">
+                                                                        <b>م</b>
+                                                                    </span>
+                                                                </font>
+                                                            </font>
+                                                        </p>
+                                                    </td>
+                                                    <td width="346" style="border: none; padding: 0in">
+                                                        <p class="western" align="center">
+                                                            <span t-field="o.date_to"/>
+
+                                                            <font face="Tahoma, sans-serif">
+                                                                <font size="2" style="font-size: 11pt"></font>
+                                                            </font>
+                                                        </p>
+                                                    </td>
+                                                    <td width="154" style="border: none; padding: 0in">
+                                                        <p dir="ltr" class="western" align="right">
+                                                            <font face="Garamond, serif">
+                                                                <font size="3" style="font-size: 13pt">
+                                                                    <b>Till:</b>
+                                                                </font>
+                                                            </font>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="154" height="21" style="border: none; padding: 0in">
+                                                        <p dir="ltr" class="western">
+                                                            <span lang="ar-SA">
+                                                                <font face="Arial, sans-serif">
+                                                                    <font size="3" style="font-size: 13pt">
+                                                                        <span lang="ar-EG">
+                                                                            <b>السبب</b>
+                                                                        </span>
+                                                                    </font>
+                                                                </font>
+                                                                <font face="Arial, sans-serif">
+                                                                    <font size="3" style="font-size: 13pt">
+                                                                        <span lang="ar-EG">
+                                                                            <b>
+                                                                            </b>
+                                                                        </span>
+                                                                    </font>
+                                                                </font>
+                                                            </span>
+                                                        </p>
+                                                    </td>
+                                                    <td width="346" style="border: none; padding: 0in">
+                                                        <p class="western" align="center">
+                                                            <span t-field="o.name"/>
+
+                                                            <font face="Tahoma, sans-serif">
+                                                                <font size="2" style="font-size: 11pt"></font>
+                                                            </font>
+                                                        </p>
+                                                    </td>
+                                                    <td width="154" style="border: none; padding: 0in">
+                                                        <p dir="ltr" class="western" align="right">
+                                                            <font face="Garamond, serif">
+                                                                <font size="3" style="font-size: 13pt">
+                                                                    <b>Reason:</b>
+                                                                </font>
+                                                            </font>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="154" height="21" style="border: none; padding: 0in">
+                                                        <p dir="ltr" class="western">
+                                                            <font face="Arial, sans-serif">
+                                                                <font size="3" style="font-size: 13pt">
+                                                                    <span lang="ar-EG">
+                                                                        <b>موافقة</b>
+                                                                    </span>
+                                                                </font>
+                                                            </font>
+                                                        </p>
+                                                    </td>
+                                                    <td width="346" style="border: none; padding: 0in">
+                                                        <p class="western" align="center">………………………………………………………………………
+                                                            <font face="Tahoma, sans-serif">
+                                                                <font size="2" style="font-size: 11pt"></font>
+                                                            </font>
+                                                        </p>
+                                                    </td>
+                                                    <td width="154" style="border: none; padding: 0in">
+                                                        <p dir="ltr" class="western" align="right">
+                                                            <font face="Garamond, serif">
+                                                                <font size="3" style="font-size: 13pt">
+                                                                    <b>Manager’s
+                                                                        approval:
+                                                                    </b>
+                                                                </font>
+                                                            </font>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </col>
+                                        </col>
+                                    </col>
+                                </table>
+                                <p dir="rtl" class="western" align="right"
+                                   style="margin-bottom: 0in; line-height: 100%">
+                                    <br/>
+
+                                </p>
+                                <p class="western" style="margin-bottom: 0in; line-height: 100%">
+                                    <br/>
+
+                                </p>
+                            </body>
+                        </div>
+
+
+                    </div>
+                </t>
+            </t>
+
+        </template>
+    </data>
+</openerp>

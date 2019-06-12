@@ -1,0 +1,41 @@
+<openerp>
+    <data>
+        <record id="core_competencies_tree_view" model="ir.ui.view">
+            <field name="name">core.competenices.conf.tree.view</field>
+            <field name="model">core.competencies.conf</field>
+            <field name="arch" type="xml">
+                <tree string="Core Competencies Configuration" editable="top">
+                    <field name="title"/>
+                    <field name="description"/>
+                    <field name="percentage"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="core_competencies_res_tree_view" model="ir.ui.view">
+            <field name="name">core.competenices.res.tree.view</field>
+            <field name="model">core.competencies.res.conf</field>
+            <field name="arch" type="xml">
+                <tree string="Core Competencies Results Configuration" editable="top">
+                    <field name="description" required="1"/>
+                    <field name="percentage" required="1"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="core_competencies_action" model="ir.actions.act_window">
+            <field name="name">Core Competencies Configuration</field>
+            <field name="res_model">core.competencies.conf</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <record id="core_competencies_res_action" model="ir.actions.act_window">
+            <field name="name">Core Competencies Guide Line</field>
+            <field name="res_model">core.competencies.res.conf</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+        </record>
+    </data>
+</openerp>

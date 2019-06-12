@@ -1,0 +1,124 @@
+<openerp>
+    <data>
+        <report
+                id="payment_strategy"
+                model="rs.reservation"
+                string="Strategy Report"
+                name="sky_height.strategies_report"
+                file="sky_height.strategies_report"
+                report_type="qweb-pdf"/>
+
+        <template id="strategies_report">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="report.external_layout">
+                        <div class="page">
+                            <div class="row">
+                                <center>
+                                    <h2>
+                                        <u>Payment Strategies</u>
+                                    </h2>
+                                </center>
+                            </div>
+
+                            <table border="1" cellpadding="1" cellspacing="1" style="height:100%;width:100%;"
+                                   class="table table-bordered">
+                                <table align="center" border="1" cellpadding="1" cellspacing="1" style="width:100%;">
+                                    <tbody>
+                                        <tr>
+                                            <!--<td style="text-align: left;">Property Name :</td>-->
+                                            <!--<td style="text-align: left;"><span t-field="o.unit_id.name"/></td>-->
+                                            <td style="text-align: left;">Project Name :</td>
+                                            <td style="text-align: left;">
+                                                <span t-field="o.project_id.name"/>
+                                            </td>
+                                        </tr>
+                                        <!--<tr>-->
+                                        <!--<td style="text-align: left;">Property No. :</td>-->
+                                        <!--<td style="text-align: left;"><span t-field="o.unit_id.property_no"/></td>-->
+                                        <!--<td style="text-align: left;">Property Price :</td>-->
+                                        <!--<td style="text-align: left;"><span t-field="o.unit_id.lst_price"/></td>-->
+                                        <!--</tr>-->
+
+                                    </tbody>
+                                </table>
+                                <p></p>
+
+                                <table align="center" border="1" cellpadding="1" cellspacing="1" dir="rtl"
+                                       style="width:100%;" class="table table-bordered">
+                                    <tr>
+                                        <th scope="col" style="text-align: center;width: 200px;">Property No.</th>
+                                        <th scope="col" style="text-align: center;width: 200px;">Property Name</th>
+                                        <th scope="col" style="text-align: center;width: 200px;">Property Price</th>
+                                    </tr>
+                                    <tbody>
+                                        <t t-foreach="o.unit_ids" t-as="unit">
+                                            <tr colspan="5" style="text-align: center;">
+
+                                                <td>
+                                                    <span t-field="unit.property_no"/>
+
+                                                </td>
+                                                <td>
+                                                    <span t-field="unit.name"/>
+
+                                                </td>
+                                                <td>
+                                                    <span t-field="unit.lst_price"/>
+
+                                                </td>
+
+
+                                            </tr>
+
+                                        </t>
+
+                                    </tbody>
+                                </table>
+
+
+                                <table border="1" cellpadding="1" cellspacing="1" style="height:100%;width:100%;"
+                                       class="table table-bordered">
+                                    <tr>
+                                        <th style="width: 200px; text-align: center;">Name</th>
+                                        <th style="width: 200px; text-align: center;">Amount</th>
+                                        <th style="width: 200px; text-align: center;">Date</th>
+                                        <th style="width: 200px; text-align: center;">Payment Method</th>
+
+                                    </tr>
+                                    <t t-foreach="o.payment_strg_ids" t-as="d">
+                                        <tr colspan="5" style="text-align: center;">
+                                            <td>
+                                                <span t-field="d.description"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="d.amount"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="d.payment_date"/>
+                                            </td>
+
+                                            <td>
+                                                <span t-field="d.type"/>
+                                            </td>
+
+                                        </tr>
+                                    </t>
+
+
+                                    <tr>
+
+                                    </tr>
+                                </table>
+
+
+                            </table>
+
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</openerp>

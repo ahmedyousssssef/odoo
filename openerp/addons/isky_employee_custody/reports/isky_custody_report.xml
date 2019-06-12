@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <template id="employee_custody_report_id">
+            <t t-call="report.html_container">
+                <t t-call="report.external_layout">
+                    <div class="page row">
+
+                        <style type="text/css" media="print">
+                            @page {
+                                size: landscape;
+                            }
+                            body {
+                                writing-mode: tb-rl;
+                            }
+                        </style>
+                        <h3 style="text-align: center;">أذن صرف نقدية</h3>
+                        <t t-foreach="docs" t-as="t">
+                            <h3 style="text-align: center;"><t t-esc="t.name"/></h3>
+                            <h3 style="text-align: center;">خزينة المشروعات</h3>
+                            <br/>
+                            <br/>
+                            <br/>
+                           <table  class="table" align="right" text-align="right" width="100%"  style="height: 100px;" >
+                               <tr class="row">
+                                   <th style="width:  400px;text-align: right;">جنيه<br/> <t t-esc="t.open_balance"/></th>
+                                   <th style="width:  400px;text-align: right;">قرش</th>
+                                   <th   style="width:  400px;text-align: right;"></th>
+                                   <th style="width:  400px;text-align: right;"></th>
+                                   <th   style="width:  400px;text-align: right;"></th>
+                                   <th  style="width: 50%;text-align: right;">التاريخ:<t t-esc="t.custody_date"/></th>
+                               </tr>
+                               <tr class="row">
+                                   <th text-align="right" style="width:  400px;text-align: right;"><t t-esc="t.employee_id.employee_code"/>:رقم</th>
+
+                                    <th text-align="right" style="width:  400px;text-align: right;"></th>
+                                   <th  text-align="right" style="width:  400px;text-align: right;"></th>
+
+                                   <th  text-align="right" style="width:  400px;text-align: right;"></th>
+                                  <th  text-align="right" style="width:  400px;text-align: right;"></th>
+
+                                   <th  text-align="right" style="width:  50%;text-align: right;"> <t t-esc="t.employee_id.name"/>:استلمت أنا   </th>
+                               </tr>
+                               <tr></tr>
+                               <tr class="row">
+                                   <th style="width:  400px;text-align: right;"></th>
+
+
+                                    <th style="width:  400px;text-align: right;"></th>
+                                   <th style="width:  400px;text-align: right;"></th>
+                                   <th style="width:  400px;text-align: right;"></th>
+                                   <th style="width:  400px;text-align: right;"></th>
+
+                                   <th style="width:  50%;text-align: right;">مبلغ وقدره:<t t-esc="t.arabic_amount"/>فقط لاغير</th>
+                               </tr>
+                               <tr>
+                               </tr>
+                               <!--<tr class="row">-->
+                                   <!--<th  style="width:  400px;text-align: right;"></th>-->
+                                   <!--<th style="width:  400px;text-align: right;"></th>-->
+                                   <!--<th style="width:  400px;text-align: right;"></th>-->
+
+                                   <!--<th style="width:  400px;text-align: right;"></th>-->
+                                   <!--<th  style="width:  400px;text-align: right;"><t t-esc="t.description"/></th>-->
+                                   <!--<th style="width:  800px;text-align: right;">وذلك بقيمة:</th>-->
+                               <!--</tr>-->
+
+                           </table>
+                            <br/>
+                            <div width="100%">
+                                <div style="text-align:right">
+                                                                                                                    <b>:وذلك بقيمة</b>
+
+
+
+                                </div>
+                                 <div style="text-align:right">
+                                            <t t-esc="t.description"/>
+                                 </div>
+                            </div>
+                            <!--<div class="row"></div>-->
+                            <!--<div class="row"></div>-->
+                            <br/>
+                            <br/>
+                            <br/>
+                        <table style="height: 20px;" width="100%">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 25%; text-align: center;"> يعتمد</td>
+                                    <td style="width: 25%; text-align: center;"> مراجع</td>
+
+                                    <td style="width: 25%; text-align: center;">أمين الخزنة <br/> <t t-esc="t.create_uid.name"/></td>
+
+                                <td style="width: 25%; text-align: center;">  المستلم</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        </t>
+
+
+
+                    </div>
+                </t>
+            </t>
+        </template>
+        <report id="employee_custody_report"
+                        model="employee.custody"
+                        string="Employee Custody Report"
+                        report_type="qweb-pdf"
+                        name="isky_employee_custody.employee_custody_report_id"
+                        file="isky_employee_custody.employee_custody_report_id"
+                        attachment_use="False"/>
+
+    </data>
+</openerp>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="commission_wizard_form_view" model="ir.ui.view">
+            <field name="name">Commission Wizard</field>
+            <field name="model">commission.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Commission Wizard">
+                    <group col="4">
+                        <field name="reservation_id" readonly="1"/>
+                        <field name="reservation_tot_amount" readonly="1"/>
+                        <field name="journal_id" options="{'no_create' : True}"/>
+                        <field name="sales_type"/>
+                    </group>
+                    <group string="Commissions"/>
+
+                    <field name="lines_ids"
+                           context="{'default_reservation_value':reservation_tot_amount}">
+                        <tree editable="top" create="false">
+                            <field name="commission_type" readonly="1"/>
+                            <field name="partner_id" readonly="1"/>
+                            <field name="act_percentage"
+                                   attrs="{'readonly':[('commission_type','!=','sales_person')]}"/>
+                            <field name="pay_type" readonly="1"/>
+                            <field name="amount_percentage" readonly="1"/>
+                            <field name="commission_account_id" readonly="1"/>
+                            <field name="amount" sum="Total" readonly="1"/>
+                        </tree>
+                        <form>
+                            <field name="commission_type" readonly="1"/>
+                            <field name="partner_id" readonly="1"/>
+                            <field name="act_percentage" readonly="1"/>
+                            <field name="pay_type" readonly="1"/>
+                            <field name="amount_percentage" readonly="1"/>
+                            <field name="commission_account_id" readonly="1"/>
+                            <field name="amount" sum="Total" readonly="1"/>
+                        </form>
+                    </field>
+                    <field name="show_confirm_button" invisible="1"/>
+
+                    <footer>
+                        <button class="oe_highlight" string="UPDATE" name="update_commission" type="object"
+                                style="background-color:#68465f;border-radius: 6px;"
+                                attrs="{'invisible' : [('show_confirm_button','!=', False)]}"/>
+
+                        <button name="create_inv_vendor"
+                                string="Create Commissions"
+                                type="object"
+                                groups="account.group_account_user,sky_height.rs_group_finance,sky_height.group_sky_height_admin"
+                                class="btn-primary" attrs="{'invisible' : [('show_confirm_button','=', False)]}"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="commission_wizard_action" model="ir.actions.act_window">
+            <field name="name">Commission Wizard</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">commission.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</openerp>

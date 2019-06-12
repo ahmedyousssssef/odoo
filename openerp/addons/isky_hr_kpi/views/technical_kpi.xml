@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="technical_kpi_tree_view" model="ir.ui.view">
+            <field name="name">technical.kpi.tree.view</field>
+            <field name="model">project.task</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="project_id"/>
+                    <field name="name"/>
+                    <field name="user_id"/>
+                    <field name="weight" sum="weight"/>
+                    <field name="expected"/>
+                    <field name="achieved"/>
+                    <field name="ratio"/>
+                    <field name="final"/>
+                    <field name="evaluation"/>
+                    <field name="evaluation_on_score"/>
+                    <field name="final_score"/>
+                    <field name="weighted_score" sum="Weighted Score"/>
+                    <field name="diff"  sum="Diff"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="technical_kpi_groupped" model="ir.ui.view">
+            <field name="name">technical.kpi.grouped</field>
+            <field name="model">project.task</field>
+            <field name="arch" type="xml">
+                <search>
+                    <group expand="1" string="Group By">
+                        <filter context="{'group_by':['project_id']}"
+                                name='group_by_project'/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="technical_kpi_action">
+            <field name="name">Technical KPIs</field>
+            <field name="res_model">project.task</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="domain">[('is_kpi','=',True)]</field>
+            <field name="view_id" ref="technical_kpi_tree_view"/>
+            <field name="search_view_id" ref="technical_kpi_groupped"/>
+            <field name="context">{'search_default_group_by_project': 1}</field>
+
+        </record>
+
+    </data>
+</openerp>

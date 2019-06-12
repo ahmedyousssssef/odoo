@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="res_users_view_inherit_form">
+            <field name="name">users</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_simple_form"/>
+            <field name="arch" type="xml">
+                <field name="fax" position="after">
+                    <field name="sales_commission_amount"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="isky_res_users_view_tree" model="ir.ui.view">
+            <field name="name">res.users.tree</field>
+            <field name="model">res.users</field>
+            <field name="arch" type="xml">
+                <tree string="Users">
+                    <field name="name"/>
+                    <field name="login"/>
+                    <field name="lang"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="res_user_inherit_action">
+            <field name="name">Sales Persons</field>
+            <field name="res_model">res.users</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="isky_res_users_view_tree"/>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <menuitem id="technical_kpi"
+                  name="Technical KPIs"
+                  parent="base.menu_project_report"
+                  action="technical_kpi_action"
+                  sequence="20"/>
+
+        <menuitem id="deadline_report"
+                  name="Deadline"
+                  parent="base.menu_project_report"
+                  action="deadline_action"
+                  sequence="21"/>
+
+
+        <menuitem id="appraisal_conf"
+                  name="Configuration"
+                  parent="hr_appraisal.menu_hr_appraisal_root"
+                  sequence="100"/>
+
+        <menuitem id="appraisal_settings"
+                  name="Settings"
+                  parent="appraisal_conf"
+                  action="setting_appraisal_action"
+                  sequence="1"/>
+
+        <menuitem id="core_competencies"
+                  name="Core Competencies"
+                  parent="appraisal_conf"
+                  action="core_competencies_action"
+                  sequence="2"/>
+
+        <menuitem id="core_competencies_results"
+                  name="Core Competencies Guide Line"
+                  parent="appraisal_conf"
+                  action="core_competencies_res_action"
+                  sequence="3"/>
+
+
+
+
+
+    </data>
+</openerp>

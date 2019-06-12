@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="full_time_report">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="report.external_layout">
+                        <div class="page">
+                                <center><h3>JOB OFFER LETTER</h3></center>
+                                <center><h5>CONFIDENTIAL</h5></center>
+                                <left><h4>Dear <span t-field="o.partner_name" /></h4></left>
+                                <left><h4>We would like to inform you that EL SHAHAWI GROUP is offering you a full time
+                                employment opportunity as a <span t-field="o.job_id"/> in <span t-field="o.department_id"/> to join in <span t-field="o.hiring_date"/></h4></left>
+                                <left><h4>Please find below your employment opportunity description:</h4></left>
+                                <left><h4><u>Job Title: <span t-field="o.job_id"/> </u></h4></left>
+                                <left><h4><u>Department: <span t-field="o.department_id"/> </u></h4></left>
+                                <left><h4><u>job title of the direct Superior: <span t-field="o.department_id.manager_id"/> </u></h4></left>
+                                <left><h4><u>Job Summary:</u></h4></left>
+                                <center><h4>The HR Coordinator is responsible for all the operational HR including recruitment,</h4></center>
+                                <center><h4>hiring, compensation and benefits and maintaining employee records.</h4></center>
+                                <left><h4><u>Job Responsibilities:</u></h4></left>
+                                <center><h4><span t-field="o.job_id.duties"/> </h4></center>
+                                <center><h4>Perform other related duties assigned by the direct superior as required.</h4></center>
+                                <left><h4><u>Net Salary : <span t-field="o.salary_proposed"/> </u></h4></left>
+                                <left><h4><u>Salary Due:</u> 2nd day of each month.</h4> </left>
+                                <left><h4>Benefits Offered:</h4></left><br></br>
+                                <left><h4><span t-field="o.benefits_offerd"/></h4></left>
+                                <center><h4>Please confirm your acceptance at your earliest convenience, but not later than</h4></center>
+                                <center><h4><span t-field="o.offer_expire_date"/> as the date for this offer will expire.</h4></center>
+                                <center><h4>If you accept the offer, please be informed that your employment at EL SHAHAWI</h4></center>
+                                <center><h4>GROUP will be subjected to an employment yearly contract after the 3 months’</h4></center>
+                                <center><h4>probation period that will start from <span t-field="o.pro_date"/> </h4></center>
+                                <center><h4>employment documentation which can be completed within one month from your</h4></center>
+                                <center><h4>joining date.</h4></center>
+                                <center><h4>We are looking forward see you at our company and we are glad that you will play a</h4></center>
+                                <center><h4>key role in our company’s expansion. If you have any inquiries, please do not</h4></center>
+                                <center><h4>hesitate to contact me.</h4></center>
+                                <table border="0" width="100%">
+                                    <tr>
+                                       <th>Employee</th>
+                                        <th>company</th>
+                                    </tr>
+                                    <tr >
+                                        <td><h3>---------------</h3></td>
+                                        <td><h3>---------------</h3></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Authorized Signature</td>
+                                        <td>Authorized Signature</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span t-field="o.partner_name"/><span t-field="o.job_id"/> </td>
+                                        <td>-------------------------</td>
+                                    </tr>
+                                    <tr>
+                                        <td><h4>Print Name &amp; Title</h4></td>
+                                        <td><h4>Print Name &amp; Title</h4></td>
+                                    </tr>
+                                </table>
+
+
+
+                        </div>
+
+                    </t>
+
+                </t>
+
+            </t>
+        </template>
+
+    </data>
+</openerp>

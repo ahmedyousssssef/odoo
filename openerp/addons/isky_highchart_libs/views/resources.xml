@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <!-- Adds all assets in Odoo -->
+        <template id="assets_backend" name="static_resources_highchart" inherit_id="web.assets_backend">
+           <xpath expr="." position="inside">
+               <script type="text/javascript" src="/isky_highchart_libs/static/src/js/lib/bind.min.js"></script>
+               <script type="text/javascript" src="/isky_highchart_libs/static/src/js/lib/highstock.js"></script>
+               <script type="text/javascript" src="/isky_highchart_libs/static/src/js/lib/data.js"></script>
+               <script type="text/javascript" src="/isky_highchart_libs/static/src/js/lib/drilldown.js"></script>
+               <script type="text/javascript" src="/isky_highchart_libs/static/src/js/lib/exporting.js"></script>
+               <script type="text/javascript" src="/isky_highchart_libs/static/src/js/lib/highcharts-3d.js"></script>
+
+           </xpath>
+        </template>
+    </data>
+</openerp>

@@ -1,0 +1,192 @@
+<openerp>
+    <data>
+        <report
+                id="payment_details"
+                model="payment.strg"
+                string="إيصال إستلام نقدية"
+                name="sky_height.payment_details_report"
+                file="sky_height.payment_details_report"
+                report_type="qweb-pdf"/>
+
+        <template id="payment_details_report">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="report.external_layout">
+                        <div class="page">
+                            <head>
+                                <title></title>
+                            </head>
+                            <body>
+                                <table align="center" border="0" cellpadding="1" cellspacing="1" style="width:800px;">
+                                    <tbody>
+                                        <tr>
+                                            <td style="text-align: right;">
+                                                <table align="center" border="0" cellpadding="1" cellspacing="1"
+                                                       dir="rtl" style="width: 800px;">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Sky Heights For Real estate Development
+                                                                <br/>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: right;">
+                                                <table align="center" border="0" cellpadding="1" cellspacing="1"
+                                                       dir="rtl" style="width: 800px;">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>سكاى هايتس للتنمية العقارية
+                                                                <br/>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <p></p>
+
+                                <p></p>
+
+                                <p></p>
+
+                                <p></p>
+
+                                <p></p>
+
+                                <p></p>
+
+                                <table align="center" border="0" cellpadding="1" cellspacing="1" dir="rtl"
+                                       style="width:800px;">
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td style="text-align: center;">
+                                                <span style="font-family:tahoma,geneva,sans-serif;">
+                                                    <u>
+                                                        <strong>استلام نقدية / شيك</strong>
+                                                        <strong><span t-field="o.payment_id"/></strong>
+                                                    </u>
+                                                </span>
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td style="background-color: rgb(102, 102, 102);"></td>
+                                            <td style="background-color: rgb(102, 102, 102);"></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" rowspan="1">استلمنا من السيد /</td>
+                                            <t t-if="o.payment_id">
+                                                <td colspan="3" rowspan="1"><span t-field="o.partner_id"/></td>
+                                            </t>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="1" rowspan="1">مبلغ وقدره /</td>
+                                            <t t-if="o.payment_id">
+                                                <td colspan="3" rowspan="1"><span t-field="o.amount"/></td>
+                                            </t>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="5" rowspan="1">وذلك قيمة :</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="5" rowspan="1"></td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>نقداً / بشيك رقم :</td>
+                                            <t t-if="o.payment_id">
+                                                <td colspan="1" rowspan="1"><span t-field="o.cheque"/></td>
+                                            </t>
+                                            <td>بتاريخ:</td>
+                                            <t t-if="o.payment_id"><span t-field="o.payment_date"/></t>
+                                            <td>مسحوب على بنك :</td>
+                                            <t t-if="o.payment_id">
+                                                <td colspan="3" rowspan="1"><span t-field="o.bank_name"/></td>
+                                            </t>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="5" rowspan="1"></td>
+
+                                        </tr>
+                                        <tr>
+                                            <td colspan="5" rowspan="1">تحريراً في :</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td colspan="5" rowspan="1"></td>
+
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;">المحاسب</td>
+                                            <td style="text-align: center;"></td>
+                                            <td style="text-align: center;">المدير المالي</td>
+                                            <td style="text-align: center;"></td>
+                                            <td style="text-align: center;">المستلم</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;">
+                                                ............................................
+                                            </td>
+                                            <td style="text-align: center;"></td>
+                                            <td style="text-align: center;">
+                                                ............................................
+                                            </td>
+                                            <td></td>
+                                            <td style="text-align: center;">.........................................
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="5" rowspan="1">
+                                                ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="5" rowspan="1">مدينة نصر : 5 ب حافظ رمضان - العمار بلازا - برج
+                                                ب - بجوار سيتي سنتر - ت :‫‪22723512/3‬‬ الخط الساخن : 16410
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <p></p>
+                            </body>
+
+
+                        </div>
+
+
+                    </t>
+                </t>
+            </t>
+        </template>
+
+
+    </data>
+</openerp>

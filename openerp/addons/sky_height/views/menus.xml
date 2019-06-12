@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <menuitem id="crm.crm_opportunity_report_menu_lead"
+                  name="Welcome Cards"
+                  parent="base.menu_sale_report"
+                  action="crm.crm_opportunity_report_action_lead"
+                  sequence="6"/>
+
+        <menuitem name="Sky Heights"
+                  id="menu_real_estate"
+                  sequence="1"/>
+
+        <menuitem id="configuration_sub"
+                  name="Configuration"
+                  parent="menu_real_estate"/>
+
+
+        <menuitem parent="menu_real_estate"
+                  id="menu_transactions"
+                  name="Transactions"
+                  sequence="1"/>
+
+        <menuitem id="reservation_menu"
+                  name="Reservations"
+                  parent="menu_transactions"
+                  action="rsreservation_list_action"
+                  sequence="0"/>
+
+        <menuitem action="sale.action_orders"
+                  id="real_estate_menu_sale_order"
+                  parent="menu_transactions"
+                  sequence="5"
+                  name="Sky Contract"/>
+
+        <menuitem id="res_user_inherit_inherit"
+                  name="Sales Persons"
+                  parent="configuration_sub"
+                  action="res_user_inherit_action"/>
+
+        <menuitem id="payment_details_sub"
+                  name="Payment Details"
+                  parent="menu_real_estate"
+                  sequence="2"/>
+
+        <menuitem id="payment_strategy_details"
+                  name="All Payment Details"
+                  parent="payment_details_sub"
+                  action="payments_details_list_action"
+                  sequence="1"/>
+
+        <menuitem id="payment_strategy_bank_details"
+                  name="Check Payment Details"
+                  parent="payment_details_sub"
+                  sequence="2"
+                  action="payments_details_bank_list_action"/>
+
+        <menuitem id="payment_strategy_direct_details"
+                  name="Direct Payment Details"
+                  sequence="3"
+                  parent="payment_details_sub"
+                  action="payments_details_direct_list_action"/>
+
+        <menuitem id="base.menu_sale_config"
+                  name="Configuration"
+                  parent="base.menu_base_partner"
+                  sequence="100"/>
+
+
+        <menuitem action="product.product_template_action"
+                  id="product.menu_product_template_action"
+                  parent="base.menu_sales"
+                  name="Properties"
+                  sequence="14"/>
+
+        <menuitem action="sale.action_orders"
+                  id="sale.menu_sale_order"
+                  parent="base.menu_sales"
+                  sequence="12"/>
+
+        <menuitem id="crm.menu_crm_opportunities"
+                  action="crm.action_your_pipeline"
+                  name="Leads"
+                  parent="base.menu_sales"
+                  sequence="3"/>
+
+
+        <menuitem id="sky_heights_settings"
+                  name="Settings"
+                  parent="configuration_sub"
+                  action="action_sky_heights_configuration"
+                  sequence="0"/>
+
+
+        <menuitem parent="configuration_sub"
+                  id="menu_brokers"
+                  name="Brokers"
+                  action="action_broker_form"
+                  sequence="1"/>
+
+        <menuitem parent="menu_real_estate"
+                  id="menu_properties"
+                  name="All Properties"
+                  sequence="0"/>
+
+        <menuitem id="main_property_menu"
+                  name="Property"
+                  parent="menu_properties"
+                  action="property_normal_action"
+                  sequence="1"/>
+
+        <menuitem id="main_available_property_menu"
+                  name="Available Property"
+                  parent="menu_properties"
+                  sequence="98"
+                  action="property_available_action"/>
+
+        <menuitem id="main_reserved_property_menu"
+                  name="Reserved Property"
+                  parent="menu_properties"
+                  sequence="99"
+                  action="property_reserved_action"/>
+
+
+        <menuitem parent="configuration_sub"
+                  name="Commission Configuration"
+                  id="commission_conf_menu_id"
+                  action="real_commission_conf_action"
+                  sequence="2"/>
+
+        <menuitem id="property_platform"
+                  name="Property Platform"
+                  parent="configuration_sub"
+                  action="property_platform_action"/>
+
+        <menuitem id="property_block"
+                  name="Property Block"
+                  parent="configuration_sub"
+                  action="property_block_action"/>
+
+        <menuitem id="phase_menu"
+                  action="phase_list_action"
+                  parent="project.menu_project_config"
+                  name="Phases"
+                  sequence="5"/>
+
+        <menuitem id="property_level"
+                  name="Property Level"
+                  parent="configuration_sub"
+                  action="property_level_action"/>
+
+        <menuitem name="Project"
+                  id="base.menu_main_pm"
+                  icon="fa-calendar"
+                  web_icon="project,static/description/icon.png"
+                  sequence="50"/>
+
+        <menuitem id="sky_heights_settings"
+                  name="Settings"
+                  parent="configuration_sub"
+                  action="action_sky_heights_configuration"
+                  sequence="0"/>
+
+        <menuitem id="property_floor"
+                  name="Property Floor"
+                  parent="configuration_sub"
+                  action="property_floor_action"/>
+
+        <menuitem id="property_type"
+                  name="Property Type"
+                  parent="configuration_sub"
+                  action="property_type_action"/>
+
+
+        <menuitem parent="menu_real_estate"
+                  name="Brokers"
+                  id="menu_real_estate_brokers"
+                  sequence="3"/>
+
+    </data>
+</openerp>

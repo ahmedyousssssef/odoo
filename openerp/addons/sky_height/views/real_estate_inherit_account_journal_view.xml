@@ -1,0 +1,30 @@
+<openerp>
+    <data>
+        <record id="view_account_journal_form_inherit" model="ir.ui.view">
+        <field name="name">account.journal.form</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='show_on_dashboard']" position="after">
+                    <field name="show_checks" attrs="{'invisible':[('type','!=', 'bank')]}"/>
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                  <page string="Checks Workflow"
+                        attrs="{'invisible':[('show_checks','!=', True)]}">
+                    <group>
+                      <group>
+                          <field name="under_collected_account_id"
+                                 attrs="{'required':[('show_checks','=', True)]}" />
+                      </group>
+                      <group>
+                          <field name="collection_account_id"
+                                 attrs="{'required':[('show_checks','=', True)]}"/>
+                      </group>
+                    </group>
+                  </page>
+                </xpath>
+            </field>
+    </record>
+
+  </data>
+</openerp>

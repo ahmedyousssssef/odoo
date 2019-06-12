@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="hr_applicant_inherit_view" model="ir.ui.view">
+            <field name="name">hr.applicant.inherit.view</field>
+            <field name="model">hr.applicant</field>
+            <field name="inherit_id" ref="hr_recruitment.crm_case_form_view_job"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='availability']" position="after">
+                    <field name="hiring_date"/>
+                    <field name="offer_expire_date"/>
+                    <field name="benefits_offerd"/>
+                </xpath>
+                <xpath expr="//sheet/separator" position="replace" />
+                <xpath expr="//sheet/field[@name='description']" position="replace"/>
+                <xpath expr="//sheet" position="inside">
+                    <notebook>
+                        <page string="Application Summary">
+                            <field name="description" placeholder="Feedback of interviews..."/>
+                        </page>
+                        <page string="Certifications And Degrees">
+                            <group>
+                                <field name="certificate_ids" nolabel="1">
+                                    <tree string="Certifications And Degrees" editable="bottom">
+                                        <field name="name" required="1"/>
+                                        <field name="college_name" required="1"/>
+                                        <field name="date" required="1"/>
+                                        <field name="inclusive_date" required="1"/>
+                                        <field name="country" options="{'create': false, 'create_edit': false}"
+                                               required="1"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                        <page string="Additional Courses and Qualifications">
+                            <group>
+                                <field name="course_ids" nolabel="1">
+                                    <tree string="Additional Courses and Qualification" editable="bottom">
+                                        <field name="name" required="1"/>
+                                        <field name="country" options="{'create': false, 'create_edit': false}"
+                                               required="1"/>
+                                        <field name="date" required="1"/>
+                                        <field name="duration" required="1"/>
+                                        <field name="description" required="1"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                        <page string="Employment History">
+                            <field name="emp_history_ids" nolabel="1">
+                                <tree string="Employment History" editable="bottom">
+                                    <field name="name" required="1"/>
+                                    <field name="position" required="1"/>
+                                    <field name="employer" required="1"/>
+                                    <field name="date_from" required="1"/>
+                                    <field name="date_to" required="1"/>
+                                    <field name="country" options="{'create': false, 'create_edit': false}"
+                                           required="1"/>
+                                    <field name="address"/>
+                                </tree>
+                            </field>
+                        </page>
+
+                    </notebook>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+
+        <record id="hr_appraisal_form_view_inherit" model="ir.ui.view">
+            <field name="name">hr.appraisal.form.inherit.view</field>
+            <field name="model">hr.appraisal</field>
+            <field name="inherit_id" ref="hr_appraisal.view_hr_appraisal_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='employee_id']" position="after">
+                    <field name="show" invisible="1"/>
+                    <field name="show_res" invisible="1"/>
+                </xpath>
+                <field name="date_close" position="after">
+                    <field name="from_date"/>
+                    <field name="to_date"/>
+                </field>
+                <xpath expr="//notebook/page[1]" position="after">
+                    <page string="Competencies" attrs="{'invisible' : [('show', '=', False)]}">
+                        <group>
+                            <field name="core_competencies_ids" >
+                            <tree create="false" delete="false" editable="false">
+                                <field name="title" readonly="1"/>
+                                <field name="description" readonly="1"/>
+                                <field name="percentage"/>
+                                <field name="rate"/>
+                                <field name="score" sum="sum_score"/>
+                            </tree>
+                        </field>
+                        </group>
+                        <div>
+                            <center>
+                                <field name="final_res_competencies"/>
+                            </center>
+                        </div>
+
+                    </page>
+                    <page string="Supervisory" attrs="{'invisible' : [('show', '=', False)]}">
+                        <group>
+                            <group>
+                                <field name="self_share"/>
+                                <field name="team_share"/>
+                            </group>
+                            <group>
+                                <field name="no_subordinates"/>
+                                <field name="subordinates_score"/>
+                            </group>
+                        </group>
+                        <group>
+                            <button name="get_subordinateds_text"
+                                    type="object"
+                                    string="Compute Subordinates Average"/>
+                        </group>
+                        <br/>
+                        <div>
+                            <field name="subordinates_text"
+                                   attrs="{'invisible' : [('show_res', '=', False)]}"/>
+                        </div>
+
+                    </page>
+                    <page string="Employee self perfomance apprasial" attrs="{'invisible' : [('show', '=', False)]}">
+                        <br/>
+                        <div>
+                            <field name="employee_self_performance_appraisal" string=""/>
+                        </div>
+                    </page>
+                    <page string="Final" attrs="{'invisible' : [('state', '!=', 'done')]}">
+                        <br/>
+                        <div>
+                            <field name="final_res" string=""/>
+                        </div>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

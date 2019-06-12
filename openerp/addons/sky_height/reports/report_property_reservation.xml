@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report id="report_property_reservation"
+                model="rs.reservation"
+                string="Property Reservation Report"
+                report_type="qweb-pdf"
+                name="sky_height.report_property_reservation_document"
+                file="sky_height.report_property_reservation_document"
+                attachment_use="False"/>
+
+        <template id="report_property_reservation_document">
+            <t t-call="report.external_layout">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+                        <div class="row">
+                            <center>
+                                <h3>
+                                    <t t-set="units_count"
+                                       t-value="0.0"/>
+                                    <t t-foreach="o.unit_ids"
+                                       t-as="unit">
+                                        <t t-set="units_count"
+                                           t-value="units_count + 1"/>
+                                    </t>
+                                    <t t-if="units_count > 1">
+                                        <u>استمارة حجز وحدات</u>
+                                    </t>
+                                    <t t-if="units_count == 1">
+                                        <u>استمارة حجز وحدة</u>
+                                    </t>
+
+
+                                </h3>
+                            </center>
+                        </div>
+                        <table border="1"
+                               cellpadding="1"
+                               cellspacing="1"
+                               style="height:100%;width:100%;"
+                               class="table table-bordered">
+                            <table align="center"
+                                   border="1"
+                                   cellpadding="1"
+                                   cellspacing="1"
+                                   dir="rtl"
+                                   style="width:100%;"
+                                   class="table table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <td colspan="2">
+                                            <h4>
+                                                <u>بيانات العميل:</u>
+                                            </h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 300px;">الاسم :</td>
+                                        <td>
+                                            <span t-field="o.customer_id.name"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 300px;">العملاء :</td>
+                                        <td>
+                                            <span t-field="o.partners_name"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>العنوان :</td>
+                                        <td>
+                                            <span t-field="o.customer_id.street"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>رقم تحقيق الشخصية :</td>
+                                        <td>
+                                            <span t-field="o.id_no"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>نوع تحقيق الشخصية :</td>
+                                        <td>
+                                            <span t-field="o.id_type"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <p></p>
+
+                            <table align="center"
+                                   border="1"
+                                   cellpadding="1"
+                                   cellspacing="1"
+                                   dir="rtl"
+                                   style="width:100%;"
+                                   class="table table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <td colspan="4">
+                                            <h4>
+
+                                                <t t-if="units_count > 1">
+                                                    <u>بيانات الوحدات:</u>
+                                                </t>
+
+                                                <t t-if="units_count == 1">
+                                                    <u>بيانات الوحدة:</u>
+                                                </t>
+                                            </h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 200px;">اسم المشروع:</td>
+                                        <td>
+                                            <span t-field="o.project_id.name"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table align="center"
+                                   border="1"
+                                   cellpadding="1"
+                                   cellspacing="1"
+                                   dir="rtl"
+                                   style="width:100%;"
+                                   class="table table-bordered">
+                                <tr>
+                                    <th scope="col"
+                                        style="text-align: center;width: 200px;">رقم الوحدة</th>
+                                    <th scope="col"
+                                        style="text-align: center;width: 200px;">مساحة الوحدة</th>
+                                    <th scope="col"
+                                        style="text-align: center;width: 200px;">نموذج</th>
+                                    <th scope="col"
+                                        style="text-align: center;width: 200px;">الدور</th>
+                                    <th scope="col"
+                                        style="text-align: center;width: 200px;">جراج</th>
+
+                                </tr>
+                                <tbody>
+                                    <t t-foreach="o.unit_ids" t-as="unit">
+                                        <tr colspan="5" style="text-align: center;">
+
+                                            <td>
+                                                <span t-field="unit.name"/>
+
+                                            </td>
+
+                                            <td>
+                                                <span t-field="unit.total_area"/>
+
+                                            </td>
+
+                                            <td>
+                                                <span t-field="unit.property_platform_id"/>
+
+                                            </td>
+                                            <td>
+                                                <span t-field="unit.property_floor_id"/>
+
+                                            </td>
+                                            <td>
+                                                <span t-field="unit.garage"/>
+
+                                            </td>
+
+
+                                        </tr>
+
+                                    </t>
+
+                                </tbody>
+                            </table>
+                            <p></p>
+
+                            <table align="center" border="1" cellpadding="1" cellspacing="1" dir="rtl"
+                                   style="width:100%;"
+                                   class="table table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <td colspan="2">
+                                            <h4>
+                                                <u>طريقة السداد:</u>
+                                            </h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 200px;">طريقة السداد :</td>
+                                        <td>
+                                            <span t-field="o.pay_strategy_id.name"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <t t-if="units_count > 1">
+                                            <td>قيمة الوحدات :</td>
+                                        </t>
+                                        <t t-if="units_count == 1">
+                                            <td>قيمة الوحدة :</td>
+                                        </t>
+
+                                        <td>
+                                            <span t-field="o.net_price"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+
+                            <p></p>
+
+                            <p></p>
+
+                            <p></p>
+
+                            <p></p>
+
+                            <table align="center" border="1" cellpadding="1" cellspacing="1" dir="rtl"
+                                   style="width:100%;" class="table table-bordered">
+                                <tr>
+                                    <th scope="col" style="text-align: center;width: 200px;">الوصف</th>
+                                    <th scope="col" style="text-align: center;width: 200px;">القيمة</th>
+                                    <th scope="col" style="text-align: center;width: 200px;">التاريخ</th>
+
+                                </tr>
+                                <tbody>
+                                    <t t-foreach="o.payment_strg_ids" t-as="k">
+                                        <tr colspan="5" style="text-align: center;">
+
+                                            <td>
+                                                <span t-field="k.description"/>
+
+                                            </td>
+
+                                            <td>
+                                                <span t-field="k.amount"/>
+
+                                            </td>
+
+                                            <td>
+                                                <span t-field="k.payment_date"/>
+
+                                            </td>
+
+
+                                        </tr>
+
+                                    </t>
+
+                                </tbody>
+                            </table>
+
+                            <p></p>
+
+                            <table align="center" border="0" cellpadding="0" cellspacing="0" dir="rtl"
+                                   style="width:100%;" class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" style="text-align: right;">
+                                            <u>شروط الحجز :</u>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <span t-field="o.conditions"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <p></p>
+
+                            <table align="center" border="0" cellpadding="0" cellspacing="0" dir="rtl"
+                                   style="width:100%;">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" style="width: 200px;">توقيع العميل</th>
+                                        <th scope="col"></th>
+                                        <th scope="col" style="width: 200px;">توقيع مسئول التسويق</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</openerp>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_partner_preaccount_property_form" model="ir.ui.view">
+            <field name="name">res.partner.preaccount.property.form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="priority">3</field>
+            <field name="inherit_id" ref="account.view_partner_property_form"/>
+            <field name="arch" type="xml">
+				<xpath expr="//field[@name='property_account_receivable_id']"
+					   position="after">
+					<field name="property_account_prereceivable"
+						   groups="account.group_account_invoice"
+						   attrs="{'invisible' : [('customer', '=', False)],'required' : [('customer', '=', True)]}"/>
+					<field name="property_unearned_revenu_account_prereceivable"
+						   groups="account.group_account_invoice"
+						   attrs="{'invisible' : [('customer', '=', False)],'required' : [('customer', '=', True)]}"/>
+					<field name="extension_account_prereceivable"
+						   groups="account.group_account_invoice"
+						   attrs="{'invisible' : [('customer', '=', False)],'required' : [('customer', '=', True)]}"/>
+		        </xpath>
+
+            </field>
+        </record>
+        
+		<record model="ir.ui.view" id="view_prepayment_form">
+            <field name="name">account.payment.prepayment.form</field>
+            <field name="model">account.payment</field>
+			<field name="inherit_id" ref="account.view_account_payment_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='communication']" position="after">
+					<field name="use_prepayment_account" attrs="{'readonly' : [('state','!=','draft')], 'invisible': 1}"/>
+					<field name="use_unearned_revenu_account" attrs="{'readonly' : [('state','!=','draft')], 'invisible': 1}"/>
+					<field name="use_extension_account" attrs="{'readonly' : [('state','!=','draft')], 'invisible': 1}"/>
+		        </xpath>
+			</field>
+		</record>   
+
+
+    </data>
+</openerp>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <report id="reservation_payment_report"
+                model="rs.reservation"
+                string="Payment Report"
+                report_type="qweb-pdf"
+                name="sky_height.reservation_payment_report_template"
+                file="sky_height.reservation_payment_report_template"
+                attachment_use="False"
+                menu="True"/>
+
+        <template id="reservation_payment_report_template">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="a">
+                    <t t-call="report.external_layout">
+                        <div class="page">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Reservation Name</th>
+                                        <th>Reservation Code</th>
+                                        <th>Project</th>
+                                        <th>Phase</th>
+                                        <th>Payment Strategy</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <span t-field="a.name"/>
+                                        </td>
+
+                                        <td>
+                                            <span t-field="a.reservation_code"/>
+                                        </td>
+
+                                        <td>
+                                            <span t-field="a.project_id"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="a.phase_id"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="a.pay_strategy_id"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br/>
+                            <br/>
+
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Description</th>
+                                        <th>Amount</th>
+                                        <th>Date</th>
+                                        <th>Payment Method</th>
+                                        <th>Payment Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="a.payment_strg_ids" t-as="l">
+                                        <tr>
+                                            <td>
+                                                <span t-field="l.description"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="l.amount"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="l.payment_date"/>
+                                            </td>
+
+                                            <td>
+                                                <span t-field="l.journal_id"/>
+                                            </td>
+                                            <td>
+                                                <t t-if="l.cheque_status in ['draft','received','under_collection']">
+                                                    <span>Not Paid</span>
+                                                </t>
+                                                <t t-if="l.cheque_status == 'collection'">
+                                                    <span>Paid</span>
+                                                </t>
+                                                <t t-if="l.cheque_status == 'rejected'">
+                                                    <span>Rejected</span>
+                                                </t>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</openerp>

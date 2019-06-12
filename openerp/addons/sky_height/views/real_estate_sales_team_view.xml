@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+
+        <record id="real_state_sales_team_inherit" model="ir.ui.view" >
+            <field name="name">users</field>
+            <field name="model">crm.team</field>
+            <field name="inherit_id" ref="sales_team.crm_team_view_form"/>
+            <field name="arch" type="xml">
+                <field name="user_id" position="after">
+                    <field name="sales_manager_id"/>
+                </field>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

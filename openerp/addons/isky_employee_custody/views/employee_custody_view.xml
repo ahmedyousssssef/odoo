@@ -1,0 +1,348 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <act_window id="act_emp_custody_entries"
+                    name="Journal Entries"
+                    res_model="account.move"
+                    domain="[('custody_id', '=',active_id )]"/>
+
+        <act_window id="act_emp_custody_invoices"
+                    name="Invoices"
+                    res_model="account.invoice"
+                    domain="[('custody_id', '=',active_id )]"/>
+
+        <record id="view_custody_filter" model="ir.ui.view">
+            <field name="name">employee.custody.filter</field>
+            <field name="model">employee.custody</field>
+            <field name="arch" type="xml">
+                <search string="Search Invoice">
+                    <field name="employee_code" string="code"/>
+                    <field name="name"/>
+                    <field name="journal_id"/>
+                    <field name="payment_method_id"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="view_employee_custody_form" model="ir.ui.view">
+            <field name="name">view.employee.custody.form</field>
+            <field name="model">employee.custody</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Employee Custody">
+                    <header>
+                        <button name="button_validate"
+                                states="draft"
+                                string="Confirm"
+                                type="object"
+                                class="oe_highlight"
+                        />
+                        <button name="button_journal_entry"
+                                states="open"
+                                string="Receive Custody"
+                                type="object"
+                                class="oe_highlight"
+                                groups="account.group_account_manager"
+                                context="{'button_type':'receive'}"/>
+                        <button name="button_journal_entry"
+                                states="receiving_custody"
+                                string="Generate Journal Entries"
+                                type="object"
+                                class="oe_highlight"
+                                groups="account.group_account_manager"
+                                context="{'button_type':'entry'}"/>
+                        <button name="button_journal_entry"
+                                string="Close"
+                                type="object"
+                                class="oe_highlight"
+                                groups="account.group_account_manager"
+                                context="{'button_type':'close'}"
+                                attrs="{'invisible': ['|', ('arrears', '=', True), ('state', '!=', 'pay')]}"/>
+                        <button name="cancel_custody"
+                                states="draft"
+                                string="Cancel"
+                                type="object"
+                                groups="hr.group_hr_user"/>
+                        <button name="cancel_custody"
+                                states="open"
+                                string="Cancel"
+                                type="object"
+                                groups="account.group_account_user"/>
+                        <button name="reconcile_arrears"
+                                string="Reconcile Arrears"
+                                type="object"
+                                groups="account.group_account_user"
+                                attrs="{'invisible': ['|', ('arrears', '=', False), ('state', '!=', 'pay')]}"
+                                class="oe_highlight"/>
+                        <field name="state"
+                               widget="statusbar"
+                               statusbar_visible="draft,open,receiving_custody,pay,done"/>
+                    </header>
+
+                    <sheet>
+                        <div class="oe_button_box"
+                             name="button_box">
+                            <button class="oe_stat_button"
+                                    type="action"
+                                    name="%(act_emp_custody_entries)d"
+                                    attrs="{'invisible': [('state', 'in', ['draft','open'])]}" icon="fa-usd">
+                                <field string="Journal Entries"
+                                       name="journal_entries_count"
+                                       widget="statinfo"/>
+                            </button>
+                        </div>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="arabic_amount"
+                                       invisible="1"/>
+                                <field name="employee_id"/>
+                                <field name="loan_id"/>
+                                <field name="company_id"
+                                       invisible="1"/>
+                                <field name="company_currency_id"
+                                       invisible="1"/>
+                                <field name="arrears"
+                                       invisible="1"/>
+                            </group>
+                            <group>
+                                <field name="custody_date"/>
+                                <field name="custody_close_date"
+                                       attrs="{'invisible': [('state', 'not in',['pay','done'])] ,'readonly':[('state', 'in',['cancel','done'])]}"/>
+                                <field name="currency_id"
+                                       options="{'no_create': True, 'no_open': True}"
+                                       groups="base.group_multi_currency"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="employee_custody_item_ids"
+                                   string="Previous Custodies"
+                                   attrs="{'invisible': [('employee_id', '=', False)]}">
+                                <tree create="false" edit="false">
+                                    <field name="name"/>
+                                    <field name="loan_id"/>
+                                    <field name="open_balance"
+                                           string="Debit"
+                                           sum="Total Debit"/>
+                                    <field name="total_transactions"
+                                           string="Credit"
+                                           sum="Total Credit"/>
+                                    <field name="reconciled_amount"
+                                           string="Reconciled"
+                                           sum="Total Reconciled"/>
+                                    <field name="close_balance"
+                                           string="Balance"
+                                           sum="Total Balance"/>
+                                    <field name="state"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <group>
+                            <field name="reconcile_from_all"/>
+                        </group>
+                        <notebook colspan="4">
+                            <page string="Accounting Configuration"
+                                  groups="account.group_account_manager">
+                                <group>
+                                    <group>
+                                        <field name="journal_id"/>
+                                        <field name="payment_method_id"
+                                               options="{'no_create':True}"/>
+
+                                    </group>
+                                    <group>
+
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Description">
+                                <field name="description"/>
+                            </page>
+
+                            <page string="Transactions"
+                                  attrs="{'invisible': [('state','in',['draft','open'])]}">
+                                <field name="line_ids">
+                                    <tree string="Transactions"
+                                          editable="bottom">
+                                        <field name="is_validated"
+                                               invisible="1"/>
+                                        <field name="type"
+                                               attrs="{'readonly': [('is_validated','=', True)]}"/>
+                                        <field name="partner_id"
+                                               domain="[('supplier','=',True)]"
+                                               attrs="{'invisible': [('type','not in',['payback','payment'])],'required':[('type','in',['payment'])], 'readonly': ['|',('type','in',['payback']),('is_validated','=', True)]}"/>
+                                        <field name="product_id"  domain="[('type','!=','property')]" options="{'no_create': True}"
+                                               attrs="{'invisible': [('type','not in',['direct_expense'])],'required':[('type','in',['direct_expense'])], 'readonly': [('is_validated','=', True)]}"/>
+                                        <field name="name"
+                                               attrs="{'invisible': [('type','not in',['direct_expense'])],'required':[('type','in',['direct_expense'])], 'readonly': [('is_validated','=', True)]}"/>
+                                        <field name="date"
+                                               attrs="{'readonly': [('is_validated','=', True)]}"/>
+                                        <field name="attachment_ids"
+                                               widget="many2many_binary"
+                                               attrs="{'readonly': [('is_validated','=', True)]}"/>
+                                        <field name="company_id"
+                                               invisible="1"/>
+                                        <field name="journal_id"
+                                               attrs="{'invisible': [('type','not in',['payment','payback'])],'required':[('type','in',['payback'])], 'readonly': [('is_validated','=', True)]}"/>
+                                        <field name="account_id"
+                                               attrs="{'invisible': [('type','not in',['direct_expense'])],'required':[('type','in',['direct_expense'])], 'readonly': [('is_validated','=', True)]}"
+                                               groups="account.group_account_user"
+                                               domain="[('company_id', '=', parent.company_id), ('internal_type', '=', 'other')]"/>
+
+                                        <field name="account_analytic_id"
+                                               attrs="{'readonly':[('type','in',['payment','payback'])]}"
+                                        />
+                                        <field name="payment_amount"
+                                               attrs="{'invisible': [('type','in',['direct_expense'])], 'readonly': [('is_validated','=', True)]}"/>
+                                        <field name="quantity"
+                                               attrs="{'invisible': [('type','not in',['direct_expense'])],'required':[('type','in',['direct_expense'])], 'readonly': [('is_validated','=', True)]}"/>
+                                        <field name="uom_id"
+                                               groups="product.group_uom"
+                                               attrs="{'invisible': [('type','not in',['direct_expense'])],'required':[('type','in',['direct_expense'])], 'readonly': [('is_validated','=', True)]}"/>
+                                        <field name="price_unit"
+                                               attrs="{'invisible': [('type','not in',['direct_expense'])],'required':[('type','in',['direct_expense'])], 'readonly': [('is_validated','=', True)]}"/>
+                                        <field name="price_subtotal"
+                                               readonly="1"/>
+                                        <field name="currency_id"
+                                               invisible="1"/>
+                                        <field name="amount_before_transaction"
+                                               invisible="1"/>
+                                        <field name="amount_after_transaction"
+                                               invisible="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+
+                            <page string="Journal Entries"
+                                  attrs="{'invisible': [('state','not in',['receiving_custody','pay','done'])]}">
+                                <field name="move_line_ids">
+                                    <tree string="Journal Entries">
+                                        <field name="type"/>
+                                        <field name="date"/>
+                                        <field name="move_id"/>
+                                        <field name="journal_id"/>
+                                        <field name="name"/>
+                                        <field name="ref"/>
+                                        <field name="partner_id"/>
+                                        <field name="account_id"/>
+                                        <field name="amount_currency"
+                                               groups="base.group_multi_currency"/>
+                                        <field name="reconciled"/>
+                                        <field name="debit"/>
+                                        <field name="credit"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                        <group>
+                            <div>
+                                <group class="oe_subtotal_footer"
+                                       attrs="{'invisible': [('state', '=', 'draft')]}">
+                                    <label for="close_balance"
+                                           string="Remaining Amount"
+                                    />
+                                    <field name="close_balance"
+                                           nolabel="1"
+                                           widget="monetary"/>
+                                </group>
+                                <group class="oe_subtotal_footer"
+                                       attrs="{'invisible': [('state', '=', 'draft')]}">
+                                    <label for="total_transactions"
+                                    />
+                                    <field name="total_transactions" nolabel="1"
+                                           widget="monetary"/>
+                                </group>
+                                <group class="oe_subtotal_footer">
+                                    <label for="open_balance"
+                                           string="Amount"
+                                    />
+                                    <field name="open_balance"
+                                           nolabel="1" widget="monetary"
+                                    />
+                                </group>
+                            </div>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_employee_custody_tree" model="ir.ui.view">
+            <field name="name">view.employee.custody.tree</field>
+            <field name="model">employee.custody</field>
+            <field name="arch" type="xml">
+                <tree string="Employee Custody">
+                    <field name="name"/>
+                    <field name="loan_id"/>
+                    <field name="employee_id"/>
+                    <field name="employee_code"/>
+                    <field name="custody_date"/>
+                    <field name="open_balance" sum="Total"/>
+                    <field name="close_balance" sum="Total"/>
+                    <field name="currency_id"/>
+                    <field name="custody_close_date"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <record id="isky_view_custody_category_form" model="ir.ui.view">
+            <field name="name">isky.view.custody.category.form</field>
+            <field name="model">custody.category</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Employee Loan">
+                    <sheet>
+                        <group>
+                            <group colspan="2">
+                                <field name="name"/>
+                            </group>
+                            <field name="loan_description"/>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_employee_custody_pivot" model="ir.ui.view">
+            <field name="name">view.employee.custody.pivot</field>
+            <field name="model">employee.custody</field>
+            <field name="arch" type="xml">
+                <pivot string="Custody Analysis" disable_linking="True">
+                    <field name="employee_id" type="row"/>
+                    <field name="close_balance" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_employee_custody">
+            <field name="name">Employee Custody</field>
+            <field name="res_model">employee.custody</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,pivot</field>
+            <field name="view_id" ref="view_employee_custody_tree"/>
+        </record>
+
+        <record id="isky_custody_multi_generate_journals" model="ir.ui.view">
+            <field name="name">isky.custody.multi.generate.journals</field>
+            <field name="model">custody.multi.generate.journals</field>
+            <field name="arch" type="xml">
+                <form string="Generate Journals For Selected Custody(s)">
+                    <p class="oe_grey">
+                        Once draft custody(s) are confirmed, you will not be able
+                        to modify them.
+                    </p>
+                    <footer>
+                        <button string="Create Journals" name="generate_journals" type="object" default_focus="1"
+                                class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <act_window id="custody_generate_multi_journal_entries"
+                    multi="True" key2="client_action_multi" name="Generate Journal Entries"
+                    res_model="custody.multi.generate.journals" src_model="employee.custody"
+                    view_mode="form" target="new" view_type="form"/>
+
+    </data>
+</openerp>

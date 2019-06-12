@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+
+        <!-- Menuitems'actions-->
+
+        <!-- Unavailable property menuitem action-->
+        <record id="property_unavailable_action" model="ir.actions.act_window">
+            <field name="name">Unavailable Property</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.product</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="view_type">form</field>
+            <field name="search_view_id" ref="product.product_search_form_view"/>
+            <field name="context">{"search_default_property":1,"default_type":"property"}}</field>
+            <field name="domain">[('type','=','property'),('status','=','not_available'), ('resp_user_id', '=', uid)]
+            </field>
+            <field name="view_id" eval="False"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to define a new product.
+                </p>
+                <p>
+                    You must define a product for everything you buy or sell,
+                    whether it's a physical product, a consumable or service.
+                </p>
+            </field>
+        </record>
+
+        <record id="property_unavailable_sale_teamleader_action" model="ir.actions.act_window">
+            <field name="name">Unavailable Property</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.product</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="view_type">form</field>
+            <field name="search_view_id" ref="product.product_search_form_view"/>
+            <field name="context">{"search_default_property":1,"default_type":"property"}}</field>
+            <field name="domain">[('type','=','property'),('status','=','not_available'), '|' ,('resp_user_id', '=',
+                uid), ('resp_user_id.sale_team_id.user_id', '=', uid)]
+            </field>
+            <field name="view_id" eval="False"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to define a new product.
+                </p>
+                <p>
+                    You must define a product for everything you buy or sell,
+                    whether it's a physical product, a consumable or service.
+                </p>
+            </field>
+        </record>
+
+         <record id="property_unavailable_sales_manager_action" model="ir.actions.act_window">
+            <field name="name">Unavailable Property</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.product</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="view_type">form</field>
+            <field name="search_view_id" ref="product.product_search_form_view"/>
+            <field name="context">{"search_default_property":1,"default_type":"property"}}</field>
+            <field name="domain">[('type','=','property'),('status','=','not_available'), '|' ,('resp_user_id', '=',
+                uid), ('resp_user_id.sale_team_id.sales_manager_id', '=', uid)]
+            </field>
+            <field name="view_id" eval="False"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to define a new product.
+                </p>
+                <p>
+                    You must define a product for everything you buy or sell,
+                    whether it's a physical product, a consumable or service.
+                </p>
+            </field>
+        </record>
+
+        <record id="property_unavailable_sales_operations_team_action" model="ir.actions.act_window">
+            <field name="name">Unavailable Property</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.product</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="view_type">form</field>
+            <field name="search_view_id" ref="product.product_search_form_view"/>
+            <field name="context">{"search_default_property":1,"default_type":"property"}}</field>
+            <field name="domain">[('type','=','property'),('status','=','not_available')]
+            </field>
+            <field name="view_id" eval="False"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to define a new product.
+                </p>
+                <p>
+                    You must define a product for everything you buy or sell,
+                    whether it's a physical product, a consumable or service.
+                </p>
+            </field>
+        </record>
+
+
+        <!--Actions for reserved menuitems for sales teams -->
+
+        <record id="property_reserved_property_saleperson_action" model="ir.actions.act_window">
+            <field name="name">Reserved Property</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.product</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="view_type">form</field>
+            <field name="search_view_id" ref="product.product_search_form_view"/>
+            <field name="context">{"search_default_property":1,"default_type":"property"}}</field>
+            <field name="domain">[('type','=','property'), ('status','in', ['reserved', 'delivered', 'contracted']), ('reserved_user_ids', 'in', [uid])]
+            </field>
+            <field name="view_id" eval="False"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to define a new product.
+                </p>
+                <p>
+                    You must define a product for everything you buy or sell,
+                    whether it's a physical product, a consumable or service.
+                </p>
+            </field>
+        </record>
+
+        <record id="property_reserved_property_teamleader_action" model="ir.actions.act_window">
+            <field name="name">Reserved Property</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.product</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="view_type">form</field>
+            <field name="search_view_id" ref="product.product_search_form_view"/>
+            <field name="context">{"search_default_property":1,"default_type":"property"}}</field>
+            <field name="domain">[('type','=','property'), ('status','in', ['reserved', 'delivered', 'contracted']), '|',('reserved_user_ids', 'in', [uid]),
+                ('reserved_user_ids.sale_team_id.user_id', '=', [uid])]
+            </field>
+            <field name="view_id" eval="False"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to define a new product.
+                </p>
+                <p>
+                    You must define a product for everything you buy or sell,
+                    whether it's a physical product, a consumable or service.
+                </p>
+            </field>
+        </record>
+
+        <record id="property_reserved_property_sales_manager_action" model="ir.actions.act_window">
+            <field name="name">Reserved Property</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.product</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="view_type">form</field>
+            <field name="search_view_id" ref="product.product_search_form_view"/>
+            <field name="context">{"search_default_property":1,"default_type":"property"}}</field>
+            <field name="domain">[('type','=','property'), ('status','in', ['reserved', 'delivered', 'contracted']), '|',('reserved_user_ids', 'in', [uid]),
+                ('reserved_user_ids.sale_team_id.sales_manager_id', 'in', [uid])]
+            </field>
+            <field name="view_id" eval="False"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to define a new product.
+                </p>
+                <p>
+                    You must define a product for everything you buy or sell,
+                    whether it's a physical product, a consumable or service.
+                </p>
+            </field>
+        </record>
+
+        <record id="property_reserved_property_sales_head_action" model="ir.actions.act_window">
+            <field name="name">Reserved Property</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.product</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="view_type">form</field>
+            <field name="search_view_id" ref="product.product_search_form_view"/>
+            <field name="context">{"search_default_property":1,"default_type":"property"}}</field>
+            <field name="domain">[('type','=','property'), ('status','in', ['reserved', 'delivered', 'contracted'])]
+            </field>
+            <field name="view_id" eval="False"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to define a new product.
+                </p>
+                <p>
+                    You must define a product for everything you buy or sell,
+                    whether it's a physical product, a consumable or service.
+                </p>
+            </field>
+        </record>
+
+
+        <!-- Menuitems -->
+        <record model="ir.ui.menu" id="base.menu_base_partner">
+            <field name="groups_id"
+                   eval="[(6,0,[ref('base.group_sale_salesman'),ref('base.group_sale_manager'),ref('sky_height.sale_team_leader_group'),ref('sky_height.group_sky_height_admin'),ref('sky_height.operation_sr_manager_user'),ref('sky_height.operation_manager_user'),ref('sky_height.operation_senior_supervisor_user'),ref('sky_height.operation_supervisor_user'),ref('sky_height.operation_sr_executive_user'),ref('sky_height.operation_executive_user'),ref('sky_height.sales_head_user'),ref('sky_height.rs_group_finance'), ref('sky_height.group_legal'), ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+
+        <record id="sky_height.menu_real_estate" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6,0,[ref('isky_access_rights.financial_manager'),ref('isky_access_rights.accounting_supervisor'),ref('sky_height.group_real_state')])]"/>
+        </record>
+
+        <record id="sky_height.main_available_property_menu" model="ir.ui.menu">
+            <field name="groups_id"
+                   eval="[(6,0,[ref('base.group_sale_salesman'),ref('base.group_sale_manager'),ref('sky_height.sale_team_leader_group'),ref('sky_height.sales_head_user'),ref('sky_height.rs_group_finance'),ref('sky_height.group_legal'),ref('sky_height.development_head_user'), ref('isky_access_rights.development_user'), ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+        <!--<record id="sky_height.menu_properties" model="ir.ui.menu">-->
+            <!--<field name="groups_id"-->
+                   <!--eval="[(6,0,[ref('base.group_sale_salesman'),ref('base.group_sale_manager'),ref('sky_height.sale_team_leader_group'),ref('sky_height.sales_head_user'),ref('sky_height.rs_group_finance'),ref('sky_height.group_legal'),ref('sky_height.development_head_user'),ref('sky_height.operation_executive_user'),ref('sky_height.operation_sr_executive_user'),ref('sky_height.operation_supervisor_user'),ref('sky_height.operation_senior_supervisor_user'),ref('sky_height.operation_manager_user'),ref('sky_height.operation_sr_manager_user'), ref('isky_access_rights.development_user'), ref('sky_height.group_sky_height_admin')])]"/>-->
+        <!--</record>-->
+
+        <record id="sky_height.configuration_sub" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6,0,[ref('isky_access_rights.accounting_supervisor'),ref('sky_height.group_sky_height_admin'), ref('sky_height.sales_head_user')])]"/>
+        </record>
+
+        <record model="ir.ui.menu" id="product.menu_product_template_action">
+            <field name="groups_id"
+                   eval="[(6,0,[ref('base.group_no_one')])]"/>
+        </record>
+
+        <record model="ir.ui.menu" id="sky_height.menu_brokers">
+            <field name="groups_id"
+                   eval="[(6,0,[ref('sky_height.group_legal'),ref('sky_height.sale_team_leader_group'),ref('base.group_sale_salesman'),ref('base.group_sale_manager'),ref('sky_height.operation_executive_user'),ref('sky_height.operation_sr_executive_user'),ref('sky_height.operation_supervisor_user'),ref('sky_height.operation_senior_supervisor_user'),ref('sky_height.operation_manager_user'),ref('sky_height.operation_sr_manager_user'),ref('sky_height.sales_head_user'),ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+        <record model="ir.ui.menu" id="sky_height.menu_real_estate_brokers">
+            <field name="groups_id"
+                   eval="[(6,0,[ref('sky_height.operation_executive_user'),ref('sky_height.operation_sr_executive_user'),ref('sky_height.operation_supervisor_user'),ref('sky_height.operation_senior_supervisor_user'),ref('sky_height.operation_manager_user'),ref('sky_height.operation_sr_manager_user'),ref('sky_height.rs_group_finance'), ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+
+        <record id="sky_height.payment_details_sub" model="ir.ui.menu">
+            <field name="groups_id"
+                   eval="[(6,0,[ref('isky_access_rights.financial_manager'),ref('isky_access_rights.accounting_supervisor'),ref('account.group_account_manager'),ref('account.group_account_user'),ref('sky_height.rs_group_finance'),ref('sky_height.group_legal'), ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+
+        <record id="sky_height.payment_strategy_details" model="ir.ui.menu">
+            <field name="groups_id"
+                   eval="[(6,0,[ref('isky_access_rights.financial_manager'),ref('isky_access_rights.accounting_supervisor'),ref('account.group_account_manager'),ref('account.group_account_user'),ref('sky_height.rs_group_finance'),ref('sky_height.group_legal'), ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+
+        <record id="sky_height.payment_strategy_direct_details" model="ir.ui.menu">
+            <field name="groups_id"
+                   eval="[(6,0,[ref('isky_access_rights.financial_manager'),ref('isky_access_rights.accounting_supervisor'),ref('account.group_account_manager'),ref('account.group_account_user'),ref('sky_height.rs_group_finance'),ref('sky_height.group_legal'), ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+
+        <record id="sky_height.payment_strategy_bank_details" model="ir.ui.menu">
+            <field name="groups_id"
+                   eval="[(6,0,[ref('isky_access_rights.financial_manager'),ref('isky_access_rights.accounting_supervisor'),ref('account.group_account_manager'),ref('account.group_account_user'),ref('sky_height.rs_group_finance'),ref('sky_height.group_legal'), ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+
+        <record model="ir.ui.menu" id="base.menu_main_pm">
+            <field name="groups_id"
+                   eval="[(6,0,[ref('project.group_project_manager'),ref('project.group_project_user'),ref('base.group_sale_salesman'), ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+
+        <record model="ir.ui.menu" id="base.menu_sales">
+            <field name="groups_id"
+                   eval="[(6,0,[ref('base.group_sale_salesman'),ref('base.group_sale_manager'),ref('sky_height.sale_team_leader_group'),ref('sky_height.group_sky_height_admin'),ref('sky_height.operation_sr_manager_user'),ref('sky_height.operation_manager_user'),ref('sky_height.operation_senior_supervisor_user'),ref('sky_height.operation_supervisor_user'),ref('sky_height.operation_sr_executive_user'),ref('sky_height.operation_executive_user'),ref('sky_height.sales_head_user'),ref('sky_height.rs_group_finance'),ref('sky_height.group_legal')])]"/>
+        </record>
+
+        <record model="ir.ui.menu" id="base.menu_sale_report">
+            <field name="groups_id"
+                   eval="[(6,0,[ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+
+        <record model="ir.ui.menu" id="crm.crm_opportunity_report_menu_lead">
+            <field name="groups_id"
+                   eval="[(6,0,[ref('crm.group_use_lead'),ref('sky_height.operation_sr_manager_user'),ref('sky_height.operation_manager_user'),ref('sky_height.operation_senior_supervisor_user'),ref('sky_height.operation_supervisor_user'),ref('sky_height.operation_sr_executive_user'),ref('sky_height.operation_executive_user'),ref('sky_height.sales_head_user'), ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+
+        <record model="ir.ui.menu" id="base.menu_sale_config">
+            <field name="groups_id"
+                   eval="[(6,0,[ref('base.group_configuration'),ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+
+
+        <record model="ir.ui.menu" id="crm.menu_crm_opportunities">
+            <field name="groups_id"
+                   eval="[(6,0,[ref('sky_height.operation_sr_manager_user'),ref('sky_height.operation_manager_user'),ref('sky_height.operation_senior_supervisor_user'),ref('sky_height.operation_supervisor_user'),ref('sky_height.operation_sr_executive_user'),ref('sky_height.operation_executive_user'),ref('base.group_sale_salesman'),ref('sky_height.sale_team_leader_group'),ref('base.group_sale_manager'),ref('sky_height.sales_head_user'), ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+
+        <record model="ir.ui.menu" id="crm.crm_lead_menu_activities">
+            <field name="groups_id"
+                   eval="[(6,0,[ref('base.group_sale_salesman'),ref('sky_height.sale_team_leader_group'),ref('base.group_sale_manager'),ref('sky_height.sales_head_user'), ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+        <record model="ir.ui.menu" id="crm.menu_crm_leads">
+            <field name="groups_id"
+                   eval="[(6,0,[ref('sky_height.operation_sr_manager_user'),ref('sky_height.operation_manager_user'),ref('sky_height.operation_senior_supervisor_user'),ref('sky_height.operation_supervisor_user'),ref('sky_height.operation_sr_executive_user'),ref('sky_height.operation_executive_user'), ref('sky_height.sales_head_user'), ref('sky_height.group_sky_height_admin')])]"/>
+            <field name="name">Welcome Card</field>
+
+        </record>
+
+        <record model="ir.ui.menu" id="sale.menu_report_product_all">
+            <field name="groups_id"
+                   eval="[(6,0,[ref('base.group_sale_salesman'),ref('base.group_sale_manager'),ref('sky_height.sale_team_leader_group'),ref('sky_height.operation_sr_manager_user'),ref('sky_height.operation_manager_user'),ref('sky_height.operation_senior_supervisor_user'),ref('sky_height.operation_supervisor_user'),ref('sky_height.operation_sr_executive_user'),ref('sky_height.operation_executive_user'),ref('sky_height.sales_head_user'), ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+
+        <record model="ir.ui.menu" id="base.menu_partner_form">
+            <field name="groups_id"
+                   eval="[(6,0,[ref('sky_height.sale_team_leader_group'),ref('base.group_sale_manager'),ref('base.group_sale_salesman'),ref('sky_height.operation_sr_manager_user'),ref('sky_height.operation_manager_user'),ref('sky_height.operation_senior_supervisor_user'),ref('sky_height.operation_supervisor_user'),ref('sky_height.operation_sr_executive_user'),ref('sky_height.operation_executive_user'),ref('sky_height.sales_head_user'),ref('sky_height.group_legal'),ref('sky_height.rs_group_finance'), ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+
+        <record model="ir.ui.menu" id="sky_height.real_estate_menu_sale_order">
+            <field eval="[(6,0,[ref('sky_height.rs_group_finance'), ref('sky_height.group_sky_height_admin')])]" name="groups_id"/>
+        </record>
+
+
+        <record model="ir.ui.menu" id="sale.menu_sale_order">
+            <field eval="[(6,0,[ref('sky_height.rs_group_finance'), ref('sky_height.group_sky_height_admin')])]"
+                   name="groups_id"/>
+        </record>
+
+
+        <record model="ir.ui.menu" id="sky_height.main_reserved_property_menu">
+            <field eval="[(6,0,[ref('base.group_sale_manager'),ref('sky_height.sale_team_leader_group'),ref('base.group_sale_salesman'),ref('sky_height.rs_group_finance'),ref('sky_height.sales_head_user'),ref('sky_height.group_legal'),ref('sky_height.development_head_user'),ref('isky_access_rights.development_user'), ref('sky_height.group_sky_height_admin')])]"
+                   name="groups_id"/>
+        </record>
+
+        <record model="ir.ui.menu" id="sky_height.menu_transactions">
+            <field eval="[(6,0,[ref('sky_height.operation_sr_manager_user'),ref('sky_height.operation_manager_user'),ref('sky_height.operation_senior_supervisor_user'),ref('sky_height.operation_supervisor_user'),ref('sky_height.operation_sr_executive_user'),ref('sky_height.operation_executive_user'),ref('isky_access_rights.rs_accountant'),ref('isky_access_rights.financial_manager'),ref('isky_access_rights.accounting_supervisor'),ref('base.group_sale_manager'),ref('sky_height.sale_team_leader_group'),ref('sky_height.group_legal'),ref('base.group_sale_salesman'),ref('sky_height.sales_head_user'),ref('isky_access_rights.group_legal_ex'),ref('isky_access_rights.group_legal_adv'),ref('isky_access_rights.group_ar'),ref('isky_access_rights.group_ar_sup'),ref('isky_access_rights.group_treasury'),ref('sky_height.group_sky_height_admin')])]" name="groups_id"/>
+        </record>
+
+        <record model="ir.ui.menu" id="sky_height.reservation_menu">
+            <field eval="[(6,0,[ref('account.group_account_user'),ref('isky_access_rights.financial_manager'),ref('isky_access_rights.accounting_supervisor'),ref('base.group_sale_manager'),ref('sky_height.sale_team_leader_group'),ref('sky_height.group_legal'),ref('isky_access_rights.group_legal_ex'),ref('isky_access_rights.group_legal_adv'),ref('base.group_sale_salesman'),ref('sky_height.operation_sr_manager_user'),ref('sky_height.operation_manager_user'),ref('sky_height.operation_senior_supervisor_user'),ref('isky_access_rights.group_ar_sup'),ref('sky_height.operation_supervisor_user'),ref('sky_height.operation_sr_executive_user'),ref('sky_height.operation_executive_user'),ref('sky_height.sales_head_user'),ref('isky_access_rights.group_ar'),ref('isky_access_rights.group_treasury'),ref('sky_height.group_sky_height_admin')])]" name="groups_id"/>
+        </record>
+
+        <record model="ir.ui.menu" id="sky_height.main_property_menu">
+            <field eval="[(6,0,[ref('isky_access_rights.development_user'), ref('sky_height.development_head_user'),ref('sky_height.group_sky_height_admin')])]"
+                   name="groups_id"/>
+        </record>
+
+        <record model="ir.ui.menu" id="sale.menu_sale_invoicing">
+            <field eval="[(6,0,[ref('base.group_no_one'),ref('sky_height.group_sky_height_admin')])]"
+                   name="groups_id"/>
+        </record>
+
+
+        <record model="ir.ui.menu" id="sky_height.main_reserved_property_menu">
+            <field eval="[(6,0,[ref('sky_height.development_head_user'), ref('isky_access_rights.development_user'), ref('sky_height.group_sky_height_admin')])]"
+                   name="groups_id"/>
+        </record>
+
+
+        <record id="sky_height.commission_conf_menu_id" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6,0,[ref('isky_access_rights.accounting_supervisor'),ref('isky_access_rights.financial_manager'),ref('sky_height.sales_head_user'), ref('isky_access_rights.group_treasury'),ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+
+        <record id="sky_height.property_platform" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6,0,[ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+
+        <record id="sky_height.property_block" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6,0,[ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+
+        <record id="sky_height.property_level" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6,0,[ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+
+        <record id="sky_height.sky_heights_settings" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6,0,[ref('isky_access_rights.financial_manager'),ref('isky_access_rights.accounting_supervisor'), ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+
+
+        <record id="sky_height.property_floor" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6,0,[ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+
+        <record id="sky_height.property_type" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6,0,[ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+
+        <record id="sky_height.res_user_inherit_inherit" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6,0,[ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+
+        <record id="isky_kpi_gui.kpi_dashboard" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6,0,[ref('base.group_hr_manager'), ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+
+        <record id="account.menu_finance" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6,0,[ref('account.group_account_user'),ref('account.group_account_manager'),ref('account.group_account_invoice'),ref('isky_access_rights.group_ar'),ref('isky_access_rights.group_ar_sup'), ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+
+        <record id="account.menu_finance_configuration" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6,0,[ref('account.group_account_manager'),ref('base.group_configuration'),ref('isky_access_rights.group_ar'),ref('isky_access_rights.group_ar_sup'), ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+
+        <record id="payment.payment_transaction_menu" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6,0,[ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+        <record id="payment.payment_acquirer_menu" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6,0,[ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+        <record id="payment.payment_method_menu" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6,0,[ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+        <record id="account.menu_action_account_fiscal_position_form" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6,0,[ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+        <record id="account.menu_action_account_bank_journal_form" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6,0,[ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+        <record id="account.menu_action_tax_form" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6,0,[ref('isky_access_rights.financial_manager'),ref('isky_access_rights.accounting_supervisor'),ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+        <!--<record id="account.menu_action_payment_term_form" model="ir.ui.menu">-->
+            <!--<field name="groups_id" eval="[(6,0,[ref('isky_access_rights.accounting_supervisor')])]"/>-->
+        <!--</record>-->
+        <!--<record id="account.menu_action_account_journal_form" model="ir.ui.menu">-->
+            <!--<field name="groups_id" eval="[(6,0,[ref('isky_access_rights.accounting_supervisor')])]"/>-->
+        <!--</record>-->
+
+        <record id="account.account_management_menu" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6,0,[ref('account.group_account_manager'), ref('isky_access_rights.group_ar'), ref('isky_access_rights.group_ar_sup'), ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+
+        <record id="account.menu_config_multi_currency" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6,0,[ref('account.group_account_manager'), ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+
+        <record id="payment.root_payment_menu" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6,0,[ref('account.group_account_manager'), ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+
+        <record id="account.menu_board_journal_1" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6,0,[ref('account.group_account_manager'), ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+        <record id="account.menu_finance_payables" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6,0,[ref('account.group_account_manager'),ref('account.group_account_user'), ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+        <record id="account.menu_action_invoice_tree2" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6,0,[ref('account.group_account_manager'),ref('account.group_account_user'), ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+
+        <record id="account_reports.menu_action_followups" model="ir.ui.menu">
+           <field name="groups_id" eval="[(6,0,[ref('account.group_account_manager'),ref('isky_access_rights.group_ar'),ref('account.group_account_user'),ref('isky_access_rights.group_ar_sup'), ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+
+        <record id="account.menu_account_customer" model="ir.ui.menu">
+            <field name="groups_id"
+                   eval="[(6,0,[ref('account.group_account_manager'),ref('account.group_account_user'), ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+
+        <record id="account.menu_finance_entries" model="ir.ui.menu">
+            <field name="groups_id"
+                   eval="[(4,[ref('account.group_account_user'), ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+        <record id="account.menu_action_account_moves_all" model="ir.ui.menu">
+            <field name="groups_id"
+                   eval="[(4,[ref('account.group_account_user'), ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+
+        <record id="isky_employee_custody.employee_custody_menu" model="ir.ui.menu">
+            <field name="groups_id"
+                   eval="[(6, 0, [ref('isky_access_rights.group_treasury'), ref('isky_access_rights.financial_manager'), ref('isky_access_rights.accounting_supervisor'), ref('isky_access_rights.rs_accountant')])]"/>
+        </record>
+        <record id="sales_team.menu_sales_team_act" model="ir.ui.menu">
+            <field name="groups_id"
+                   eval="[(4,[ref('sky_height.group_sky_height_admin')])]"/>
+        </record>
+
+
+        <!-- Unavailable menuitems for sales team -->
+        <menuitem id="main_unavailable_property_menu"
+                  name="Unavailable Property"
+                  parent="sky_height.menu_properties"
+                  sequence="98"
+                  action="property_unavailable_action"
+                  groups="base.group_sale_salesman"
+        />
+
+        <menuitem id="main_unavailable_property_sale_teamleader_menu"
+                  name="Unavailable Property"
+                  parent="sky_height.menu_properties"
+                  sequence="98"
+                  action="property_unavailable_sale_teamleader_action"
+                  groups="sky_height.sale_team_leader_group"
+        />
+
+        <menuitem id="main_unavailable_property_sale_manager_menu"
+                  name="Unavailable Property"
+                  parent="sky_height.menu_properties"
+                  sequence="100"
+                  action="property_unavailable_sales_manager_action"
+                  groups="base.group_sale_manager"
+        />
+
+        <menuitem id="main_unavailable_property_operations_team_menu"
+                  name="Unavailable Property"
+                  parent="sky_height.menu_properties"
+                  sequence="100"
+                  action="property_unavailable_sales_operations_team_action"
+        />
+
+        <record id="isky_access_rights.main_unavailable_property_operations_team_menu" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6,0,[ref('sky_height.sales_head_user')])]"/>
+        </record>
+
+        <!-- Reserved menuitems for salespersons -->
+        <menuitem id="main_reserved_property_saleperson_menu"
+                  name="Reserved Property"
+                  parent="sky_height.menu_properties"
+                  sequence="98"
+                  action="property_reserved_property_saleperson_action"
+                  groups="base.group_sale_salesman"
+        />
+
+        <menuitem id="main_reserved_property_teamleader_menu"
+                  name="Reserved Property"
+                  parent="sky_height.menu_properties"
+                  sequence="98"
+                  action="property_reserved_property_teamleader_action"
+                  groups="sky_height.sale_team_leader_group"
+        />
+
+        <menuitem id="main_reserved_property_sales_manager_menu"
+                  name="Reserved Property"
+                  parent="sky_height.menu_properties"
+                  sequence="98"
+                  action="property_reserved_property_sales_manager_action"
+                  groups="base.group_sale_manager"
+        />
+
+        <menuitem id="main_reserved_property_sales_head_menu"
+                  name="Reserved Property"
+                  parent="sky_height.menu_properties"
+                  sequence="98"
+                  action="property_reserved_property_sales_head_action"
+                  groups="sky_height.sales_head_user"
+        />
+
+         <record id="base.action_partner_form" model="ir.actions.act_window">
+            <field name="domain"
+                   eval="[('customer', '=', True)]"/>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,460 @@
+<openerp>
+    <data>
+        <record id="view_crm_opportunity_inherit" model="ir.ui.view">
+            <field name="name">crm.lead.tree.inherit</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
+            <field name="arch" type="xml">
+                <field name="name" position="attributes">
+                    <attribute name="string">Lead Name</attribute>
+                </field>
+                <field name="country_id" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="partner_id" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+
+                <field name="planned_revenue" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="probability" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="name" position="after">
+                    <field name="source"/>
+                    <field name="note"/>
+                </field>
+
+            </field>
+        </record>
+        <record model="ir.ui.view" id="isky_form_view_opportunity_form_inherit">
+            <field name="name">crm.lead.form</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='description']" position="replace">
+                    <field name="note_ids">
+                        <tree editable="top">
+                            <field name="note"/>
+                            <field name="create_date" readonly="1"/>
+                            <field name="lead_id" invisible="1"/>
+                        </tree>
+                        <form>
+                            <group col="4">
+                                <field name="note"/>
+                                <field name="create_date" readonly="1"/>
+                                <field name="lead_id" invisible="1"/>
+                            </group>
+                        </form>
+                    </field>
+                </xpath>
+
+                <xpath expr="//label[@for='name']" position="attributes">
+                    <attribute name="string">Lead</attribute>
+                    <attribute name="required">1</attribute>
+                </xpath>
+
+                <xpath expr="//group[1]" position="replace">
+                    <group col="4">
+                        <field name="contact_name"/>
+                        <field name="email_from"/>
+                        <field name="mobile1_type"/>
+                        <field name="mobile2_type"/>
+                        <field name="mobile" string="Mobile1"/>
+                        <field name="mobile2"/>
+                        <field name="user_id"/>
+                        <field name="team_id"/>
+                        <field name="is_sales_head" invisible="1"/>
+                        <field name="sales_type" attrs="{'readonly': [('is_sales_head', '!=', True)]}"/>
+                        <field name="create_date"/>
+                        <field name="source" attrs="{'readonly': [('is_sales_head', '!=', True)]}"/>
+                        <field name="date_expiry"/>
+                        <field name="broker_id"
+                               attrs="{'invisible':[('source','!=', 'broker'),('sales_type','!=', 'individual_broker')],'required':['|',('source','=', 'broker'),('sales_type','=', 'individual_broker')],'readonly' : [('check_readonly','=', True)]}"
+                        />
+                        <field name="no_of_kids"/>
+                        <field name="customer_id"
+                               attrs="{'invisible':[('sales_type','not in', ['client_referral','resale'])],'required':[('sales_type','in', ['client_referral','resale'])],'readonly' : [('check_readonly','=', True)]}"
+                               context="{'default_customer':1}"/>
+
+                        <field name="employee_id"
+                               attrs="{'invisible':[('sales_type','!=', 'employee_referral')],'required':[('sales_type','=', 'employee_referral')],'readonly' : [('check_readonly','=', True)]}"
+                        />
+                        <field name="other"
+                               attrs="{'invisible':[('source','!=', 'other')],'required':[('source','=', 'other')],'readonly' : [('check_readonly','=', True)]}"
+                        />
+                        <field name="function" string="Job Title"/>
+                        <label for="street" string="Address"/>
+                        <div class="o_address_format">
+                            <field name="street" placeholder="Street..." class="o_address_street"/>
+                            <field name="street2" placeholder="Street 2..." class="o_address_street"/>
+                            <field name="city" placeholder="City" class="o_address_city"/>
+                            <field name="state_id" class="o_address_state" placeholder="State"
+                                   options="{&quot;no_open&quot;: True}" on_change="onchange_state(state_id)"/>
+                            <field name="zip" placeholder="ZIP" class="o_address_zip"/>
+                            <field name="country_id" placeholder="Country" class="o_address_country"
+                                   options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}"/>
+                        </div>
+                        <field name="check_readonly" invisible="1"/>
+                        <field name="partner_id" invisible="1"/>
+                    </group>
+                    <group>
+
+                    </group>
+                </xpath>
+                <xpath expr="//form/sheet/notebook" position="inside">
+                    <page string="Activity">
+                        <field name="meetings_ids" readonly="1">
+                            <tree create="false">
+                                <field name="name" string="Subject"/>
+                                <field name="allday" invisible="True"/>
+                                <field name="start" string="Start Date"/>
+                                <field name="stop" string="End Date"/>
+                                <field name="partner_ids"/>
+                                <field name="location"/>
+                                <field name="state" invisible="True"/>
+                                <field name="duration"/>
+                                <field name="message_needaction" invisible="1"/>
+                            </tree>
+                        </field>
+                    </page>
+
+                </xpath>
+                <xpath expr="//form/sheet/notebook/page[@name='lead']" position="replace">
+                </xpath>
+
+
+                <!--<xpath expr="//field[@name='partner_id']" position="replace">-->
+                <!--<field name="partner_id"-->
+                <!--on_change="on_change_partner_id(partner_id)"-->
+                <!--string="Customer"-->
+                <!--context="{'default_name': partner_name,-->
+                <!--'default_street': street,-->
+                <!--'default_street2': street2,-->
+                <!--'default_city': city,-->
+                <!--'default_state_id': state_id,-->
+                <!--'default_zip': zip,-->
+                <!--'default_country_id': country_id,-->
+                <!--'default_function': function,-->
+                <!--'default_phone': phone,-->
+                <!--'default_mobile': mobile,-->
+                <!--'default_fax': fax,-->
+                <!--'default_email': email_from,-->
+                <!--'default_team_id': team_id}"/>-->
+                <!--</xpath>-->
+
+
+                <!--<xpath expr="//field[@name='user_id']" position="replace">-->
+                <!--<field name="user_ids" widget="many2many_tags" required="1"/>-->
+                <!--</xpath>-->
+
+                <!--<xpath expr="//field[@name='contact_name']" position="attributes">-->
+                <!--<attribute name="required">1</attribute>-->
+                <!--</xpath>-->
+
+                <!--<xpath expr="//field[@name='phone']" position="attributes">-->
+                <!--<attribute name="required">1</attribute>-->
+                <!--</xpath>-->
+
+
+                <!--<xpath expr="//field[@name='street']" position="attributes">-->
+                <!--<attribute name="required">1</attribute>-->
+                <!--</xpath>-->
+                <!--<xpath expr="//field[@name='email_from']" position="attributes">-->
+                <!--<attribute name="required">1</attribute>-->
+                <!--</xpath>-->
+                <!--<xpath expr="//field[@name='function']" position="attributes">-->
+                <!--<attribute name="required">1</attribute>-->
+                <!--</xpath>-->
+                <!--<xpath expr="//field[@name='tag_ids']" position="after">-->
+                <!--<field name="marital_status" invisible="1"/>-->
+                <!--<field name="no_of_kids" invisible="1"/>-->
+                <!--</xpath>-->
+                <!--<xpath expr="//form/sheet/notebook/page[1]" position="before">-->
+                <!--<page string="Reservation" groups="sky_height.group_real_state" invisible="1">-->
+                <!--<group groups="sky_height.group_real_state">-->
+                <!--<field name="project_id"-->
+                <!--options="{'no_quick_create':True, 'no_create_edit' : True,'no_open': True}"/>-->
+                <!--<field name="phase_id"-->
+                <!--options="{'no_quick_create':True, 'no_create_edit' : True,'no_open': True}"/>-->
+                <!--<field name="property_id"-->
+                <!--options="{'no_quick_create':True, 'no_create_edit' : True,'no_open': True}"/>-->
+                <!--</group>-->
+                <!--<group></group>-->
+
+                <!--</page>-->
+
+
+                <!--</xpath>-->
+                <xpath expr="//h2[@class='o_row']"
+                       position="attributes">
+                    <attribute name="invisible">1</attribute>
+
+                </xpath>
+
+            </field>
+        </record>
+        <record model="ir.ui.view" id="isky_form_view_opportunity_form_inherit2">
+            <field name="name">crm.lead.form</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="sale_crm.crm_case_form_view_oppor"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[3]"
+                       position="replace">
+                    <field name="status"
+                           invisible="1"/>
+                    <button name="create_reservation"
+                            string="Create Reservation"
+                            type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible' : ['|',('status', 'in', ['reserved','deliverd','contracted','not_available']),('active', '!=', True)]}"
+                            groups="base.group_sale_salesman,sky_height.sale_team_leader_group,sky_height.group_sky_height_admin"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="isky_form_view_lead_form_inherit">
+            <field name="name">crm.lead.form</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_form_view_leads"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//sheet/group" position="replace">
+                    <group>
+                        <group>
+                            <field name="email_from"/>
+                            <field name="mobile1_type" required="1"/>
+                            <field name="mobile" required="1"/>
+                            <field name="source" required="1"/>
+                            <field name="broker_id"
+                                   attrs="{'invisible':[('source','!=', 'broker'),('sales_type','!=', 'individual_broker')],'required':['|',('source','=', 'broker'),('sales_type','=', 'individual_broker')]}"
+                                   context="{'default_is_broker':1}"/>
+
+                            <field name="customer_id"
+                                   attrs="{'invisible':[('sales_type','not in', ['client_referral','resale'])],'required':[('sales_type','in', ['client_referral','resale'])]}"
+                                   context="{'default_customer':1}"/>
+
+                            <field name="employee_id"
+                               attrs="{'invisible':[('sales_type','!=', 'employee_referral')],'required':[('sales_type','=', 'employee_referral')]}"
+                        />
+                            <field name="other"
+                               attrs="{'invisible':[('source','!=', 'other')],'required':[('source','=', 'other')]}"
+                        />
+                        </group>
+                        <group>
+                            <field name="contact_name" required="1"/>
+                            <field name="mobile2_type"/>
+                            <field name="mobile2"/>
+                            <field name="sales_type" required="1"/>
+                            <field name="team_id" invisible="1"/>
+                        </group>
+                    </group>
+                </xpath>
+
+                <xpath expr="//form/sheet/notebook" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </xpath>
+
+                <xpath expr="//button[@name='%(crm.action_crm_lead2opportunity_partner)d']" position="attributes">
+                    <attribute name="string">Convert To Lead</attribute>
+                    <attribute name="groups">sky_height.operation_manager_user,sky_height.operation_senior_supervisor_user,sky_height.operation_supervisor_user,sky_height.operation_sr_executive_user,sky_height.operation_executive_user,sky_height.group_sky_height_admin</attribute>
+                </xpath>
+
+                <xpath expr="//label[@for='name']" position="attributes">
+                    <attribute name="string">Welcome Card</attribute>
+                </xpath>
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="placeholder">Describe The Welcome Card ..</attribute>
+                </xpath>
+
+
+            </field>
+        </record>
+        <!-- Inherit Form View to Modify it -->
+        <record id="crm_view_crm_lead2opportunity_partner_inherit" model="ir.ui.view">
+            <field name="name">view.crm.lead2opportunity.partner</field>
+            <field name="model">crm.lead2opportunity.partner</field>
+            <field name="inherit_id" ref="crm.view_crm_lead2opportunity_partner"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//form" position="replace">
+                    <form string="Convert to Lead">
+                        <group name="name">
+                            <field name="name" widget="radio"/>
+                        </group>
+                        <group string="Assign these Leads to">
+                            <field name="user_id" on_change="on_change_user(user_id, team_id, context)"/>
+                            <field name="team_id" widget="selection"/>
+                        </group>
+                        <group string="Leads" attrs="{'invisible': [('name', '!=', 'merge')]}">
+                            <field name="opportunity_ids" nolabel="1">
+                                <tree>
+                                    <field name="create_date"/>
+                                    <field name="name"/>
+                                    <field name="type"/>
+                                    <field name="contact_name"/>
+                                    <field name="country_id" invisible="context.get('invisible_country', True)"/>
+                                    <field name="email_from"/>
+                                    <field name="phone"/>
+                                    <field name="stage_id"/>
+                                    <field name="user_id"/>
+                                    <field name="team_id"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <group name="action" attrs="{'invisible': [('name', '!=', 'convert')]}" string="Customers"
+                               col="1">
+                            <field name="action" nolabel="1" widget="radio"
+                                   on_change="onchange_action(action, context)"/>
+                            <group col="2">
+                                <field name="partner_id"
+                                       attrs="{'required': [('action', '=', 'exist')], 'invisible':[('action','!=','exist')]}"/>
+                            </group>
+                        </group>
+                        <footer>
+                            <button name="action_apply" string="Create Leads" type="object" class="btn-primary"/>
+                            <button string="Cancel" class="btn-default" special="cancel"/>
+                        </footer>
+                    </form>
+                </xpath>
+
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="crm.crm_lead_all_leads">
+            <field name="name">Welcome</field>
+            <field name="res_model">crm.lead</field>
+            <field name="view_mode">tree,kanban,graph,pivot,calendar,form</field>
+            <field name="domain">['|', ('type','=','lead'), ('type','=',False)]</field>
+            <field name="view_id" ref="crm.crm_case_tree_view_leads"/>
+            <field name="search_view_id" ref="crm.view_crm_case_leads_filter"/>
+            <field name="context">{
+                'default_type':'lead',
+                'search_default_type': 'lead',
+                'stage_type':'lead',
+                'needaction_menu_ref': 'crm.menu_crm_opportunities',
+                'search_default_to_process':1,'default_source': False, 'default_sales_type': False
+                }
+            </field>
+            <field name="help" type="html">
+                <p>
+                    Use leads if you need a qualification step before creating an
+                    opportunity or a customer. It can be a business card you received,
+                    a contact form filled in your website, or a file of unqualified
+                    prospects you import, etc.
+                </p>
+                <p>
+                    Once qualified, the lead can be converted into a business
+                    opportunity and/or a new customer in your address book.
+                </p>
+            </field>
+        </record>
+
+        <record id="crm.crm_opportunity_report_action" model="ir.actions.act_window">
+             <field name="name">Leads Analysis</field>
+             <field name="res_model">crm.opportunity.report</field>
+             <field name="view_type">form</field>
+             <field name="view_mode">pivot,graph</field>
+             <field name="context">{'search_default_opportunity': True, 'search_default_current': True, 'active_test': True, 'search_default_my': True}</field>
+            <field name="view_ids"
+                   eval="[(5, 0, 0),
+                          (0, 0, {'view_mode': 'pivot', 'view_id': ref('crm.crm_opportunity_report_view_pivot')}),
+                          (0, 0, {'view_mode': 'graph', 'view_id': ref('crm.crm_opportunity_report_view_graph')})]"/>
+             <field name="help">Pipeline Analysis gives you an instant access to
+your opportunities with information such as the expected revenue, planned cost,
+missed deadlines or the number of interactions per opportunity. This report is
+mainly used by the sales manager in order to do the periodic review with the
+teams of the sales pipeline.</field>
+        </record>
+
+        <record id="crm.crm_opportunity_report_action_lead" model="ir.actions.act_window">
+            <field name="name">Welcome Cards Analysis</field>
+            <field name="res_model">crm.opportunity.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">pivot,graph</field>
+            <field name="context">{'search_default_current': True, 'active_test': True}</field>
+            <field name="view_ids"
+                   eval="[(5, 0, 0),
+                          (0, 0, {'view_mode': 'pivot', 'view_id': ref('crm.crm_opportunity_report_view_pivot_lead')}),
+                          (0, 0, {'view_mode': 'graph', 'view_id': ref('crm.crm_opportunity_report_view_graph_lead')})]"/>
+            <field name="help">This report analyses the source of your leads
+(including those converted into opportunities).</field>
+        </record>
+
+        <record id="make_invisible" model="res.groups">
+            <field name="name">Invisible</field>
+        </record>
+
+        <record model="ir.ui.menu" id="sale.menu_sale_quotations">
+            <field eval="[(6,0,[ref('make_invisible')])]" name="groups_id"/>
+        </record>
+
+        <!--Lost Reason wizard-->
+        <record model="ir.ui.view" id="isky_crm_lead_lost_view_form_inherit">
+            <field name="name">crm.lead.lost.form</field>
+            <field name="model">crm.lead.lost</field>
+            <field name="inherit_id" ref="crm.crm_lead_lost_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='lost_reason_id']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+
+            </field>
+        </record>
+
+        <!--inherit search view-->
+        <record model="ir.ui.view" id="isky_view_leads_search_inherit">
+            <field name="name">crm.lead.search</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.view_crm_case_leads_filter"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='name']" position="before">
+                    <field name="id_no"/>
+                    <field name="mobile" string="Mobile1"/>
+                    <field name="mobile2"/>
+
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="isky_view_opportunity_search_inherit">
+            <field name="name">crm.lead.opp.search</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='name']" position="before">
+                    <field name="id_no"/>
+                    <field name="mobile" string="Mobile1"/>
+                    <field name="mobile2"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="crm.action_crm_lead2opportunity_partner" model="ir.actions.act_window">
+            <field name="name">Convert to Lead</field>
+        </record>
+
+        <record id="view_crm_lead_tree_inherit" model="ir.ui.view">
+            <field name="name">crm.lead.lead.tree.inherit</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_tree_view_leads"/>
+            <field name="arch" type="xml">
+                <field name="phone" position="replace">
+                    <field name="mobile1_type"/>
+                    <field name="mobile"/>
+                </field>
+                <field name="country_id" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>
